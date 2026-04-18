@@ -1,0 +1,217 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #1c4b61;
+  --secondary: #578ead;
+  --bg: #f1f1e2;
+  --white: #ffffff;
+  --text: #1c4b61;
+  --border: #d0d0c0;
+  --positive: #2e7d32;
+  --negative: #c62828;
+  --font-heading: 'Sofia Sans', sans-serif;
+  --font-sub: 'Saira', sans-serif;
+  --font-body: 'Sofia Sans', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.65;
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+h4 {
+  font-family: var(--font-sub);
+  font-weight: 600;
+}
+
+button {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 1rem 4rem;
+}
+
+.quiz-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 40px rgba(28, 75, 97, 0.11);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 680px;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--primary);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.brand-tagline {
+  font-family: var(--font-sub);
+  font-size: 0.72rem;
+  color: var(--secondary);
+  letter-spacing: 0.06em;
+  margin-bottom: 1.25rem;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--secondary);
+  color: white;
+  font-family: var(--font-sub);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.65rem;
+  border-radius: 100px;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.badge-practice {
+  background: rgba(87, 142, 173, 0.18);
+  color: var(--primary);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background: var(--primary);
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 0.85rem 2rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.1s;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.btn:hover {
+  background: #163a4f;
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: var(--secondary);
+}
+
+.btn-secondary:hover {
+  background: #4a7d9c;
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-sub);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--primary);
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.03em;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.72rem 1rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text);
+  background: white;
+  transition: border-color 0.18s;
+  outline: none;
+  appearance: none;
+}
+
+.form-input:focus {
+  border-color: var(--secondary);
+}
+
+.form-error {
+  color: var(--negative);
+  font-size: 0.78rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.divider {
+  height: 1px;
+  background: #e8e8d8;
+  margin: 1.75rem 0;
+}
+
+.info-box {
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+@media (max-width: 480px) {
+  .quiz-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  #root {
+    padding: 1rem 0.75rem 3rem;
+  }
+}
+
+@media print {
+  body { background: white; }
+  .no-print { display: none !important; }
+}
