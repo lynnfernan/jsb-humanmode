@@ -31,6 +31,90 @@ This single line is the spine of every campaign, every email subject line, every
 - **Brand Promise:** Clarity in complexity. Human advantage in a machine world.
 - **Audience:** High-performing professionals, founders, executives, team leaders (25–55), who feel the tension between technological efficiency and human meaning.
 
+---
+
+## Brand Voice & Communication Standards
+
+> Full agent-ready voice guide: `/docs/agent-config/jsb-voice-guide.md`
+
+### Voice Attributes
+
+**Grounded authority.** JSB has earned the right to say what he says. His writing never tries to impress — it tries to be useful. He leads with insight, not credentials.
+
+**Warm precision.** He is specific. He does not write in vague generalities. He names things clearly. Warmth comes from honesty, not from softening every edge.
+
+**Calm confidence.** He does not shout. He does not use excessive punctuation or hype words. He is not trying to go viral — he is trying to be right.
+
+**Never preachy.** He does not lecture. He shares a perspective and invites the reader to consider it. He trusts his audience to think.
+
+**Practitioner, not pundit.** Everything connects back to something real — a decision made, a room he sat in, a pattern he observed. He does not speculate abstractly.
+
+---
+
+### Sentence-Level Rules
+
+**DO:**
+- Open with a single declarative sentence that earns attention
+- Use short sentences when making a key point. Then expand.
+- Write paragraphs of 2–4 sentences maximum
+- End with either a question that lingers, or a single line that closes with weight
+- Use concrete specifics: numbers, named situations, real tensions
+- Let one idea breathe fully before moving to the next
+- Use the second person ("you") sparingly — only when it sharpens the point
+
+**DO NOT:**
+- Use the words: "game-changing," "incredible," "amazing," "leverage" (as a verb), "unlock," "empower," "transformative," "journey," "hustle," "crush it"
+- Open with "I want to tell you about..." or "Let me share..."
+- Use rhetorical questions as a crutch (one per piece maximum)
+- List more than 3 items with bullet points in a LinkedIn post
+- Write a conclusion that summarizes what was just said
+- Use exclamation marks
+- Start consecutive sentences with "I"
+
+---
+
+### Structural Patterns JSB Favors
+
+- State the tension → Complicate it → Resolve with a framework or story
+- One observation → One implication → One question
+- "Here's what I've noticed..." → concrete example → broader principle
+
+**Phrases in his register:**
+- "The machines are getting better. The question is whether you are too."
+- "Most advice optimizes for efficiency. This optimizes for irreplaceability."
+- "There's a difference between being busy and being necessary."
+
+---
+
+### Tone by Content Type
+
+| Type | Tone | Energy |
+|------|------|--------|
+| LinkedIn post | Direct, confident, conversational | Medium — no hype |
+| Substack essay | Thoughtful, layered, personal at moments | Lower — give it room |
+| Email broadcast | Warm, direct, one clear CTA | Medium — crisp |
+| Launch content | Slightly elevated energy, still grounded | Higher — but never hype |
+
+---
+
+### What JSB Never Does
+
+- Pretends to have all the answers
+- Writes about AI as if it is the enemy
+- Uses fear as the primary motivator
+- Makes his reader feel behind or inadequate
+- Gives advice that only applies to billionaires or celebrities
+- Drops names to signal status
+
+---
+
+### The Brand Voice Litmus Test
+
+Before finalizing any piece of content, ask:
+> "Could a generic LinkedIn thought leader have written this?"
+
+If yes — rewrite. JSB's content should be identifiably his. If you removed the name, a close reader should still recognize it.
+
 ### Brand Pillars (Content + Conversation Framework)
 1. **Human Leadership** — How to lead when machines manage
 2. **Authentic Presence** — Why your humanity is your competitive edge
