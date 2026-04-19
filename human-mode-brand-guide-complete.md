@@ -38,37 +38,230 @@ The brand embodies the wisdom of *altimeter lock*: Yes, focus on the vital data 
 
 ## Brand Voice & Tone
 
-### Voice Architecture
+*This section is the operational voice guide, drawn directly from the JSB Voice Reference for Claude (v1.0). Rules are non-negotiable — violating one makes the writing sound wrong. Norms are strong defaults that can flex when context justifies it. When two principles collide, favor the one that preserves JSB's voice.*
 
-Jeffrey's brand voice is:
+---
 
-1. **Grounded in Real Experience** — He draws from executive MBA classrooms, skydiving manuals, organizational psychology, and the lived reality of high-stakes teams. No abstract theory; everything connects to observable behavior and human stakes.
+### Core Voice Identity
 
-2. **Conversational Yet Sophisticated** — The voice is direct, even intimate ("you're anything like me"), but never dumbed down. He uses vivid metaphors (terminal velocity, altimeter lock, tunnel vision) to make complex ideas tangible.
+Three notes define the sound:
 
-3. **Focused on the Systemic Picture** — He doesn't celebrate individual heroics or singular metrics. He zooms out to show how one person's fixation threatens an entire team's mission.
+- **Humane authority** — Confident claims, always grounded in a story, a study, or a named source. Rarely abstract assertion. Authority earned through clarity, not distance.
+- **Cosmopolitan curiosity** — Cross-cultural references, multilingual fragments, pop-culture touchstones, and lived-experience detail sit alongside academic research. The net is wide on purpose.
+- **Narrative cadence** — Long, shapely sentences punctuated by short, punchy ones. Questions to the reader. Occasional single-line paragraphs that land like a drumbeat.
 
-4. **Pedagogical & Curious** — There's a teaching quality: "As you might know... As you may not know..." He's not lecturing; he's drawing you into discovery alongside him.
+JSB writes as a researcher who has sat in a lot of rooms — C-suite retreats, operating theaters, classrooms in 35 countries — and brings that range back to the page. The voice is warm, literate, and personal, but anchored in evidence. It respects the reader's intelligence without posturing. It is never corporate, never clinical, never cute.
 
-5. **Urgent But Calm** — The stakes are high (human-sized holes in the ground; mission failure), but the tone is measured, clear, even warm. The urgency comes from clarity, not panic.
+---
+
+### Voice & Tone
+
+**Rules**
+
+| Rule | Do | Don't |
+|---|---|---|
+| Write in first person; be present without being the subject | "A few years ago I surveyed employees at a financial institution…" | "In this piece, the author will argue that…" |
+| Address the reader directly | "Consider how you might behave in your first month of a new job versus your 12th." | "One might consider how one's behavior could vary…" |
+| Keep register literate but unpretentious — reach for the precise word, not the fanciest | "But that advice begs the question: what exactly do you do differently?" | "However, one must interrogate the epistemic premises undergirding…" |
+| Stay warm. Never cold, never corporate | "If you're anything like me, jumping out of an airplane might be about the most terrifying experience you can imagine." | "This paper examines the phenomenon of occupational detachment." |
+
+**Norms**
+
+- **Open with a scene, not a thesis.** Drop the reader into a moment — an elevator, a Zoom call, a skydive, a dinner table — and let the idea rise from it. *Do:* "It happens in an instant. You click to join the Zoom call…" *Don't:* "This essay argues that traditional work mode is outdated."
+- **Use rhetorical questions to pivot.** They mark transitions, challenge assumptions, and create breathing room. 3–5 per chapter-length piece, fewer in short-form. Never stack them.
+- **Anticipate and disarm the skeptic.** Before a reader objects ("this sounds soft"), name the objection and answer it calmly. *Do:* "For anyone worried about destroying decorum… I'm not talking about a gushing, always emoting practice…"
+- **Humor is dry, situational, and brief.** A single line punctuates a serious point. Never an extended riff. *Do:* "Old story, new medium." *Don't:* Anything that reads as trying to be funny.
+
+---
 
 ### Tone Shifts by Context
 
 | Context | Tone | Example |
-|---------|------|---------|
-| **Keynote / Speaking** | Narrative, immersive, builds from concrete to universal | "One evening after class, Gabriel took me through what it's like..." |
+|---|---|---|
+| **Keynote / Speaking** | Narrative, immersive, builds concrete → universal | "One evening after class, Gabriel took me through what it's like…" |
 | **Written Thought Leadership** | Measured, analytical, deeply researched | "An altimeter is a device that measures height above sea level, usually relying on barometric pressure." |
-| **Social / Community** | Direct, connecting, warm without being saccharine | Invitations to "see the complete picture" with you |
+| **Social / Community** | Direct, connecting, warm without saccharine | Invitations to "see the complete picture" with you |
 | **Assessment / Tool** | Clear, permission-giving, non-judgmental | Frameworks that help people diagnose their own fixations |
+| **Short-form (email, memo, post)** | Hook first, compressed scene, one rhetorical turn, close with question or image | Subject line + opening sentence both state what this is and what's needed |
 
-### What the Brand Voice NEVER Does
+---
 
-- ❌ Reduces people to metrics or outcomes
-- ❌ Celebrates individual achievement at the cost of team awareness
-- ❌ Uses jargon as a substitute for clarity
-- ❌ Creates false urgency or manufactured drama
-- ❌ Operates from a place of shame ("You're doing it wrong")
-- ❌ Ignores the legitimate role of focus and targets
+### Sentence Construction
+
+**Rules**
+
+- **Vary sentence length deliberately.** The signature rhythm is *long–long–short*. A flowing, clause-rich sentence carries the reader through a full thought; another extends or qualifies it; a sharp stop lands the point. *Do:* "…the ability to see the big picture can ebb and flow depending on the circumstances. But the fact is, each of us has a tendency toward some version of myopic altimeter lock. We focus on the numbers and fail to pay attention to our overall health."
+- **Favor active voice and concrete verbs.** Strong, physical verbs do the lifting: *forage, sever, harness, dampen, rummage, snap, pour, puncture, blunt.* Passive voice only when the agent genuinely doesn't matter.
+- **Use em dashes — generously — for parenthetical expansion.** Spaced em dashes ( — ) open a side channel for a clarification or aside, then snap back to the main line. *Do:* "Our brains are wired such that merely seeing another person's movement — leaning in, touching the face, crossing the legs — triggers a preparedness to mirror…"
+
+**Norms**
+
+- **Deploy the one-line paragraph as punctuation.** Reserved for moments of rhetorical weight. One or two per 2,000 words. *Do:* "Everybody but Richard Boothman." / "Old story, new medium."
+- **Use parallel structure — especially in threes.** Triads give prose its cadence: "connection, efficiency, and meaning." "creativity, productivity, and connection."
+- **Lead with the dependent clause when it sets the stage.** Periodic sentences build anticipation. *Do:* "After all, for airborne units, getting back to earth without making a human-sized hole in the ground is only the first stage of the mission."
+
+---
+
+### Vocabulary & Diction
+
+**Rules**
+
+- **Coin and capitalize key concepts.** Give recurring ideas a short, evocative, capitalized handle: *Human Mode, Altimeter Lock, Collective Chemistry, Planned Epiphanies, Bricoleur.* Reserve naming for load-bearing ideas only.
+- **Integrate foreign-language phrases with translation.** Non-English phrases are part of the voice — *Gemeinschaft / Gesellschaft, 空気を読む (reading the air), Um die Ecke denken (think around the corner)* — always translated in the same sentence. Texture, not exclusion.
+- **Avoid corporate and AI-sounding filler.** Banned outright: *leverage* (as a catch-all), *synergy, optimal* (as catch-all), *delve, tapestry, navigate the complexities of, in today's fast-paced world, at the end of the day, at its core, robust, seamless, game-changing* (as filler), *holistic approach, commendable, it is important to note that.*
+
+**Norms**
+
+- **Reach for the earthy, physical, or mildly surprising word.** Where a vivid verb fits without strain, choose it: *cauterized, blunt, rummage, forage, snap out of, shoulders drooping, bolt from the blue.*
+- **Use contractions.** *Don't, wouldn't, we're, it's* are the default. Contractions are how spoken warmth survives on the page.
+- **Use scare quotes to flag a term being interrogated.** *"Professional," "only" human, "touchy feely."* Signals the word is on trial. Do not use on ordinary words — it reads as sneering.
+
+---
+
+### Structure & Flow
+
+**Rules**
+
+- **Open long pieces with a scene; close by opening a door.** First paragraph is almost always a concrete scene or sensory image. Last paragraph points forward, invites the next move, or lands one final image — it does not summarize.
+- **Use short, evocative section headings — not labels.** Headings carry voice: *"Myopia on the Ground," "The Invisible Data," "Emotion in Motion," "The Serum is in the Venom."* They title mini-essays, not table-of-contents entries.
+
+**Norms**
+
+- **Move scene → research → meaning → widen.** (1) Concrete human moment; (2) the research that moment illustrates; (3) what it means for the reader; (4) pan out to a broader cultural or historical frame; close the loop.
+- **Bridge paragraphs with a crisp transition sentence.** End a paragraph with a hinge into the next: "But the issue is not just…" / "Even so…" / "Old story, new medium."
+- **Foreshadow — then deliver.** Plant the tension early: "Moreover, the biggest question on his mind was…" Then let the reader wait.
+
+---
+
+### Evidence, Research & Cultural References
+
+**Rules**
+
+- **Anchor every claim in a story, a study, or a named human.** Never a free-floating abstract claim. *Do:* "A 2025 Qualtrics survey of 35,000 employees, across 22 countries and 30 industries, found that…" *Don't:* "Studies show that employees are disengaged."
+- **Name names — with titles and institutions.** Full name, title, and institution on first mention; surname only after. *Do:* "Patricia Greenfield, Distinguished Professor of Psychology at UCLA, offers a cautionary tale." *Don't:* "One researcher argues that…"
+- **Never fabricate citations.** When a specific source is uncertain, use a descriptive anchor and flag it: "a 2023 Qualtrics survey found…" — then mark for JSB to verify.
+
+**Norms**
+
+- **Draw from a wide cultural palette.** Pop culture (*Severance, Ted Lasso, The Office, Mad Men*), classic texts (Rilke, Frankl, Lévi-Strauss, William James), business history (Taylor, Pollard, Mokyr), international examples (Japanese kimonos, Brazilian fried fish, Polish rye), and named places (Cottesloe Beach, Ann Arbor, Munich's English Garden).
+- **Use specific, unexpected detail.** "Drake's 'Energy' (5X Platinum)." "The 1961 dance compilation *Do the Twist! With Ray Charles.*" "Two pilots completing 203 training sessions." Vague summaries erode authority; concrete detail earns it.
+
+---
+
+### Storytelling Conventions
+
+**Rules**
+
+- **Show, don't summarize.** Describe the room, the words spoken, the expression on a face, the specific detail that makes the moment true. The reader is placed inside the moment before the lesson is drawn.
+- **Give the protagonist a name and a context.** "Becky MacGregor, senior director at Diageo." "Richard C. Boothman, malpractice lawyer." "Shigetaka Komori, CEO of FujiFilm." When privacy requires it: "we'll call him Gabriel."
+
+**Norms**
+
+- **Use the reporting verb to position JSB as listener.** *"explained to me," "told me," "shared with me"* — keeps him present but centers the source.
+- **Embed the research finding inside the story.** Research arrives as an interpretation of what the story already showed — not as a cited fact followed by an illustrative example. The story makes the emotional argument first; the data confirms it.
+
+---
+
+### Formatting
+
+**Rules**
+
+- **Prefer prose over bullets.** Long-form writing is mostly flowing paragraphs. Bulleted lists appear in structured learning objectives, numbered protocols, and occasional visual callouts — the default is prose. In short-form, bullets are more acceptable but still used sparingly.
+- **Use italics for true emphasis or for a non-English word or title.** No bold in body prose — bold is reserved for headings and structural labels only.
+
+**Norms**
+
+- **Use smart quotes, em dashes, and en dashes correctly.** Curly quotes throughout. Spaced em dashes ( — ) for American-style parenthetical breaks. En dashes ( – ) for ranges ("1842–1910").
+- **Paragraph length should breathe.** Most paragraphs run 3–7 sentences. Occasional one-liners punctuate. Very long paragraphs (10+ sentences) reserved for cumulative arguments where momentum matters more than white space.
+
+---
+
+### Things to Avoid
+
+These reliably break the voice. Check every draft against this list.
+
+| Anti-pattern | Why it breaks the voice |
+|---|---|
+| The five-bullet executive summary as opener | JSB opens with a scene, never a preview list |
+| Consulting-deck cadence ("Key takeaways / Next steps / Action items") | Unless explicitly requested |
+| Hedging stacks ("It could perhaps be argued that it might be possible…") | Cut to the claim; qualify once if needed |
+| "In today's rapidly evolving landscape" and all its cousins | Banned |
+| AI tells: *delve, tapestry, navigate, unlock the potential of, at the intersection of, robust framework, holistic approach, commendable, it is important to note* | These signal generic AI, not JSB |
+| Overuse of em dashes (more than one per paragraph) | A signature, not a tic |
+| Emoji in prose | Not used — even in short-form. Exception: emoji quoted as examples of a phenomenon, inside quotes or parentheses |
+| Pre-apologizing for the argument ("Of course, this is complicated…" before any claim) | Acknowledging complexity is fine; pre-apologizing is not |
+| Lecture voice ("What we must understand is…" / "Let us now turn to…") | JSB never teaches down |
+| Stacked adjectives of the marketing kind ("Transformative, innovative, world-class…") | One strong adjective beats three weak ones |
+| Abstract noun as sentence subject ("Self-actualization in organizational contexts remains underexplored") | Put a person or a thing in the subject slot |
+| Inventing sources | Use a descriptive anchor and flag for JSB to verify |
+
+---
+
+### Short-Form vs. Long-Form
+
+All Rules apply across both. The Norms and structure shift based on length and audience.
+
+**What carries over into short-form:**
+- First-person voice; direct address as "you"
+- A concrete image, scene, or named person somewhere in the first few lines
+- Em dashes, contractions, smart quotes, italics for non-English words and titles
+- Rhetorical question as a pivot — at most one per piece
+- A one-line paragraph as a rhetorical beat — judiciously, often near the end
+- Named concept if the piece introduces one (capitalized, short, evocative)
+
+**What changes in short-form:**
+- Length discipline is the top constraint. Most short-form pieces: 150–400 words. Every sentence earns its place.
+- Open with the hook, not the setup. One image, one sentence — not a full unfolding scene.
+- Evidence is signaled, not cited in full: "A Qualtrics survey of 35,000 workers found…" is enough.
+- End with a small turn, a question back to the reader, or a compressed insight — not a summary.
+- Bullets are acceptable when content is genuinely enumerative. Keep them parallel and short — one line each.
+
+**Short-form default skeleton:**
+1. One-line opener: concrete scene, surprising statistic, or named person in a situation
+2. Two to four sentences developing the tension or paradox
+3. One sentence of evidence or named source
+4. A turn — "but," "then," "the point is" — that reframes
+5. Close with an image, a question, or a capitalized named concept
+
+---
+
+### Quick Self-Audit Checklist
+
+Run this before returning any draft written in JSB's voice. **Rule** items: if the answer is no, revise. **Norm** items: flexible but worth reviewing.
+
+**Voice and tone**
+- [ ] The opening is a scene, image, or named person — not a thesis statement *(long-form Rule)*
+- [ ] First person appears; the reader is addressed as "you"
+- [ ] The register is warm and literate, never corporate or clinical
+- [ ] No AI tells (*delve, tapestry, navigate the complexities, in today's fast-paced world*)
+
+**Sentence craft**
+- [ ] Sentence lengths vary — at least one short (under 8 words) sentence per 200 words
+- [ ] Active voice dominates; strong, physical verbs present
+- [ ] Em dashes appear, but not more than one per paragraph on average
+- [ ] At least one instance of parallel structure or a triad in long-form
+
+**Evidence and reference**
+- [ ] Every concept is anchored in a story, study, or named person — not a free-floating claim
+- [ ] Researchers cited with full name, title, and institution on first mention
+- [ ] No fabricated citations; descriptive anchors flagged if source is uncertain
+- [ ] At least one cultural or international reference in a long piece
+
+**Structure**
+- [ ] Section headings (if any) are short, voice-y, and not generic labels
+- [ ] Paragraphs breathe — mostly 3–7 sentences, with at most one long one and maybe one single-line beat
+- [ ] The close points forward, asks a question, or lands an image — it does not summarize
+
+**Formatting**
+- [ ] Smart quotes, em dashes, en dashes used correctly throughout
+- [ ] No emoji in prose; italics for emphasis and non-English terms only; no bold in body paragraphs
+- [ ] Bullets used sparingly, if at all, and only when content is genuinely enumerative
+
+**If short-form or functional writing**
+- [ ] The ask or main point lands in the first two sentences
+- [ ] The reader's stake is clear without being labeled "important"
+- [ ] If an action is requested: deliverable, owner, and deadline are explicit
+- [ ] Cut one more pass after you think it's done. Less is less.
 
 ---
 
@@ -156,100 +349,98 @@ Landing in the right zone matters. The wind, the terrain, the mission parameters
 
 ## Audience Personas
 
-Eight personas define the audiences *Human Mode, Always* speaks to. Each maps to a specific form of *altimeter lock* — a fixation that blocks the complete picture — and a corresponding entry point into the ecosystem (lead magnet, site resource, book, or speaking engagement).
+Three personas define the audiences *Human Mode, Always* speaks to — simplified from client feedback to reflect how people actually arrive at JSB's work. Each maps to a form of *Altimeter Lock* and a corresponding entry point into the ecosystem.
 
-The personas fall into two strategic tiers:
+*Note: A fuller set of eight sub-personas (Elena, Marcus, Diana, Raj, Priya, Jordan, Carol, Amara) exists in* `personas.md` *for content and campaign-level targeting. The three here are the primary strategic lens.*
 
-**Tier 1 — Business & List Growth (original five):** Elena, Marcus, Diana, Raj, Priya. These audiences enter through specific work pain and convert via assessments, tools, workshops, and programs.
+---
 
-**Tier 2 — Brand & Movement (expanded three):** Jordan, Carol, Amara. These audiences enter through JSB's identity as a behavioral scientist and cultural psychologist, and convert via the *MATTERING* book, speaking engagements, and cross-cultural programs.
+### Persona 1 — The Individual Who Wants to Up Their Game
 
-### Persona Cards
+**"I'm good at what I do. I want to be better at being human while I do it."**
 
-#### 1. Elena — The High-Stakes Executive
-- **Role:** C-suite / SVP / General Manager; large enterprise
-- **Altimeter Lock:** Projecting certainty; quarterly performance optics
-- **Complete Picture Missed:** The cost of her projected confidence on her team's trust; the wisdom available in "I don't know"
-- **Why JSB:** *Competent Humility* and *Emotional Complexity* give her research-grounded permission to loosen her grip on the altimeter
-- **Voice That Works:** Peer-level, research-anchored, counter-intuitive; never vulnerability theater
-- **Entry → Conversion:** Forbes/Competent Humility article → Competent Humility Self-Assessment → Emotional Complexity Index → Executive coaching or leadership intensive
+**Who they are:** A professional at any level — individual contributor, manager, founder, coach — who is personally motivated to grow. Not necessarily seeking organizational change; seeking personal insight that makes them more effective and more whole. They read broadly (Adam Grant, Brené Brown, Kahneman), listen to podcasts, and notice when something names an experience they've had but couldn't articulate. They may be in a transition — new role, new challenge, a moment of honest self-appraisal.
 
-#### 2. Marcus — The Overwhelmed People Manager
-- **Role:** Mid-level manager; team of 8–12
-- **Altimeter Lock:** Task completion and output delivery
-- **Complete Picture Missed:** The emotional landscape of his team — who is falling fast, who is stalled, who is frozen
-- **Why JSB:** The Scan Routine gives him a structure for emotional labor he's been running on instinct
-- **Voice That Works:** Practical, scenario-driven, permission-giving; "yes, that's exactly what I do" before it teaches him
-- **Entry → Conversion:** "What to Do When Your Employee Is Angry, Sad, or Dejected" article → scenario quiz → workties.org diagnostic → Manager's Emotional Response Field Guide → workshop or manager cohort
+**Their Altimeter Lock:** Professional performance mode — the optimized, curated, efficient self they've learned to present at work. They've been rewarded for it. It's also costing them something they can't quite name.
 
-#### 3. Diana — The Executive Coach
-- **Role:** Independent executive coach / leadership developer
-- **Altimeter Lock:** Her clients' lock — she is the instructor descending alongside
-- **Complete Picture Missed:** (Clients') how the full system shapes what they're choosing to see
-- **Why JSB:** Research-backed tools that hold up with skeptical senior clients; the Scan Routine as a portable framework for her coaching arc
-- **Voice That Works:** Intellectual equals; research cited, mechanism explained, nuance honored; long-form welcome
-- **Entry → Conversion:** "Why the Best Leaders Don't Simplify Their Feelings" → Emotional Complexity Index → Competent Humility Assessment → Team Emotional Landscape Audit → Tool licensing or facilitator certification
+**Complete Picture Missed:** Their own full humanity. The emotional complexity they carry but suppress. The capacity for aliveness and connection that "work mode" has been quietly shutting down.
 
-#### 4. Raj — The Scrappy Founder
-- **Role:** Seed–Series B founder/CEO; 15–80 employees
-- **Altimeter Lock:** Runway, growth metrics, the next raise; startup velocity at terminal speed
-- **Complete Picture Missed:** The team fracturing beside him; the culture breaking; his own lost peripheral vision
-- **Why JSB:** *Bricolage* names his instincts; *Competent Humility* gives him a framework for scaling past pure resourcefulness; the Team in Freefall metaphor is immediately felt
-- **Voice That Works:** Smart, direct, no fluff; novel concept with rigorous backbone; "so what" must be fast
-- **Entry → Conversion:** "What Is Bricolage Leadership?" → Bricoleur Quiz → "Leading with What You Have" guide → Competent Humility Assessment → Founder cohort or offsite keynote
+**Why JSB:** *Human Mode, Always* names what they've been circling. The Wabi-Sabi framing, Competent Humility, Emotional Complexity, and the Ambivalent Mind research all speak to something personal — not just professional. The skydiving metaphor lands because they recognize their own fixation: on the next achievement, the next credential, the next proof of worth.
 
-#### 5. Priya — The HR/OD Strategist
-- **Role:** Senior HRBP / Head of L&D / VP of Talent; 1,000–20,000 employees
-- **Altimeter Lock:** Program ROI; proving L&D impact to skeptical CHRO
-- **Complete Picture Missed:** Whether behavioral change is actually happening in the field; what her managers truly need
-- **Why JSB:** Team-level diagnostics (*Emotional Aperture*, *Team Emotional Landscape Audit*) fill a genuine gap; peer-reviewed research defends against internal skepticism
-- **Voice That Works:** Evidence-based, program-ready, implementable; reads for ROI on her managers, not herself
-- **Entry → Conversion:** "How Leaders Read the Room" → Emotional Aperture Quiz → Team Emotional Landscape Audit → Manager's Field Guide → Enterprise licensing or summit keynote
+**Voice that works:** Warm but rigorous. Narrative-driven with research grounding. Treated as a thoughtful person, not a buyer or a student. Opens with a scene they recognize. The "aha" lands before the framework is named. *See: soul.md register.*
 
-#### 6. Jordan — The Curious Professional / Book Reader
-- **Role:** Mid-career professional or thoughtful generalist; reads Adam Grant, Brené Brown, Kahneman
-- **Altimeter Lock:** Professional performance mode — the optimized, curated, efficient self
-- **Complete Picture Missed:** Their own humanity, complexity, and capacity for aliveness at work
-- **Why JSB:** *Human Mode* names what they've been circling for years — the sense that professional life has required suppressing their full humanity
-- **Voice That Works:** Warm but rigorous; narrative-driven with research grounding; treated as a thoughtful person, not a buyer; soul.md voice
-- **Entry → Conversion:** Podcast/social discovery → "Why the Best Leaders Don't Simplify Their Feelings" → Wabi-Sabi essay → Emotional Complexity Index → ***MATTERING* book** → newsletter / public talks / community
+**Key assets:**
+- *MATTERING* book ← primary conversion
+- Emotional Complexity Index ← personal self-knowledge opt-in
+- Competent Humility Self-Assessment ← identity-challenging opt-in
+- "Wabi-Sabi Leadership" essay and "Why the Best Leaders Don't Simplify Their Feelings" ← free site reads
+- Podcast appearances / social clips ← primary discovery channel
 
-#### 7. Carol — The Event Strategist / Speaker Buyer
-- **Role:** Conference chair / Chief of Staff / Head of Executive Events / L&D meeting planner
-- **Altimeter Lock:** Event success metrics — attendee ratings, committee approval, internal reflection on her curation
-- **Complete Picture Missed:** Whether the ideas the speaker delivers actually change anything
-- **Why JSB:** Fresh research-grounded framework; proven ability to translate behavioral science into a memorable keynote; *Human Mode* is a headline her committee will remember
-- **Voice That Works:** Efficient, confident, proof-driven; one-sentence value prop; social proof from peer events
-- **Entry → Conversion:** Referral or book/media discovery → Speaker page (video, testimonials, topic menu) → **Speaker One-Pager PDF download (gated)** → booking inquiry → Keynote or workshop booking
-- **Asset Gap to Close:** Dedicated speaker page and Speaker One-Pager PDF (opt-in with name/email/organization)
+**Message frame:** *"You are not falling alone. You never were. Human Mode is the part of you that has been scanning the whole time — and finally having permission to trust it."*
 
-#### 8. Amara — The Global Leader / Cross-Cultural Navigator
-- **Role:** Regional Director / VP International / CDO / Global Team Lead
-- **Altimeter Lock:** Dominant-culture professional norms treated as the universal standard for emotional expression at work
-- **Complete Picture Missed:** Whose emotions are visible, whose are suppressed; the full cultural landscape of her diverse team
-- **Why JSB:** Cultural psychology is his distinctive research base; *Emotional Landscapes* raises the question "whose emotions count?" that her existing EQ frameworks cannot
-- **Voice That Works:** Global in reference, precise in language; acknowledges cultural variation explicitly; high intellectual stakes; soul.md-level depth welcome
-- **Entry → Conversion:** Academic-practitioner publication or DEIB conference → "How Leaders Read the Room" (read through a cross-cultural lens) → Emotional Aperture Quiz → Team Emotional Landscape Audit → ***MATTERING* book** → Global program or DEIB keynote
-- **Asset Gap to Close:** A site article that explicitly engages the cultural dimensions of emotional expression at work (e.g., "Whose Emotions Count at Work?")
+---
+
+### Persona 2 — The Leader Who Wants to Transform Their Team and Organization
+
+**"I'm responsible for more than my own performance. I need to change something larger."**
+
+**Who they are:** A senior leader, team lead, HR/OD strategist, executive coach, or organizational change agent who carries responsibility for a team, a culture, or a system. They think beyond their own development — they want tools and frameworks that travel, that they can use with others, that will hold up with skeptical colleagues and organizations. They evaluate content as practitioners: *will this work in the field?*
+
+**Their Altimeter Lock:** Organizational metrics and program outcomes. They're watching the P&L, the engagement scores, the keynote ratings — so intently that they've stopped scanning the human landscape that produces those numbers. Or they're the ones trying to get *other* leaders to look up, and they need the science to make the case.
+
+**Complete Picture Missed:** The emotional landscape of the teams around them. Whose emotions are being seen and whose are suppressed. Whether the people beside them in freefall are actually okay — or just pretending to be.
+
+**Why JSB:** The behavioral science grounding is non-negotiable for this audience. Peer-reviewed research, named researchers, specific numbers. The *Emotional Landscapes* work, the *Emotional Aperture* framework, and the *Team in Freefall* metaphor map directly to their day-to-day. The Scan Routine gives them something concrete to bring back to a team or a coaching session. The research base means they can defend the work internally.
+
+**Voice that works:** Evidence-based, peer-level, implementable. Respects their intelligence and their time constraints. Research cited with names and institutions. Concrete tools they can use the next day. Anticipates the skeptic in the room because they *are* the skeptic, or they're preparing for one.
+
+**Key assets:**
+- "What's Your Emotional Aperture?" quiz ← anchor opt-in
+- Team Emotional Landscape Audit ← highest-value team tool
+- Manager's Emotional Response Field Guide ← practical, shareable
+- Scenario quiz "How Do You Respond When Employees Struggle?" → workties.org
+- Competent Humility Self-Assessment ← coaching arc tool
+- Speaking page + Speaker One-Pager ← for those booking JSB for their organization
+
+**Message frame:** *"Most leadership tools measure one person. The complete picture is the team's emotional landscape — the distribution of who is energized, who is stalled, who is spinning. That is what your altimeter is missing."*
+
+---
+
+### Persona 3 — The Non-Corporate Professional
+
+**"I keep hearing that business school insights will transform my organization. I'm not sure they were built for us."**
+
+**Who they are:** A leader in healthcare, government, education, nonprofit, social enterprise, or the public sector. Deeply mission-driven. Resource-constrained in ways that corporate frameworks don't account for. Skeptical — sometimes quietly, sometimes loudly — that MBA-world research was designed with their reality in mind. They've sat through leadership trainings built for Fortune 500 contexts and found themselves translating the entire time. They're hungry for something that takes their world seriously.
+
+**Their Altimeter Lock:** Mission fixation — so committed to the cause (the patients, the community, the public good) that they've stopped scanning the team dynamics and human complexity around them. Burnout is high in their world precisely because the mission creates permission to ignore everything else, including each other.
+
+**Complete Picture Missed:** The humans beside them in freefall. The emotional landscape of teams working under enormous pressure with inadequate resources. The cultural and contextual dimensions of what "professional behavior" means in their sector — which rarely matches the corporate default.
+
+**Why JSB:** His research is genuinely cross-sector — the organizational psychology, the cultural dimensions, the emotional complexity work were not built only for business. The Bricolage framing speaks directly to their lived experience: they make things work with what they have, every day. The Scan Routine applies in an operating theater, a city council meeting, a nonprofit board room. And JSB is one of the few behavioral scientists who explicitly acknowledges that cultural context shapes everything — which matters enormously in sectors serving diverse populations.
+
+**Voice that works:** The research has to do the credibility work — not corporate case studies. Examples from their world (healthcare, public sector, education) land; McKinsey examples don't. Acknowledges the translation required without condescending. Treats their sector as a first-class context, not an afterthought. Cross-cultural fluency matters here — many non-corporate sectors serve populations whose cultural norms around emotion, authority, and expression differ significantly from the corporate default.
+
+**Key assets:**
+- "What Is Bricolage Leadership?" site article ← strongest entry point; names their reality
+- "Leading with What You Have" guide ← practical, sector-agnostic
+- Emotional Aperture Quiz ← highly applicable in high-pressure, diverse team environments
+- *MATTERING* book ← the philosophy resonates across sectors
+- Speaking at sector-specific conferences (SHRM nonprofit, healthcare leadership, public sector summits) ← primary discovery channel
+- Content that explicitly names healthcare/govt/nonprofit examples ← trust-building signal
+
+**Message frame:** *"The research wasn't built only for boardrooms. The same dynamics that create Altimeter Lock in a C-suite create it in an ICU, a school district, a city budget meeting. The complete picture looks different in your world — and it is just as necessary."*
 
 ---
 
 ## Messaging Matrix by Persona
 
-The matrix below applies the *Human Mode, Always* voice to each persona. Every frame uses the altimeter lock metaphor as its spine — because that is how the brand speaks about every audience, not just the abstract ones.
+| Persona | Altimeter Lock | Message Frame | Primary Benefit | Tone | Primary Conversion |
+|---|---|---|---|---|---|
+| **The Individual** — Up Their Game | Performance mode; the curated professional self | "You are not falling alone. Human Mode is the part of you that has been scanning the whole time — and finally has permission to trust itself." | Aliveness, self-knowledge, permission to be fully human at work | Warm, narrative, research-grounded; soul.md register | *MATTERING* book; assessments; newsletter |
+| **The Leader** — Transform Team & Org | Org metrics and program outcomes; other people's Altimeter Lock | "The complete picture is the team's emotional landscape. That is what your altimeter is missing." | Research-backed tools that travel; team diagnostics; internal credibility | Evidence-based, peer-level, implementable | Workshop; keynote; enterprise licensing; coaching |
+| **The Non-Corporate Professional** | Mission fixation; the cause as permission to miss everything else | "The same dynamics that create Altimeter Lock in a C-suite create it in an ICU, a school district, a city budget meeting." | Sector-relevant application; research that crosses contexts; Bricolage as lived experience | Acknowledges the translation; cross-cultural; examples from their world | Book; sector speaking; adapted workshops |
 
-| Persona | Altimeter Lock | Message Frame | Primary Benefit | Tone |
-|---|---|---|---|---|
-| **Elena** — Senior Executive | Projecting certainty; quarterly optics | "The altimeter tells you how high you are. It does not tell you who is falling beside you — or whether they can see you slipping too." | Decision clarity + team trust; wisdom without weakness | Peer-level, research-anchored, counter-intuitive |
-| **Marcus** — People Manager | Task delivery and output | "Your team is falling at 180 miles per hour. Some are stalled. Some are spinning. You can't help them if your eyes are locked on the task board." | Team coordination; confidence in hard conversations; retention | Practical, scenario-driven, permission-giving |
-| **Diana** — Executive Coach | (Clients') their fixation | "The instructor's gesture doesn't shame the diver. It expands the field. That is the coaching move — and the science behind it is real." | Differentiated tools; coherent narrative across clients; credibility | Intellectual equals; research cited; nuance honored |
-| **Raj** — Startup Founder | Runway; terminal velocity | "You built this with duct tape and instinct. That is bricolage — and it is a real leadership asset. But terminal velocity creates tunnel vision. Your team is in freefall beside you. Who is watching each other?" | Sustainable scaling; team resilience; identity clarity | Smart, direct, novel concept with rigorous backbone |
-| **Priya** — HR/OD Strategist | Program ROI; CHRO buy-in | "Most leadership assessments measure individuals. The complete picture is the team's emotional landscape — what managers are missing when they scan one face instead of the whole formation." | Tools that change behavior; team-level diagnostics; internal credibility | Evidence-based, program-ready, implementable |
-| **Jordan** — Curious Professional | Performance mode; the curated self | "You are not falling alone. You never were. Human Mode is the part of you that has been scanning the whole time — and finally having permission to trust it." | Reconnection to aliveness; framework for the shift they already sense; meaning | Warm but rigorous; narrative with research grounding; soul.md voice |
-| **Carol** — Speaker Buyer | Event outcome metrics | "Your audience is tired of keynotes about focus. Give them the one that tells the truth: focus is the trap, the complete picture is the mission, and science proves it." | Memorable program; strong attendee signal; committee-ready pitch | Efficient, confident, proof-driven |
-| **Amara** — Global Leader | Dominant-culture norms as universal | "The emotional landscape of your team looks different across four continents. The question is not whether they're feeling — it is whose feelings your altimeter is calibrated to see." | Cross-cultural fluency; inclusive team diagnostics; research grounding for DEIB | Global in reference; precise; acknowledges variation |
-
-### Shared Voice Across All Personas
+### Shared Voice Across All Three Personas
 
 Every message, regardless of persona, must:
 
@@ -257,7 +448,7 @@ Every message, regardless of persona, must:
 - **Name the stakes without panic.** Urgency from clarity, not drama.
 - **Offer agency, not judgment.** The reader is never doing it wrong — they are falling, and the system rewarded the fixation.
 - **Point toward the complete picture.** Every message ends with expansion, not reduction.
-- **Treat the reader as capable.** Even Marcus. Especially Marcus.
+- **Treat the reader as capable.** Always.
 
 ---
 
