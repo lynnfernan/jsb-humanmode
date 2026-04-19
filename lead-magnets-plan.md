@@ -2,7 +2,9 @@
 
 **Status:** Planning  
 **Last updated:** April 2026  
-**Purpose:** Map out lead magnets, assessments, and site resources across four research-grounded topics to drive opt-ins and engagement across key audiences.
+**Purpose:** Map out lead magnets, assessments, and site resources across five research-grounded topics to drive opt-ins and engagement across key audiences.
+
+> **Note on existing asset:** The "Boost Your Response Skills: Workplace Emotions Quiz" lives at workties.org and is an existing JSB assessment. New assets in this space should extend and feed into it, not duplicate it. See Topic 5 and the Integration Notes section below.
 
 ---
 
@@ -95,13 +97,44 @@
 
 ---
 
+## Topic 5: Responding to Employee Emotions — Anger, Sadness, and Dejection
+
+**Core concept:** Managers routinely face employees experiencing intense negative emotions — anger after a perceived slight, sadness following a loss, dejection after a setback. Most respond poorly: they minimize ("don't worry about it"), fix prematurely ("here's what you should do"), or disengage entirely. JSB's research on emotional signaling and workplace relationships provides a framework for responses that validate the emotion, preserve the relationship, and restore the employee's capacity to function. This is the most immediately practical of all the topics — every people manager needs it.
+
+**Source material:**
+- *When Your Employee Feels Angry, Sad, or Dejected* (attached article)
+- "Boost Your Response Skills: Workplace Emotions Quiz" — existing asset at workties.org
+
+**Target audiences:**
+- People managers at all levels (broadest, most immediate audience)
+- New and first-time managers (high-need, high-search-volume segment)
+- HR Business Partners and HR generalists
+- Executive coaches (scenario work with clients)
+- High-potential leaders preparing for management
+
+| Asset | Format | Delivery |
+|---|---|---|
+| "How Do You Respond When Employees Struggle?" | Scenario-based quiz (5–6 workplace vignettes, branching responses) | **Lead Magnet / Opt-in** — gateway to workties.org quiz |
+| "The Manager's Emotional Response Field Guide" | Practical reference: frameworks for anger, sadness, and dejection + common mistakes | **Lead Magnet / Opt-in** — high utility, high download motivation |
+| "What to Do When Your Employee Is Angry, Sad, or Feeling Defeated" | Article with research-backed frameworks and examples | **Site Resource** — free, high-search intent, strong SEO |
+| "Boost Your Response Skills" (existing) | Scenario-based assessment | **workties.org** — drive traffic here from other assets |
+
+**Notes:** This topic has the highest broad-audience potential of anything in the plan — "how to respond to an upset employee" is one of the most searched manager pain points. The scenario-based quiz format works especially well here because it surfaces gaps the manager didn't know they had ("I would have said X — oh, that's the wrong move"). The field guide is a reference they'll keep and share, which extends organic reach. The workties.org quiz should be positioned as the deeper diagnostic; the Human Mode lead magnet is the entry point that earns the click-through.
+
+**Recommendation on workties.org integration:** Position the Human Mode scenario quiz as a "quick read" (3–4 minutes, 5 vignettes) and the workties.org quiz as the "full diagnostic." The CTA on the Human Mode results page drives to workties.org for the complete assessment. This creates a coherent two-step journey and grows both lists.
+
+---
+
 ## Audience Entry-Point Matrix
 
 | Audience | Best First Asset | Follow-On |
 |---|---|---|
 | Senior Executives / C-Suite | Competent Humility Assessment | Emotional Complexity Index |
-| Team Leaders / Managers | Emotional Aperture Quiz | Team Emotional Landscape Audit |
+| Team Leaders / Managers | Emotional Aperture Quiz | Manager's Emotional Response Field Guide |
+| People Managers (all levels) | "How Do You Respond When Employees Struggle?" quiz | workties.org full diagnostic |
+| New / First-Time Managers | "How Do You Respond When Employees Struggle?" quiz | Manager's Emotional Response Field Guide |
 | HR / OD Professionals | Team Audit Tool | Emotional Complexity Index |
+| HR Business Partners | Manager's Emotional Response Field Guide | Team Audit Tool |
 | Executive Coaches | Competent Humility Assessment | All other assessments as client tools |
 | Entrepreneurs / Founders | Bricolage Quiz | "Leading with What You Have" guide |
 | High-Potential Leaders | Emotional Aperture Quiz | Emotional Complexity Index |
@@ -114,15 +147,32 @@
 **Phase 1 — Launch (highest ROI, broadest appeal):**
 1. Emotional Aperture / "Reading the Room" Self-Assessment
 2. Competent Humility Self-Assessment
-3. Site articles for Wabi-Sabi and Emotional Complexity (SEO + credibility foundation)
+3. "How Do You Respond When Employees Struggle?" scenario quiz *(broadest audience, feeds workties.org)*
+4. Site articles: Wabi-Sabi, Emotional Complexity, and "What to Do When Your Employee Is Angry/Sad/Dejected" (SEO + credibility foundation)
 
 **Phase 2 — Deepen the funnel:**
-4. Emotional Complexity Index
-5. Bricolage Quiz + "Leading with What You Have" guide
+5. Emotional Complexity Index
+6. Manager's Emotional Response Field Guide
+7. Bricolage Quiz + "Leading with What You Have" guide
 
 **Phase 3 — Expand and systematize:**
-6. Team Emotional Landscape Audit (coach/HR audience; may require facilitation guide)
-7. "The Imperfect Leader's Playbook" reflection workbook
+8. Team Emotional Landscape Audit (coach/HR audience; may require facilitation guide)
+9. "The Imperfect Leader's Playbook" reflection workbook
+
+---
+
+## workties.org Integration Notes
+
+The existing "Boost Your Response Skills: Workplace Emotions Quiz" at workties.org is a live JSB asset. New Human Mode content should work with it, not around it:
+
+| Human Mode Asset | Relationship to workties.org |
+|---|---|
+| "How Do You Respond When Employees Struggle?" quiz | Entry point — short, low-friction; CTA on results page drives to workties.org for full diagnostic |
+| Manager's Emotional Response Field Guide | Companion resource — can be cross-promoted on workties.org quiz results page |
+| Emotional Aperture Quiz | Complementary (different skill); cross-link from workties.org "related tools" |
+| All other assessments | Link back to workties.org as JSB's broader research platform |
+
+**Strategic principle:** Human Mode is the discovery layer (content, social, speaking traffic); workties.org is the depth layer (validated tools, research grounding). Assets should funnel one direction: from Human Mode into workties.org, not the reverse.
 
 ---
 
