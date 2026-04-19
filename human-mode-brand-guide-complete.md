@@ -145,7 +145,7 @@ Landing in the right zone matters. The wind, the terrain, the mission parameters
 - Ask: "What would change if your team could see what you're seeing?"
 - Tone: warm, curious, permission-giving
 
-### The "MATTERING" Book & Human Mode Experience
+### The Human Mode Experience
 
 - **Subtitle Frame:** Not just "how to matter" but "how human awareness creates mattering"
 - **Core Arc:** From Altimeter Lock (diagnosis) → Instructor's Gesture (leadership model) → Team in Freefall (interdependence) → The Landscape (systemic vision) → Human Mode, Always (philosophy)
