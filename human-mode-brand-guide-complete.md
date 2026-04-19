@@ -145,7 +145,7 @@ Landing in the right zone matters. The wind, the terrain, the mission parameters
 - Ask: "What would change if your team could see what you're seeing?"
 - Tone: warm, curious, permission-giving
 
-### The "MATTERING" Book & Human Mode Experience
+### The Human Mode Experience
 
 - **Subtitle Frame:** Not just "how to matter" but "how human awareness creates mattering"
 - **Core Arc:** From Altimeter Lock (diagnosis) → Instructor's Gesture (leadership model) → Team in Freefall (interdependence) → The Landscape (systemic vision) → Human Mode, Always (philosophy)
@@ -154,7 +154,173 @@ Landing in the right zone matters. The wind, the terrain, the mission parameters
 
 ---
 
-## Messaging Matrix by Audience
+## Audience Personas
+
+Eight personas define the audiences *Human Mode, Always* speaks to. Each maps to a specific form of *altimeter lock* — a fixation that blocks the complete picture — and a corresponding entry point into the ecosystem (lead magnet, site resource, book, or speaking engagement).
+
+The personas fall into two strategic tiers:
+
+**Tier 1 — Business & List Growth (original five):** Elena, Marcus, Diana, Raj, Priya. These audiences enter through specific work pain and convert via assessments, tools, workshops, and programs.
+
+**Tier 2 — Brand & Movement (expanded three):** Jordan, Carol, Amara. These audiences enter through JSB's identity as a behavioral scientist and cultural psychologist, and convert via the *MATTERING* book, speaking engagements, and cross-cultural programs.
+
+### Persona Cards
+
+#### 1. Elena — The High-Stakes Executive
+- **Role:** C-suite / SVP / General Manager; large enterprise
+- **Altimeter Lock:** Projecting certainty; quarterly performance optics
+- **Complete Picture Missed:** The cost of her projected confidence on her team's trust; the wisdom available in "I don't know"
+- **Why JSB:** *Competent Humility* and *Emotional Complexity* give her research-grounded permission to loosen her grip on the altimeter
+- **Voice That Works:** Peer-level, research-anchored, counter-intuitive; never vulnerability theater
+- **Entry → Conversion:** Forbes/Competent Humility article → Competent Humility Self-Assessment → Emotional Complexity Index → Executive coaching or leadership intensive
+
+#### 2. Marcus — The Overwhelmed People Manager
+- **Role:** Mid-level manager; team of 8–12
+- **Altimeter Lock:** Task completion and output delivery
+- **Complete Picture Missed:** The emotional landscape of his team — who is falling fast, who is stalled, who is frozen
+- **Why JSB:** The Scan Routine gives him a structure for emotional labor he's been running on instinct
+- **Voice That Works:** Practical, scenario-driven, permission-giving; "yes, that's exactly what I do" before it teaches him
+- **Entry → Conversion:** "What to Do When Your Employee Is Angry, Sad, or Dejected" article → scenario quiz → workties.org diagnostic → Manager's Emotional Response Field Guide → workshop or manager cohort
+
+#### 3. Diana — The Executive Coach
+- **Role:** Independent executive coach / leadership developer
+- **Altimeter Lock:** Her clients' lock — she is the instructor descending alongside
+- **Complete Picture Missed:** (Clients') how the full system shapes what they're choosing to see
+- **Why JSB:** Research-backed tools that hold up with skeptical senior clients; the Scan Routine as a portable framework for her coaching arc
+- **Voice That Works:** Intellectual equals; research cited, mechanism explained, nuance honored; long-form welcome
+- **Entry → Conversion:** "Why the Best Leaders Don't Simplify Their Feelings" → Emotional Complexity Index → Competent Humility Assessment → Team Emotional Landscape Audit → Tool licensing or facilitator certification
+
+#### 4. Raj — The Scrappy Founder
+- **Role:** Seed–Series B founder/CEO; 15–80 employees
+- **Altimeter Lock:** Runway, growth metrics, the next raise; startup velocity at terminal speed
+- **Complete Picture Missed:** The team fracturing beside him; the culture breaking; his own lost peripheral vision
+- **Why JSB:** *Bricolage* names his instincts; *Competent Humility* gives him a framework for scaling past pure resourcefulness; the Team in Freefall metaphor is immediately felt
+- **Voice That Works:** Smart, direct, no fluff; novel concept with rigorous backbone; "so what" must be fast
+- **Entry → Conversion:** "What Is Bricolage Leadership?" → Bricoleur Quiz → "Leading with What You Have" guide → Competent Humility Assessment → Founder cohort or offsite keynote
+
+#### 5. Priya — The HR/OD Strategist
+- **Role:** Senior HRBP / Head of L&D / VP of Talent; 1,000–20,000 employees
+- **Altimeter Lock:** Program ROI; proving L&D impact to skeptical CHRO
+- **Complete Picture Missed:** Whether behavioral change is actually happening in the field; what her managers truly need
+- **Why JSB:** Team-level diagnostics (*Emotional Aperture*, *Team Emotional Landscape Audit*) fill a genuine gap; peer-reviewed research defends against internal skepticism
+- **Voice That Works:** Evidence-based, program-ready, implementable; reads for ROI on her managers, not herself
+- **Entry → Conversion:** "How Leaders Read the Room" → Emotional Aperture Quiz → Team Emotional Landscape Audit → Manager's Field Guide → Enterprise licensing or summit keynote
+
+#### 6. Jordan — The Curious Professional / Book Reader
+- **Role:** Mid-career professional or thoughtful generalist; reads Adam Grant, Brené Brown, Kahneman
+- **Altimeter Lock:** Professional performance mode — the optimized, curated, efficient self
+- **Complete Picture Missed:** Their own humanity, complexity, and capacity for aliveness at work
+- **Why JSB:** *Human Mode* names what they've been circling for years — the sense that professional life has required suppressing their full humanity
+- **Voice That Works:** Warm but rigorous; narrative-driven with research grounding; treated as a thoughtful person, not a buyer; soul.md voice
+- **Entry → Conversion:** Podcast/social discovery → "Why the Best Leaders Don't Simplify Their Feelings" → Wabi-Sabi essay → Emotional Complexity Index → ***MATTERING* book** → newsletter / public talks / community
+
+#### 7. Carol — The Event Strategist / Speaker Buyer
+- **Role:** Conference chair / Chief of Staff / Head of Executive Events / L&D meeting planner
+- **Altimeter Lock:** Event success metrics — attendee ratings, committee approval, internal reflection on her curation
+- **Complete Picture Missed:** Whether the ideas the speaker delivers actually change anything
+- **Why JSB:** Fresh research-grounded framework; proven ability to translate behavioral science into a memorable keynote; *Human Mode* is a headline her committee will remember
+- **Voice That Works:** Efficient, confident, proof-driven; one-sentence value prop; social proof from peer events
+- **Entry → Conversion:** Referral or book/media discovery → Speaker page (video, testimonials, topic menu) → **Speaker One-Pager PDF download (gated)** → booking inquiry → Keynote or workshop booking
+- **Asset Gap to Close:** Dedicated speaker page and Speaker One-Pager PDF (opt-in with name/email/organization)
+
+#### 8. Amara — The Global Leader / Cross-Cultural Navigator
+- **Role:** Regional Director / VP International / CDO / Global Team Lead
+- **Altimeter Lock:** Dominant-culture professional norms treated as the universal standard for emotional expression at work
+- **Complete Picture Missed:** Whose emotions are visible, whose are suppressed; the full cultural landscape of her diverse team
+- **Why JSB:** Cultural psychology is his distinctive research base; *Emotional Landscapes* raises the question "whose emotions count?" that her existing EQ frameworks cannot
+- **Voice That Works:** Global in reference, precise in language; acknowledges cultural variation explicitly; high intellectual stakes; soul.md-level depth welcome
+- **Entry → Conversion:** Academic-practitioner publication or DEIB conference → "How Leaders Read the Room" (read through a cross-cultural lens) → Emotional Aperture Quiz → Team Emotional Landscape Audit → ***MATTERING* book** → Global program or DEIB keynote
+- **Asset Gap to Close:** A site article that explicitly engages the cultural dimensions of emotional expression at work (e.g., "Whose Emotions Count at Work?")
+
+---
+
+## Messaging Matrix by Persona
+
+The matrix below applies the *Human Mode, Always* voice to each persona. Every frame uses the altimeter lock metaphor as its spine — because that is how the brand speaks about every audience, not just the abstract ones.
+
+| Persona | Altimeter Lock | Message Frame | Primary Benefit | Tone |
+|---|---|---|---|---|
+| **Elena** — Senior Executive | Projecting certainty; quarterly optics | "The altimeter tells you how high you are. It does not tell you who is falling beside you — or whether they can see you slipping too." | Decision clarity + team trust; wisdom without weakness | Peer-level, research-anchored, counter-intuitive |
+| **Marcus** — People Manager | Task delivery and output | "Your team is falling at 180 miles per hour. Some are stalled. Some are spinning. You can't help them if your eyes are locked on the task board." | Team coordination; confidence in hard conversations; retention | Practical, scenario-driven, permission-giving |
+| **Diana** — Executive Coach | (Clients') their fixation | "The instructor's gesture doesn't shame the diver. It expands the field. That is the coaching move — and the science behind it is real." | Differentiated tools; coherent narrative across clients; credibility | Intellectual equals; research cited; nuance honored |
+| **Raj** — Startup Founder | Runway; terminal velocity | "You built this with duct tape and instinct. That is bricolage — and it is a real leadership asset. But terminal velocity creates tunnel vision. Your team is in freefall beside you. Who is watching each other?" | Sustainable scaling; team resilience; identity clarity | Smart, direct, novel concept with rigorous backbone |
+| **Priya** — HR/OD Strategist | Program ROI; CHRO buy-in | "Most leadership assessments measure individuals. The complete picture is the team's emotional landscape — what managers are missing when they scan one face instead of the whole formation." | Tools that change behavior; team-level diagnostics; internal credibility | Evidence-based, program-ready, implementable |
+| **Jordan** — Curious Professional | Performance mode; the curated self | "You are not falling alone. You never were. Human Mode is the part of you that has been scanning the whole time — and finally having permission to trust it." | Reconnection to aliveness; framework for the shift they already sense; meaning | Warm but rigorous; narrative with research grounding; soul.md voice |
+| **Carol** — Speaker Buyer | Event outcome metrics | "Your audience is tired of keynotes about focus. Give them the one that tells the truth: focus is the trap, the complete picture is the mission, and science proves it." | Memorable program; strong attendee signal; committee-ready pitch | Efficient, confident, proof-driven |
+| **Amara** — Global Leader | Dominant-culture norms as universal | "The emotional landscape of your team looks different across four continents. The question is not whether they're feeling — it is whose feelings your altimeter is calibrated to see." | Cross-cultural fluency; inclusive team diagnostics; research grounding for DEIB | Global in reference; precise; acknowledges variation |
+
+### Shared Voice Across All Personas
+
+Every message, regardless of persona, must:
+
+- **Honor the altimeter.** Focus is not the enemy. Fixation is.
+- **Name the stakes without panic.** Urgency from clarity, not drama.
+- **Offer agency, not judgment.** The reader is never doing it wrong — they are falling, and the system rewarded the fixation.
+- **Point toward the complete picture.** Every message ends with expansion, not reduction.
+- **Treat the reader as capable.** Even Marcus. Especially Marcus.
+
+---
+
+## Brand Consistency Audit
+
+The following consistency rules reconcile the personas, the lead magnets plan, and this brand guide. Use them when writing copy, designing assets, or scripting talks.
+
+### Naming & Terminology
+
+| Use This | Not This |
+|---|---|
+| **Human Mode, Always** (philosophy / brand) | "Human Mode" as a product name alone |
+| ***MATTERING*** (the book title) | "Human Mode" book / "the book" |
+| **Altimeter Lock** (the diagnosis) | "Tunnel vision" (use sparingly, as supporting language) |
+| **The Scan Routine** (the practice) | "The process" / "the framework" |
+| **The Gesture of Interruption** (the leadership act) | "Feedback" / "calling out" |
+| **The Team in Freefall** (interdependence metaphor) | "Collaboration" alone |
+| **The Complete Picture** (the goal) | "Big picture thinking" |
+
+### Voice Guardrails (reinforced across all personas)
+
+Every persona-facing message must pass these checks:
+
+- ✅ Honors focus *and* scanning (not either/or)
+- ✅ Speaks from lived, research-grounded experience
+- ✅ Grounds the abstract in concrete metaphor (altimeter, gesture, freefall)
+- ✅ Offers agency and rhythm, not prescription
+- ❌ No shame ("you're doing it wrong")
+- ❌ No reductionism (Human Mode is not a single tip or tool)
+- ❌ No manufactured urgency (the stakes are real; clarity does the work)
+- ❌ No jargon as depth
+
+### Tone-by-Persona vs. Tone-by-Context
+
+Brand tone shifts by *context* (keynote, written, social, tool) — per the Brand Voice & Tone section above. Persona shifts *framing and word choice*, not tone. Example: Elena in a keynote context hears the same narrative arc as Marcus, but the stories used, the metrics named, and the specific altimeter-lock example are calibrated to her world.
+
+### Visual Consistency Across Persona-Facing Assets
+
+All persona entry assets (lead magnets, site articles, speaker pages) share the brand visual system:
+
+- **Navy (`#1c4b61`)** headers, primary anchors
+- **Slate Blue (`#578ead`)** subheadings, accents
+- **Cream (`#f1f1e2`)** breathing room — minimum 40% of any layout
+- **Sofia Sans Bold** for H1/H2/H3 and buttons
+- **Saira** for H4 / subheadings
+- **Sofia Sans Regular** for body copy
+
+Assessment results pages, quiz outcomes, and downloadable guides follow the same system. No persona-specific color or font variation — the visual identity is unifying across every audience.
+
+### Consistency Gaps to Close
+
+Known gaps identified during this audit:
+
+1. **No speaker page or Speaker One-Pager PDF.** Required for Carol. Highest-leverage asset gap because one Carol booking = 500+ audience exposure.
+2. **No cultural-psychology site article.** Required for Amara. JSB's most distinctive research base is currently invisible in the content ecosystem.
+3. **Book title clarity.** *MATTERING* is the book; *Human Mode, Always* is the philosophy. Copy should consistently use both, not conflate them.
+4. **Altimeter-lock language not yet threaded through lead magnet assets.** The lead magnets plan uses research-topic names ("Emotional Aperture," "Competent Humility"); these should be positioned as *instances of altimeter lock* in copy — e.g., "The Emotional Aperture Quiz: Are You Locked on One Signal?"
+
+---
+
+## Messaging Matrix by Audience Segment (Legacy — Superseded by Persona Matrix Above)
+
+The original audience-segment matrix below is retained for reference. The persona matrix above is the working reference going forward.
 
 ### Executive / C-Suite
 **Frame:** "Altimeter lock is a leadership diagnostic. Are your executives scanning the landscape, or fixating on quarterly metrics?"
