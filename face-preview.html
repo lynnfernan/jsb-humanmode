@@ -2,212 +2,407 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Face Style Preview — EAM Quiz</title>
   <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@400;700&family=Saira:wght@600&display=swap" rel="stylesheet" />
   <style>
     body { font-family: 'Sofia Sans', sans-serif; background: #f1f1e2; color: #1c4b61; margin: 0; padding: 2rem; }
-    h1 { font-size: 1.4rem; margin-bottom: 0.25rem; }
-    p  { color: #578ead; font-size: 0.9rem; margin-bottom: 2rem; }
-    .options { display: flex; gap: 2rem; flex-wrap: wrap; }
-    .option  { background: white; border-radius: 16px; padding: 1.75rem; box-shadow: 0 4px 24px rgba(28,75,97,.1); flex: 1; min-width: 260px; }
-    h2 { font-family: 'Saira', sans-serif; font-size: 0.8rem; letter-spacing: .1em; text-transform: uppercase; color: #578ead; margin-bottom: 1rem; }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; background: #f7f7f0; border-radius: 12px; padding: 1.25rem; }
-    .face  { display: flex; justify-content: center; align-items: center; }
-    .note  { font-size: 0.75rem; color: #aaa; margin-top: 1rem; font-style: italic; }
+    h1  { font-size: 1.5rem; margin-bottom: 0.2rem; }
+    .sub { color: #578ead; font-size: 0.9rem; margin-bottom: 2rem; }
+    table { border-collapse: collapse; width: 100%; }
+    th   { font-family: 'Saira', sans-serif; font-size: 0.72rem; letter-spacing: .1em; text-transform: uppercase;
+           color: white; background: #1c4b61; padding: .55rem 1rem; text-align: left; }
+    th.state { background: #578ead; text-align: center; }
+    td   { padding: 1rem; background: white; border: 3px solid #f1f1e2; vertical-align: top; }
+    td.label { background: #f7f7f0; font-family: 'Saira', sans-serif; font-size: 0.75rem; font-weight: 600;
+               color: #1c4b61; letter-spacing: .05em; text-transform: uppercase; width: 130px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem;
+            background: #f7f7f0; border-radius: 10px; padding: 1rem; }
+    .cell { display: flex; justify-content: center; align-items: center; }
+    .state-tag { display:inline-block; font-family:'Saira',sans-serif; font-size:.65rem; font-weight:600;
+                 letter-spacing:.07em; text-transform:uppercase; padding:2px 8px; border-radius:20px;
+                 margin-bottom:.4rem; }
   </style>
 </head>
 <body>
+<h1>Face Style Options — All Emotions</h1>
+<p class="sub">Each row = one style. Columns show the Before (neutral), Positive reaction, and Negative reaction states.</p>
 
-<h1>Face Style Options — Emotional Aperture Quiz</h1>
-<p>Three styles shown with a "positive" reaction. Pick the direction you prefer before we revise the quiz.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Style</th>
+      <th class="state">⬜ BEFORE (neutral)</th>
+      <th class="state">🟢 POSITIVE reaction</th>
+      <th class="state">🔴 NEGATIVE reaction</th>
+    </tr>
+  </thead>
+  <tbody>
 
-<div class="options">
+    <!-- ═══════════════════════════════════════════════
+         OPTION A — Illustrated SVG
+    ═══════════════════════════════════════════════ -->
+    <tr>
+      <td class="label">Option A<br/>Illustrated<br/>SVG</td>
 
-  <!-- ── OPTION A: Current illustrated ── -->
-  <div class="option">
-    <h2>Option A — Current Illustrated</h2>
-    <div class="grid">
-      <!-- Alex happy -->
-      <div class="face">
-        <svg viewBox="0 0 100 130" width="100" height="130">
-          <path d="M 5,130 L 16,102 Q 50,90 84,102 L 95,130 Z" fill="#1c4b61"/>
-          <rect x="42" y="88" width="16" height="16" rx="3" fill="#FDBCB4"/>
-          <ellipse cx="50" cy="62" rx="27" ry="30" fill="#FDBCB4"/>
-          <path d="M23,62 C23,30 77,30 77,62 L77,46 C77,17 23,17 23,46 Z" fill="#7B4F2E"/>
-          <ellipse cx="40" cy="57" rx="5" ry="4.5" fill="white"/>
-          <ellipse cx="60" cy="57" rx="5" ry="4.5" fill="white"/>
-          <circle cx="40" cy="57" r="3" fill="#5C3D1E"/>
-          <circle cx="60" cy="57" r="3" fill="#5C3D1E"/>
-          <circle cx="41.5" cy="55.5" r="1.2" fill="white"/>
-          <circle cx="61.5" cy="55.5" r="1.2" fill="white"/>
-          <path d="M35,48 Q40,44 45,46 M55,46 Q60,44 65,48" stroke="#7B4F2E" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <path d="M 37,70 Q 50,82 63,70" stroke="#4a2e1a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <!-- Jordan happy -->
-      <div class="face">
-        <svg viewBox="0 0 100 130" width="100" height="130">
-          <path d="M 5,130 L 16,102 Q 50,90 84,102 L 95,130 Z" fill="#578ead"/>
-          <rect x="42" y="88" width="16" height="16" rx="3" fill="#8D5524"/>
-          <ellipse cx="50" cy="62" rx="27" ry="30" fill="#8D5524"/>
-          <ellipse cx="50" cy="36" rx="34" ry="27" fill="#1A0A00"/>
-          <ellipse cx="40" cy="57" rx="5" ry="4.5" fill="white"/>
-          <ellipse cx="60" cy="57" rx="5" ry="4.5" fill="white"/>
-          <circle cx="40" cy="57" r="3" fill="#1A0A00"/>
-          <circle cx="60" cy="57" r="3" fill="#1A0A00"/>
-          <circle cx="41.5" cy="55.5" r="1.2" fill="white"/>
-          <circle cx="61.5" cy="55.5" r="1.2" fill="white"/>
-          <path d="M35,48 Q40,44 45,46 M55,46 Q60,44 65,48" stroke="#1A0A00" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <path d="M 37,70 Q 50,82 63,70" stroke="#4a2e1a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <!-- Casey happy -->
-      <div class="face">
-        <svg viewBox="0 0 100 130" width="100" height="130">
-          <path d="M 5,130 L 16,102 Q 50,90 84,102 L 95,130 Z" fill="#2d6a8a"/>
-          <rect x="42" y="88" width="16" height="16" rx="3" fill="#F1C27D"/>
-          <ellipse cx="50" cy="62" rx="27" ry="30" fill="#F1C27D"/>
-          <path d="M21,60 C21,25 79,25 79,60 L79,42 C79,12 21,12 21,42 Z" fill="#2C1810"/>
-          <rect x="16" y="54" width="11" height="56" rx="5.5" fill="#2C1810"/>
-          <rect x="73" y="54" width="11" height="56" rx="5.5" fill="#2C1810"/>
-          <ellipse cx="40" cy="57" rx="5" ry="4.5" fill="white"/>
-          <ellipse cx="60" cy="57" rx="5" ry="4.5" fill="white"/>
-          <circle cx="40" cy="57" r="3" fill="#3E2723"/>
-          <circle cx="60" cy="57" r="3" fill="#3E2723"/>
-          <circle cx="41.5" cy="55.5" r="1.2" fill="white"/>
-          <circle cx="61.5" cy="55.5" r="1.2" fill="white"/>
-          <path d="M35,48 Q40,44 45,46 M55,46 Q60,44 65,48" stroke="#2C1810" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <path d="M 37,70 Q 50,82 63,70" stroke="#4a2e1a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <!-- Morgan happy -->
-      <div class="face">
-        <svg viewBox="0 0 100 130" width="100" height="130">
-          <path d="M 5,130 L 16,102 Q 50,90 84,102 L 95,130 Z" fill="#0d3349"/>
-          <rect x="42" y="88" width="16" height="16" rx="3" fill="#C68642"/>
-          <ellipse cx="50" cy="62" rx="27" ry="30" fill="#C68642"/>
-          <path d="M23,58 C23,26 77,26 77,58 C79,30 71,13 50,13 C29,13 21,30 23,58 Z" fill="#1A1A2E"/>
-          <ellipse cx="40" cy="57" rx="5" ry="4.5" fill="white"/>
-          <ellipse cx="60" cy="57" rx="5" ry="4.5" fill="white"/>
-          <circle cx="40" cy="57" r="3" fill="#212121"/>
-          <circle cx="60" cy="57" r="3" fill="#212121"/>
-          <circle cx="41.5" cy="55.5" r="1.2" fill="white"/>
-          <circle cx="61.5" cy="55.5" r="1.2" fill="white"/>
-          <path d="M35,48 Q40,44 45,46 M55,46 Q60,44 65,48" stroke="#1A1A2E" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <path d="M 37,70 Q 50,82 63,70" stroke="#4a2e1a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
-        </svg>
-      </div>
-    </div>
-    <p class="note">Current build. Simple cartoon faces.</p>
-  </div>
-
-  <!-- ── OPTION B: Photo placeholder ── -->
-  <div class="option">
-    <h2>Option B — Photo Frames (ready for your photos)</h2>
-    <div class="grid">
-
-      <!-- Person 1 — happy -->
-      <div class="face">
-        <svg viewBox="0 0 110 130" width="110" height="130">
-          <!-- shirt -->
-          <path d="M 5,130 L 18,104 Q 55,92 92,104 L 105,130 Z" fill="#1c4b61"/>
-          <!-- photo circle frame -->
-          <circle cx="55" cy="58" r="38" fill="#dde8f0" stroke="#578ead" stroke-width="3"/>
-          <!-- silhouette body -->
-          <ellipse cx="55" cy="72" rx="18" ry="14" fill="#b0c8d8"/>
-          <!-- silhouette head -->
-          <circle cx="55" cy="50" r="15" fill="#b0c8d8"/>
-          <!-- happy overlay arc -->
-          <path d="M 40,64 Q 55,74 70,64" stroke="#2e7d32" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-          <!-- green dot indicator -->
-          <circle cx="83" cy="28" r="9" fill="#2e7d32"/>
-          <text x="83" y="32" text-anchor="middle" font-size="10" fill="white">😊</text>
-        </svg>
-      </div>
-
-      <!-- Person 2 — happy -->
-      <div class="face">
-        <svg viewBox="0 0 110 130" width="110" height="130">
-          <path d="M 5,130 L 18,104 Q 55,92 92,104 L 105,130 Z" fill="#578ead"/>
-          <circle cx="55" cy="58" r="38" fill="#f0e8dd" stroke="#578ead" stroke-width="3"/>
-          <ellipse cx="55" cy="72" rx="18" ry="14" fill="#d4b898"/>
-          <circle cx="55" cy="50" r="15" fill="#d4b898"/>
-          <path d="M 40,64 Q 55,74 70,64" stroke="#2e7d32" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-          <circle cx="83" cy="28" r="9" fill="#2e7d32"/>
-          <text x="83" y="32" text-anchor="middle" font-size="10" fill="white">😊</text>
-        </svg>
-      </div>
-
-      <!-- Person 3 — happy -->
-      <div class="face">
-        <svg viewBox="0 0 110 130" width="110" height="130">
-          <path d="M 5,130 L 18,104 Q 55,92 92,104 L 105,130 Z" fill="#2d6a8a"/>
-          <circle cx="55" cy="58" r="38" fill="#ead5c0" stroke="#578ead" stroke-width="3"/>
-          <ellipse cx="55" cy="72" rx="18" ry="14" fill="#c9956a"/>
-          <circle cx="55" cy="50" r="15" fill="#c9956a"/>
-          <path d="M 40,64 Q 55,74 70,64" stroke="#2e7d32" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-          <circle cx="83" cy="28" r="9" fill="#2e7d32"/>
-          <text x="83" y="32" text-anchor="middle" font-size="10" fill="white">😊</text>
-        </svg>
-      </div>
-
-      <!-- Person 4 — happy -->
-      <div class="face">
-        <svg viewBox="0 0 110 130" width="110" height="130">
-          <path d="M 5,130 L 18,104 Q 55,92 92,104 L 105,130 Z" fill="#0d3349"/>
-          <circle cx="55" cy="58" r="38" fill="#e8ddd0" stroke="#578ead" stroke-width="3"/>
-          <ellipse cx="55" cy="72" rx="18" ry="14" fill="#b8957a"/>
-          <circle cx="55" cy="50" r="15" fill="#b8957a"/>
-          <path d="M 40,64 Q 55,74 70,64" stroke="#2e7d32" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-          <circle cx="83" cy="28" r="9" fill="#2e7d32"/>
-          <text x="83" y="32" text-anchor="middle" font-size="10" fill="white">😊</text>
-        </svg>
-      </div>
-    </div>
-    <p class="note">Circular frames designed to hold your real headshots. Silhouette fills the frame until photos are swapped in. Emotion shown via color-coded indicator dot.</p>
-  </div>
-
-  <!-- ── OPTION C: Emoji / minimal ── -->
-  <div class="option">
-    <h2>Option C — Clean Emoji Style</h2>
-    <div class="grid">
-
-      <div class="face">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-          <div style="width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#FDBCB4,#f0a090);display:flex;align-items:center;justify-content:center;font-size:3rem;box-shadow:0 3px 12px rgba(0,0,0,.12);">😄</div>
-          <div style="background:#1c4b61;color:white;font-size:0.65rem;font-family:Saira,sans-serif;font-weight:600;padding:2px 10px;border-radius:20px;letter-spacing:.06em;">POSITIVE</div>
+      <!-- BEFORE -->
+      <td>
+        <div style="text-align:center;margin-bottom:.5rem;">
+          <span class="state-tag" style="background:#e8e8d8;color:#666;">Before</span>
         </div>
-      </div>
-
-      <div class="face">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-          <div style="width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#c0845a,#a0673e);display:flex;align-items:center;justify-content:center;font-size:3rem;box-shadow:0 3px 12px rgba(0,0,0,.12);">😄</div>
-          <div style="background:#1c4b61;color:white;font-size:0.65rem;font-family:Saira,sans-serif;font-weight:600;padding:2px 10px;border-radius:20px;letter-spacing:.06em;">POSITIVE</div>
+        <div class="grid">
+          <!-- Alex neutral -->
+          <div class="cell"><svg viewBox="0 0 100 130" width="88" height="114">
+            <path d="M 5,130 L 16,102 Q 50,90 84,102 L 95,130 Z" fill="#1c4b61"/>
+            <rect x="42" y="88" width="16" height="16" rx="3" fill="#FDBCB4"/>
+            <ellipse cx="50" cy="62" rx="27" ry="30" fill="#FDBCB4"/>
+            <path d="M23,62 C23,30 77,30 77,62 L77,46 C77,17 23,17 23,46 Z" fill="#7B4F2E"/>
+            <ellipse cx="40" cy="57" rx="5" ry="4.5" fill="white"/><ellipse cx="60" cy="57" rx="5" ry="4.5" fill="white"/>
+            <circle cx="40" cy="57" r="3" fill="#5C3D1E"/><circle cx="60" cy="57" r="3" fill="#5C3D1E"/>
+            <circle cx="41.5" cy="55.5" r="1.2" fill="white"/><circle cx="61.5" cy="55.5" r="1.2" fill="white"/>
+            <path d="M35,47 Q40,46 45,47 M55,47 Q60,46 65,47" stroke="#7B4F2E" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <line x1="38" y1="74" x2="62" y2="74" stroke="#4a2e1a" stroke-width="2.8" stroke-linecap="round"/>
+          </svg></div>
+          <!-- Jordan neutral -->
+          <div class="cell"><svg viewBox="0 0 100 130" width="88" height="114">
+            <path d="M 5,130 L 16,102 Q 50,90 84,102 L 95,130 Z" fill="#578ead"/>
+            <rect x="42" y="88" width="16" height="16" rx="3" fill="#8D5524"/>
+            <ellipse cx="50" cy="62" rx="27" ry="30" fill="#8D5524"/>
+            <ellipse cx="50" cy="36" rx="34" ry="27" fill="#1A0A00"/>
+            <ellipse cx="40" cy="57" rx="5" ry="4.5" fill="white"/><ellipse cx="60" cy="57" rx="5" ry="4.5" fill="white"/>
+            <circle cx="40" cy="57" r="3" fill="#1A0A00"/><circle cx="60" cy="57" r="3" fill="#1A0A00"/>
+            <circle cx="41.5" cy="55.5" r="1.2" fill="white"/><circle cx="61.5" cy="55.5" r="1.2" fill="white"/>
+            <path d="M35,47 Q40,46 45,47 M55,47 Q60,46 65,47" stroke="#1A0A00" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <line x1="38" y1="74" x2="62" y2="74" stroke="#4a2e1a" stroke-width="2.8" stroke-linecap="round"/>
+          </svg></div>
+          <!-- Casey neutral -->
+          <div class="cell"><svg viewBox="0 0 100 130" width="88" height="114">
+            <path d="M 5,130 L 16,102 Q 50,90 84,102 L 95,130 Z" fill="#2d6a8a"/>
+            <rect x="42" y="88" width="16" height="16" rx="3" fill="#F1C27D"/>
+            <ellipse cx="50" cy="62" rx="27" ry="30" fill="#F1C27D"/>
+            <path d="M21,60 C21,25 79,25 79,60 L79,42 C79,12 21,12 21,42 Z" fill="#2C1810"/>
+            <rect x="16" y="54" width="11" height="56" rx="5.5" fill="#2C1810"/><rect x="73" y="54" width="11" height="56" rx="5.5" fill="#2C1810"/>
+            <ellipse cx="40" cy="57" rx="5" ry="4.5" fill="white"/><ellipse cx="60" cy="57" rx="5" ry="4.5" fill="white"/>
+            <circle cx="40" cy="57" r="3" fill="#3E2723"/><circle cx="60" cy="57" r="3" fill="#3E2723"/>
+            <circle cx="41.5" cy="55.5" r="1.2" fill="white"/><circle cx="61.5" cy="55.5" r="1.2" fill="white"/>
+            <path d="M35,47 Q40,46 45,47 M55,47 Q60,46 65,47" stroke="#2C1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <line x1="38" y1="74" x2="62" y2="74" stroke="#4a2e1a" stroke-width="2.8" stroke-linecap="round"/>
+          </svg></div>
+          <!-- Morgan neutral -->
+          <div class="cell"><svg viewBox="0 0 100 130" width="88" height="114">
+            <path d="M 5,130 L 16,102 Q 50,90 84,102 L 95,130 Z" fill="#0d3349"/>
+            <rect x="42" y="88" width="16" height="16" rx="3" fill="#C68642"/>
+            <ellipse cx="50" cy="62" rx="27" ry="30" fill="#C68642"/>
+            <path d="M23,58 C23,26 77,26 77,58 C79,30 71,13 50,13 C29,13 21,30 23,58 Z" fill="#1A1A2E"/>
+            <ellipse cx="40" cy="57" rx="5" ry="4.5" fill="white"/><ellipse cx="60" cy="57" rx="5" ry="4.5" fill="white"/>
+            <circle cx="40" cy="57" r="3" fill="#212121"/><circle cx="60" cy="57" r="3" fill="#212121"/>
+            <circle cx="41.5" cy="55.5" r="1.2" fill="white"/><circle cx="61.5" cy="55.5" r="1.2" fill="white"/>
+            <path d="M35,47 Q40,46 45,47 M55,47 Q60,46 65,47" stroke="#1A1A2E" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <line x1="38" y1="74" x2="62" y2="74" stroke="#4a2e1a" stroke-width="2.8" stroke-linecap="round"/>
+          </svg></div>
         </div>
-      </div>
+      </td>
 
-      <div class="face">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-          <div style="width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#F1C27D,#e0a860);display:flex;align-items:center;justify-content:center;font-size:3rem;box-shadow:0 3px 12px rgba(0,0,0,.12);">😄</div>
-          <div style="background:#1c4b61;color:white;font-size:0.65rem;font-family:Saira,sans-serif;font-weight:600;padding:2px 10px;border-radius:20px;letter-spacing:.06em;">POSITIVE</div>
+      <!-- POSITIVE -->
+      <td>
+        <div style="text-align:center;margin-bottom:.5rem;">
+          <span class="state-tag" style="background:#e8f5e9;color:#2e7d32;">Positive</span>
         </div>
-      </div>
-
-      <div class="face">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-          <div style="width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#8D5524,#6b3e18);display:flex;align-items:center;justify-content:center;font-size:3rem;box-shadow:0 3px 12px rgba(0,0,0,.12);">😄</div>
-          <div style="background:#1c4b61;color:white;font-size:0.65rem;font-family:Saira,sans-serif;font-weight:600;padding:2px 10px;border-radius:20px;letter-spacing:.06em;">POSITIVE</div>
+        <div class="grid">
+          <div class="cell"><svg viewBox="0 0 100 130" width="88" height="114">
+            <path d="M 5,130 L 16,102 Q 50,90 84,102 L 95,130 Z" fill="#1c4b61"/>
+            <rect x="42" y="88" width="16" height="16" rx="3" fill="#FDBCB4"/>
+            <ellipse cx="50" cy="62" rx="27" ry="30" fill="#FDBCB4"/>
+            <path d="M23,62 C23,30 77,30 77,62 L77,46 C77,17 23,17 23,46 Z" fill="#7B4F2E"/>
+            <ellipse cx="40" cy="57" rx="5" ry="4.5" fill="white"/><ellipse cx="60" cy="57" rx="5" ry="4.5" fill="white"/>
+            <circle cx="40" cy="57" r="3" fill="#5C3D1E"/><circle cx="60" cy="57" r="3" fill="#5C3D1E"/>
+            <circle cx="41.5" cy="55.5" r="1.2" fill="white"/><circle cx="61.5" cy="55.5" r="1.2" fill="white"/>
+            <path d="M35,48 Q40,44 45,46 M55,46 Q60,44 65,48" stroke="#7B4F2E" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M 37,70 Q 50,82 63,70" stroke="#4a2e1a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          </svg></div>
+          <div class="cell"><svg viewBox="0 0 100 130" width="88" height="114">
+            <path d="M 5,130 L 16,102 Q 50,90 84,102 L 95,130 Z" fill="#578ead"/>
+            <rect x="42" y="88" width="16" height="16" rx="3" fill="#8D5524"/>
+            <ellipse cx="50" cy="62" rx="27" ry="30" fill="#8D5524"/>
+            <ellipse cx="50" cy="36" rx="34" ry="27" fill="#1A0A00"/>
+            <ellipse cx="40" cy="57" rx="5" ry="4.5" fill="white"/><ellipse cx="60" cy="57" rx="5" ry="4.5" fill="white"/>
+            <circle cx="40" cy="57" r="3" fill="#1A0A00"/><circle cx="60" cy="57" r="3" fill="#1A0A00"/>
+            <circle cx="41.5" cy="55.5" r="1.2" fill="white"/><circle cx="61.5" cy="55.5" r="1.2" fill="white"/>
+            <path d="M35,48 Q40,44 45,46 M55,46 Q60,44 65,48" stroke="#1A0A00" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M 37,70 Q 50,82 63,70" stroke="#4a2e1a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          </svg></div>
+          <div class="cell"><svg viewBox="0 0 100 130" width="88" height="114">
+            <path d="M 5,130 L 16,102 Q 50,90 84,102 L 95,130 Z" fill="#2d6a8a"/>
+            <rect x="42" y="88" width="16" height="16" rx="3" fill="#F1C27D"/>
+            <ellipse cx="50" cy="62" rx="27" ry="30" fill="#F1C27D"/>
+            <path d="M21,60 C21,25 79,25 79,60 L79,42 C79,12 21,12 21,42 Z" fill="#2C1810"/>
+            <rect x="16" y="54" width="11" height="56" rx="5.5" fill="#2C1810"/><rect x="73" y="54" width="11" height="56" rx="5.5" fill="#2C1810"/>
+            <ellipse cx="40" cy="57" rx="5" ry="4.5" fill="white"/><ellipse cx="60" cy="57" rx="5" ry="4.5" fill="white"/>
+            <circle cx="40" cy="57" r="3" fill="#3E2723"/><circle cx="60" cy="57" r="3" fill="#3E2723"/>
+            <circle cx="41.5" cy="55.5" r="1.2" fill="white"/><circle cx="61.5" cy="55.5" r="1.2" fill="white"/>
+            <path d="M35,48 Q40,44 45,46 M55,46 Q60,44 65,48" stroke="#2C1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M 37,70 Q 50,82 63,70" stroke="#4a2e1a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          </svg></div>
+          <div class="cell"><svg viewBox="0 0 100 130" width="88" height="114">
+            <path d="M 5,130 L 16,102 Q 50,90 84,102 L 95,130 Z" fill="#0d3349"/>
+            <rect x="42" y="88" width="16" height="16" rx="3" fill="#C68642"/>
+            <ellipse cx="50" cy="62" rx="27" ry="30" fill="#C68642"/>
+            <path d="M23,58 C23,26 77,26 77,58 C79,30 71,13 50,13 C29,13 21,30 23,58 Z" fill="#1A1A2E"/>
+            <ellipse cx="40" cy="57" rx="5" ry="4.5" fill="white"/><ellipse cx="60" cy="57" rx="5" ry="4.5" fill="white"/>
+            <circle cx="40" cy="57" r="3" fill="#212121"/><circle cx="60" cy="57" r="3" fill="#212121"/>
+            <circle cx="41.5" cy="55.5" r="1.2" fill="white"/><circle cx="61.5" cy="55.5" r="1.2" fill="white"/>
+            <path d="M35,48 Q40,44 45,46 M55,46 Q60,44 65,48" stroke="#1A1A2E" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M 37,70 Q 50,82 63,70" stroke="#4a2e1a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          </svg></div>
         </div>
-      </div>
-    </div>
-    <p class="note">System emoji faces — universal, fast to read, works everywhere. Less "corporate professional" but very legible and neutral. Negative shown as 😟.</p>
-  </div>
+      </td>
 
-</div>
+      <!-- NEGATIVE -->
+      <td>
+        <div style="text-align:center;margin-bottom:.5rem;">
+          <span class="state-tag" style="background:#ffebee;color:#c62828;">Negative</span>
+        </div>
+        <div class="grid">
+          <div class="cell"><svg viewBox="0 0 100 130" width="88" height="114">
+            <path d="M 5,130 L 16,102 Q 50,90 84,102 L 95,130 Z" fill="#1c4b61"/>
+            <rect x="42" y="88" width="16" height="16" rx="3" fill="#FDBCB4"/>
+            <ellipse cx="50" cy="62" rx="27" ry="30" fill="#FDBCB4"/>
+            <path d="M23,62 C23,30 77,30 77,62 L77,46 C77,17 23,17 23,46 Z" fill="#7B4F2E"/>
+            <ellipse cx="40" cy="57" rx="5" ry="4.5" fill="white"/><ellipse cx="60" cy="57" rx="5" ry="4.5" fill="white"/>
+            <circle cx="40" cy="57" r="3" fill="#5C3D1E"/><circle cx="60" cy="57" r="3" fill="#5C3D1E"/>
+            <circle cx="41.5" cy="55.5" r="1.2" fill="white"/><circle cx="61.5" cy="55.5" r="1.2" fill="white"/>
+            <path d="M35,48 Q40,46 45,48 M55,48 Q60,46 65,48" stroke="#7B4F2E" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M 37,78 Q 50,66 63,78" stroke="#4a2e1a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          </svg></div>
+          <div class="cell"><svg viewBox="0 0 100 130" width="88" height="114">
+            <path d="M 5,130 L 16,102 Q 50,90 84,102 L 95,130 Z" fill="#578ead"/>
+            <rect x="42" y="88" width="16" height="16" rx="3" fill="#8D5524"/>
+            <ellipse cx="50" cy="62" rx="27" ry="30" fill="#8D5524"/>
+            <ellipse cx="50" cy="36" rx="34" ry="27" fill="#1A0A00"/>
+            <ellipse cx="40" cy="57" rx="5" ry="4.5" fill="white"/><ellipse cx="60" cy="57" rx="5" ry="4.5" fill="white"/>
+            <circle cx="40" cy="57" r="3" fill="#1A0A00"/><circle cx="60" cy="57" r="3" fill="#1A0A00"/>
+            <circle cx="41.5" cy="55.5" r="1.2" fill="white"/><circle cx="61.5" cy="55.5" r="1.2" fill="white"/>
+            <path d="M35,48 Q40,46 45,48 M55,48 Q60,46 65,48" stroke="#1A0A00" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M 37,78 Q 50,66 63,78" stroke="#4a2e1a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          </svg></div>
+          <div class="cell"><svg viewBox="0 0 100 130" width="88" height="114">
+            <path d="M 5,130 L 16,102 Q 50,90 84,102 L 95,130 Z" fill="#2d6a8a"/>
+            <rect x="42" y="88" width="16" height="16" rx="3" fill="#F1C27D"/>
+            <ellipse cx="50" cy="62" rx="27" ry="30" fill="#F1C27D"/>
+            <path d="M21,60 C21,25 79,25 79,60 L79,42 C79,12 21,12 21,42 Z" fill="#2C1810"/>
+            <rect x="16" y="54" width="11" height="56" rx="5.5" fill="#2C1810"/><rect x="73" y="54" width="11" height="56" rx="5.5" fill="#2C1810"/>
+            <ellipse cx="40" cy="57" rx="5" ry="4.5" fill="white"/><ellipse cx="60" cy="57" rx="5" ry="4.5" fill="white"/>
+            <circle cx="40" cy="57" r="3" fill="#3E2723"/><circle cx="60" cy="57" r="3" fill="#3E2723"/>
+            <circle cx="41.5" cy="55.5" r="1.2" fill="white"/><circle cx="61.5" cy="55.5" r="1.2" fill="white"/>
+            <path d="M35,48 Q40,46 45,48 M55,48 Q60,46 65,48" stroke="#2C1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M 37,78 Q 50,66 63,78" stroke="#4a2e1a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          </svg></div>
+          <div class="cell"><svg viewBox="0 0 100 130" width="88" height="114">
+            <path d="M 5,130 L 16,102 Q 50,90 84,102 L 95,130 Z" fill="#0d3349"/>
+            <rect x="42" y="88" width="16" height="16" rx="3" fill="#C68642"/>
+            <ellipse cx="50" cy="62" rx="27" ry="30" fill="#C68642"/>
+            <path d="M23,58 C23,26 77,26 77,58 C79,30 71,13 50,13 C29,13 21,30 23,58 Z" fill="#1A1A2E"/>
+            <ellipse cx="40" cy="57" rx="5" ry="4.5" fill="white"/><ellipse cx="60" cy="57" rx="5" ry="4.5" fill="white"/>
+            <circle cx="40" cy="57" r="3" fill="#212121"/><circle cx="60" cy="57" r="3" fill="#212121"/>
+            <circle cx="41.5" cy="55.5" r="1.2" fill="white"/><circle cx="61.5" cy="55.5" r="1.2" fill="white"/>
+            <path d="M35,48 Q40,46 45,48 M55,48 Q60,46 65,48" stroke="#1A1A2E" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M 37,78 Q 50,66 63,78" stroke="#4a2e1a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          </svg></div>
+        </div>
+      </td>
+    </tr>
 
-<div style="margin-top:2rem;background:white;border-radius:12px;padding:1.25rem;max-width:860px;font-size:0.85rem;color:#578ead;line-height:1.7;">
-  <strong style="color:#1c4b61;">My recommendation:</strong> Option B (photo frames) is ideal once you supply real headshots — the silhouettes clearly signal "a person" and the emotion indicator is unambiguous. Option C (emoji) is fastest to read and most accessible but least "professional assessment" in feel. Option A is what's currently built.
+    <!-- ═══════════════════════════════════════════════
+         OPTION B — Photo Frames
+    ═══════════════════════════════════════════════ -->
+    <tr>
+      <td class="label">Option B<br/>Photo Frames<br/>(swap in<br/>real photos)</td>
+
+      <!-- BEFORE -->
+      <td>
+        <div style="text-align:center;margin-bottom:.5rem;">
+          <span class="state-tag" style="background:#e8e8d8;color:#666;">Before</span>
+        </div>
+        <div class="grid">
+          <div class="cell"><svg viewBox="0 0 110 130" width="92" height="108">
+            <path d="M 5,130 L 18,104 Q 55,92 92,104 L 105,130 Z" fill="#1c4b61"/>
+            <circle cx="55" cy="58" r="38" fill="#dde8f0" stroke="#578ead" stroke-width="3"/>
+            <ellipse cx="55" cy="72" rx="18" ry="14" fill="#b0c8d8"/>
+            <circle cx="55" cy="50" r="15" fill="#b0c8d8"/>
+          </svg></div>
+          <div class="cell"><svg viewBox="0 0 110 130" width="92" height="108">
+            <path d="M 5,130 L 18,104 Q 55,92 92,104 L 105,130 Z" fill="#578ead"/>
+            <circle cx="55" cy="58" r="38" fill="#f0e8dd" stroke="#578ead" stroke-width="3"/>
+            <ellipse cx="55" cy="72" rx="18" ry="14" fill="#d4b898"/>
+            <circle cx="55" cy="50" r="15" fill="#d4b898"/>
+          </svg></div>
+          <div class="cell"><svg viewBox="0 0 110 130" width="92" height="108">
+            <path d="M 5,130 L 18,104 Q 55,92 92,104 L 105,130 Z" fill="#2d6a8a"/>
+            <circle cx="55" cy="58" r="38" fill="#ead5c0" stroke="#578ead" stroke-width="3"/>
+            <ellipse cx="55" cy="72" rx="18" ry="14" fill="#c9956a"/>
+            <circle cx="55" cy="50" r="15" fill="#c9956a"/>
+          </svg></div>
+          <div class="cell"><svg viewBox="0 0 110 130" width="92" height="108">
+            <path d="M 5,130 L 18,104 Q 55,92 92,104 L 105,130 Z" fill="#0d3349"/>
+            <circle cx="55" cy="58" r="38" fill="#e8ddd0" stroke="#578ead" stroke-width="3"/>
+            <ellipse cx="55" cy="72" rx="18" ry="14" fill="#b8957a"/>
+            <circle cx="55" cy="50" r="15" fill="#b8957a"/>
+          </svg></div>
+        </div>
+      </td>
+
+      <!-- POSITIVE -->
+      <td>
+        <div style="text-align:center;margin-bottom:.5rem;">
+          <span class="state-tag" style="background:#e8f5e9;color:#2e7d32;">Positive</span>
+        </div>
+        <div class="grid">
+          <div class="cell"><svg viewBox="0 0 110 130" width="92" height="108">
+            <path d="M 5,130 L 18,104 Q 55,92 92,104 L 105,130 Z" fill="#1c4b61"/>
+            <circle cx="55" cy="58" r="38" fill="#dde8f0" stroke="#2e7d32" stroke-width="4"/>
+            <ellipse cx="55" cy="72" rx="18" ry="14" fill="#b0c8d8"/>
+            <circle cx="55" cy="50" r="15" fill="#b0c8d8"/>
+            <path d="M 40,64 Q 55,76 70,64" stroke="#2e7d32" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <circle cx="83" cy="28" r="10" fill="#2e7d32"/>
+            <text x="83" y="33" text-anchor="middle" font-size="11" fill="white">😊</text>
+          </svg></div>
+          <div class="cell"><svg viewBox="0 0 110 130" width="92" height="108">
+            <path d="M 5,130 L 18,104 Q 55,92 92,104 L 105,130 Z" fill="#578ead"/>
+            <circle cx="55" cy="58" r="38" fill="#f0e8dd" stroke="#2e7d32" stroke-width="4"/>
+            <ellipse cx="55" cy="72" rx="18" ry="14" fill="#d4b898"/>
+            <circle cx="55" cy="50" r="15" fill="#d4b898"/>
+            <path d="M 40,64 Q 55,76 70,64" stroke="#2e7d32" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <circle cx="83" cy="28" r="10" fill="#2e7d32"/>
+            <text x="83" y="33" text-anchor="middle" font-size="11" fill="white">😊</text>
+          </svg></div>
+          <div class="cell"><svg viewBox="0 0 110 130" width="92" height="108">
+            <path d="M 5,130 L 18,104 Q 55,92 92,104 L 105,130 Z" fill="#2d6a8a"/>
+            <circle cx="55" cy="58" r="38" fill="#ead5c0" stroke="#2e7d32" stroke-width="4"/>
+            <ellipse cx="55" cy="72" rx="18" ry="14" fill="#c9956a"/>
+            <circle cx="55" cy="50" r="15" fill="#c9956a"/>
+            <path d="M 40,64 Q 55,76 70,64" stroke="#2e7d32" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <circle cx="83" cy="28" r="10" fill="#2e7d32"/>
+            <text x="83" y="33" text-anchor="middle" font-size="11" fill="white">😊</text>
+          </svg></div>
+          <div class="cell"><svg viewBox="0 0 110 130" width="92" height="108">
+            <path d="M 5,130 L 18,104 Q 55,92 92,104 L 105,130 Z" fill="#0d3349"/>
+            <circle cx="55" cy="58" r="38" fill="#e8ddd0" stroke="#2e7d32" stroke-width="4"/>
+            <ellipse cx="55" cy="72" rx="18" ry="14" fill="#b8957a"/>
+            <circle cx="55" cy="50" r="15" fill="#b8957a"/>
+            <path d="M 40,64 Q 55,76 70,64" stroke="#2e7d32" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <circle cx="83" cy="28" r="10" fill="#2e7d32"/>
+            <text x="83" y="33" text-anchor="middle" font-size="11" fill="white">😊</text>
+          </svg></div>
+        </div>
+      </td>
+
+      <!-- NEGATIVE -->
+      <td>
+        <div style="text-align:center;margin-bottom:.5rem;">
+          <span class="state-tag" style="background:#ffebee;color:#c62828;">Negative</span>
+        </div>
+        <div class="grid">
+          <div class="cell"><svg viewBox="0 0 110 130" width="92" height="108">
+            <path d="M 5,130 L 18,104 Q 55,92 92,104 L 105,130 Z" fill="#1c4b61"/>
+            <circle cx="55" cy="58" r="38" fill="#dde8f0" stroke="#c62828" stroke-width="4"/>
+            <ellipse cx="55" cy="72" rx="18" ry="14" fill="#b0c8d8"/>
+            <circle cx="55" cy="50" r="15" fill="#b0c8d8"/>
+            <path d="M 40,68 Q 55,56 70,68" stroke="#c62828" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <circle cx="83" cy="28" r="10" fill="#c62828"/>
+            <text x="83" y="33" text-anchor="middle" font-size="11" fill="white">😟</text>
+          </svg></div>
+          <div class="cell"><svg viewBox="0 0 110 130" width="92" height="108">
+            <path d="M 5,130 L 18,104 Q 55,92 92,104 L 105,130 Z" fill="#578ead"/>
+            <circle cx="55" cy="58" r="38" fill="#f0e8dd" stroke="#c62828" stroke-width="4"/>
+            <ellipse cx="55" cy="72" rx="18" ry="14" fill="#d4b898"/>
+            <circle cx="55" cy="50" r="15" fill="#d4b898"/>
+            <path d="M 40,68 Q 55,56 70,68" stroke="#c62828" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <circle cx="83" cy="28" r="10" fill="#c62828"/>
+            <text x="83" y="33" text-anchor="middle" font-size="11" fill="white">😟</text>
+          </svg></div>
+          <div class="cell"><svg viewBox="0 0 110 130" width="92" height="108">
+            <path d="M 5,130 L 18,104 Q 55,92 92,104 L 105,130 Z" fill="#2d6a8a"/>
+            <circle cx="55" cy="58" r="38" fill="#ead5c0" stroke="#c62828" stroke-width="4"/>
+            <ellipse cx="55" cy="72" rx="18" ry="14" fill="#c9956a"/>
+            <circle cx="55" cy="50" r="15" fill="#c9956a"/>
+            <path d="M 40,68 Q 55,56 70,68" stroke="#c62828" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <circle cx="83" cy="28" r="10" fill="#c62828"/>
+            <text x="83" y="33" text-anchor="middle" font-size="11" fill="white">😟</text>
+          </svg></div>
+          <div class="cell"><svg viewBox="0 0 110 130" width="92" height="108">
+            <path d="M 5,130 L 18,104 Q 55,92 92,104 L 105,130 Z" fill="#0d3349"/>
+            <circle cx="55" cy="58" r="38" fill="#e8ddd0" stroke="#c62828" stroke-width="4"/>
+            <ellipse cx="55" cy="72" rx="18" ry="14" fill="#b8957a"/>
+            <circle cx="55" cy="50" r="15" fill="#b8957a"/>
+            <path d="M 40,68 Q 55,56 70,68" stroke="#c62828" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <circle cx="83" cy="28" r="10" fill="#c62828"/>
+            <text x="83" y="33" text-anchor="middle" font-size="11" fill="white">😟</text>
+          </svg></div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- ═══════════════════════════════════════════════
+         OPTION C — Emoji
+    ═══════════════════════════════════════════════ -->
+    <tr>
+      <td class="label">Option C<br/>Emoji<br/>Style</td>
+
+      <!-- BEFORE -->
+      <td>
+        <div style="text-align:center;margin-bottom:.5rem;">
+          <span class="state-tag" style="background:#e8e8d8;color:#666;">Before</span>
+        </div>
+        <div class="grid">
+          <div class="cell"><div style="display:flex;flex-direction:column;align-items:center;gap:5px;">
+            <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#FDBCB4,#f0a090);display:flex;align-items:center;justify-content:center;font-size:2.5rem;box-shadow:0 2px 8px rgba(0,0,0,.1);">😐</div>
+          </div></div>
+          <div class="cell"><div style="display:flex;flex-direction:column;align-items:center;gap:5px;">
+            <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#8D5524,#6b3e18);display:flex;align-items:center;justify-content:center;font-size:2.5rem;box-shadow:0 2px 8px rgba(0,0,0,.1);">😐</div>
+          </div></div>
+          <div class="cell"><div style="display:flex;flex-direction:column;align-items:center;gap:5px;">
+            <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#F1C27D,#e0a860);display:flex;align-items:center;justify-content:center;font-size:2.5rem;box-shadow:0 2px 8px rgba(0,0,0,.1);">😐</div>
+          </div></div>
+          <div class="cell"><div style="display:flex;flex-direction:column;align-items:center;gap:5px;">
+            <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#C68642,#a0673e);display:flex;align-items:center;justify-content:center;font-size:2.5rem;box-shadow:0 2px 8px rgba(0,0,0,.1);">😐</div>
+          </div></div>
+        </div>
+      </td>
+
+      <!-- POSITIVE -->
+      <td>
+        <div style="text-align:center;margin-bottom:.5rem;">
+          <span class="state-tag" style="background:#e8f5e9;color:#2e7d32;">Positive</span>
+        </div>
+        <div class="grid">
+          <div class="cell"><div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#FDBCB4,#f0a090);border:3px solid #2e7d32;display:flex;align-items:center;justify-content:center;font-size:2.5rem;box-shadow:0 2px 8px rgba(0,0,0,.1);">😄</div></div>
+          <div class="cell"><div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#8D5524,#6b3e18);border:3px solid #2e7d32;display:flex;align-items:center;justify-content:center;font-size:2.5rem;box-shadow:0 2px 8px rgba(0,0,0,.1);">😄</div></div>
+          <div class="cell"><div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#F1C27D,#e0a860);border:3px solid #2e7d32;display:flex;align-items:center;justify-content:center;font-size:2.5rem;box-shadow:0 2px 8px rgba(0,0,0,.1);">😄</div></div>
+          <div class="cell"><div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#C68642,#a0673e);border:3px solid #2e7d32;display:flex;align-items:center;justify-content:center;font-size:2.5rem;box-shadow:0 2px 8px rgba(0,0,0,.1);">😄</div></div>
+        </div>
+      </td>
+
+      <!-- NEGATIVE -->
+      <td>
+        <div style="text-align:center;margin-bottom:.5rem;">
+          <span class="state-tag" style="background:#ffebee;color:#c62828;">Negative</span>
+        </div>
+        <div class="grid">
+          <div class="cell"><div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#FDBCB4,#f0a090);border:3px solid #c62828;display:flex;align-items:center;justify-content:center;font-size:2.5rem;box-shadow:0 2px 8px rgba(0,0,0,.1);">😟</div></div>
+          <div class="cell"><div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#8D5524,#6b3e18);border:3px solid #c62828;display:flex;align-items:center;justify-content:center;font-size:2.5rem;box-shadow:0 2px 8px rgba(0,0,0,.1);">😟</div></div>
+          <div class="cell"><div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#F1C27D,#e0a860);border:3px solid #c62828;display:flex;align-items:center;justify-content:center;font-size:2.5rem;box-shadow:0 2px 8px rgba(0,0,0,.1);">😟</div></div>
+          <div class="cell"><div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#C68642,#a0673e);border:3px solid #c62828;display:flex;align-items:center;justify-content:center;font-size:2.5rem;box-shadow:0 2px 8px rgba(0,0,0,.1);">😟</div></div>
+        </div>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<div style="margin-top:1.5rem;background:white;border-radius:12px;padding:1.1rem 1.4rem;font-size:0.85rem;color:#578ead;line-height:1.7;max-width:960px;">
+  <strong style="color:#1c4b61;">Notes:</strong>
+  Option A = current build, simple cartoon faces.
+  Option B = photo-frame silhouettes — drop in your real headshots and the quiz updates instantly; the colored border + emoji dot makes the reaction unambiguous even at a glance.
+  Option C = emoji-only — fastest to read but feels less like a professional assessment tool.
 </div>
 
 </body>
