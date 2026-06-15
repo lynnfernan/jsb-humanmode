@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 
 // GIF display duration in ms — matches EZGif settings:
 // Frame 1 (neutral): 1750ms + Frame 2 (emotional): 5000ms + buffer
-const GIF_DISPLAY_MS = 7500
+const GIF_DISPLAY_MS = 1750
 
 export default function SceneDisplay({ scenario, onComplete }) {
   const [secondsLeft, setSecondsLeft] = useState(Math.ceil(GIF_DISPLAY_MS / 1000))
