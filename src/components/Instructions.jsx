@@ -1,59 +1,84 @@
 import React from 'react'
 
-export default function Instructions({ onStart }) {
+export default function Instructions({ onStart, firstName }) {
   return (
-    <div className="quiz-card">
-      <div className="card-header">
-        <div className="brand-name">Jeffrey Sanchez-Burks</div>
-        <div className="brand-tagline">Human Mode, Always</div>
-        <span className="badge">EAM™ Assessment</span>
-        <h1 style={{ fontSize: '1.6rem', marginBottom: '0.4rem' }}>How This Works</h1>
-        <p style={{ color: '#578ead', fontSize: '0.9rem' }}>Read carefully before beginning.</p>
-      </div>
+    <div className="app-shell">
+      <nav className="top-bar">
+        <div className="top-bar-brand">
+          <span className="top-bar-name">Jeffrey Sanchez-Burks</span>
+          <span className="top-bar-tagline">Human Mode, Always</span>
+        </div>
+        <span className="top-bar-badge">Instructions</span>
+      </nav>
 
-      <ol
-        style={{
-          paddingLeft: '1.3rem',
-          fontSize: '0.9rem',
-          lineHeight: 1.8,
-          color: '#1c4b61',
-        }}
-      >
-        <li style={{ marginBottom: '1rem' }}>
-          You'll see a series of brief two-part scenes. First, a group of four people{' '}
-          <strong>before</strong> an organizational event — then their <strong>reaction</strong> to it.
-          Each clip lasts about 2 seconds, just like real-world emotional displays.
-        </li>
-        <li style={{ marginBottom: '1rem' }}>
-          After each scene, use the sliders to estimate:{' '}
-          <strong>what percentage of the group showed a positive reaction?</strong> And{' '}
-          <strong>what percentage showed a negative reaction?</strong>
-        </li>
-        <li style={{ marginBottom: '1rem' }}>
-          Positive and negative reactions <strong>do not need to add up to 100%</strong> — some
-          people may remain neutral.
-        </li>
-        <li style={{ marginBottom: '1rem' }}>
-          Treat what you see as the group's genuine feelings. There are no trick questions.
-        </li>
-        <li>
-          You'll begin with <strong>2 practice rounds</strong> with feedback before the main
-          22-scene assessment.
-        </li>
-      </ol>
+      <div className="page">
+        <div className="card">
+          <div className="card-hero">
+            <span className="eyebrow-light">Before you begin</span>
+            <h1 className="display" style={{ fontSize: 'clamp(1.4rem, 3vw, 1.9rem)' }}>
+              {firstName ? `Here's how it works, ${firstName}.` : "Here's how it works."}
+            </h1>
+          </div>
 
-      <div
-        className="info-box"
-        style={{ marginTop: '1.5rem', color: '#578ead', fontSize: '0.85rem' }}
-      >
-        <strong style={{ color: '#1c4b61' }}>Time estimate:</strong> approximately 8 minutes to
-        complete.
-      </div>
+          <div className="card-body">
+            <p className="body-lg" style={{ marginBottom: '1.75rem' }}>
+              You'll watch a short animated scene — a group of four people reacting to something. 
+              Your job is to estimate what percentage of the group felt a positive reaction 
+              versus a negative one.
+            </p>
 
-      <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-        <button className="btn" onClick={onStart} style={{ minWidth: '240px', fontSize: '1.05rem' }}>
-          Begin Practice Trials →
-        </button>
+            <ol className="instruction-steps">
+              {[
+                {
+                  title: 'Watch the scene once.',
+                  detail: 'Each animation plays through one time. Pay attention to all four faces — not just the loudest reaction.',
+                },
+                {
+                  title: 'Estimate the split.',
+                  detail: 'Use the sliders to indicate: what percentage of the group reacted positively, and what percentage reacted negatively. They should add up to 100%.',
+                },
+                {
+                  title: 'Trust your gut.',
+                  detail: "There's no trick. You're measuring your natural ability to read group-level emotion — not individual faces.",
+                },
+                {
+                  title: 'Two practice rounds first.',
+                  detail: "You'll get feedback on your estimates before the real assessment begins. Use them to calibrate.",
+                },
+              ].map((step, i) => (
+                <li key={i} className="instruction-step">
+                  <div className="step-number">{i + 1}</div>
+                  <div className="step-text">
+                    <strong>{step.title}</strong>{' '}
+                    {step.detail}
+                  </div>
+                </li>
+              ))}
+            </ol>
+
+            <div className="divider" style={{ margin: '1.5rem 0' }} />
+
+            <div style={{
+              background: 'var(--cream)',
+              borderRadius: 'var(--radius-sm)',
+              padding: '1rem 1.25rem',
+              marginBottom: '1.5rem',
+              borderLeft: '3px solid var(--slate)',
+            }}>
+              <p style={{ fontSize: '0.875rem', lineHeight: 1.65, color: 'var(--ink)' }}>
+                <strong style={{ color: 'var(--navy)' }}>Why this matters:</strong>{' '}
+                Leaders who can perceive the full spread of emotions across their team — 
+                not just the average mood, but who's energized and who's struggling — 
+                intervene earlier and build stronger teams. This is emotional aperture. 
+                Today you'll find out where yours stands.
+              </p>
+            </div>
+
+            <button className="btn btn-full" onClick={onStart}>
+              Begin Practice →
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   )

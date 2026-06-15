@@ -1,323 +1,170 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-function ScoreRing({ score, label }) {
-  const clamp = Math.min(100, Math.max(0, score))
+const TYPE_COLORS = {
+  'Two-Emotion Blend': '#578ead',
+  'Emotion Transition': '#2a7d4f',
+  'Single Emotion + Neutral': '#b45309',
+  'All-Negative, Different': '#7c3aed',
+  'All-Negative, Similar': '#b03a2e',
+  'All-Positive': '#1c4b61',
+}
+
+function ScoreRing({ accuracy }) {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <div
-        style={{
-          width: 168,
-          height: 168,
-          borderRadius: '50%',
-          background: `conic-gradient(#1c4b61 0% ${clamp}%, #e4e4d4 ${clamp}% 100%)`,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <div
-          style={{
-            width: 134,
-            height: 134,
-            borderRadius: '50%',
-            background: 'white',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '0.1rem',
-          }}
-        >
-          <span
-            style={{
-              fontFamily: 'Sofia Sans, sans-serif',
-              fontWeight: 700,
-              fontSize: '1.9rem',
-              color: '#1c4b61',
-              lineHeight: 1,
-            }}
-          >
-            {score.toFixed(1)}%
-          </span>
-          <span
-            style={{
-              fontFamily: 'Saira, sans-serif',
-              fontSize: '0.65rem',
-              color: '#578ead',
-              letterSpacing: '0.06em',
-              textTransform: 'uppercase',
-            }}
-          >
-            {label}
-          </span>
+    <div className="score-ring">
+      <div className="score-number">{accuracy}</div>
+      <div className="score-label">Accuracy</div>
+    </div>
+  )
+}
+
+function ShareCard({ profile, accuracy, onCopy, copied }) {
+  return (
+    <div className="share-section">
+      <span className="eyebrow" style={{ textAlign: 'center', display: 'block', marginBottom: '1rem' }}>
+        Share your result
+      </span>
+
+      <div className="share-card">
+        <span className="share-card-eyebrow">Emotional Aperture Assessment</span>
+        <div className="share-card-type">{profile.name}</div>
+        <div className="share-card-sub">{profile.tagline}</div>
+        <div className="share-card-score">
+          {accuracy}/100 accuracy · Jeffrey Sanchez-Burks
         </div>
       </div>
-    </div>
-  )
-}
 
-function DeltaBadge({ score, benchmark }) {
-  const diff = score - benchmark
-  const isAbove = diff >= 0
-  return (
-    <span
-      style={{
-        background: isAbove ? '#e8f5e9' : '#ffebee',
-        color: isAbove ? '#2e7d32' : '#c62828',
-        fontFamily: 'Sofia Sans, sans-serif',
-        fontWeight: 700,
-        fontSize: '0.78rem',
-        padding: '0.2rem 0.55rem',
-        borderRadius: '6px',
-        whiteSpace: 'nowrap',
-      }}
-    >
-      {isAbove ? '+' : ''}{diff.toFixed(1)}% vs avg
-    </span>
-  )
-}
-
-function AccuracyCard({ label, score, benchmark, color }) {
-  return (
-    <div
-      style={{
-        background: '#f7f7f0',
-        borderRadius: '12px',
-        padding: '1.25rem',
-        borderLeft: `4px solid ${color}`,
-      }}
-    >
-      <h4 style={{ fontSize: '0.82rem', color: '#578ead', marginBottom: '0.4rem' }}>{label}</h4>
-      <div
-        style={{
-          fontFamily: 'Sofia Sans, sans-serif',
-          fontWeight: 700,
-          fontSize: '1.8rem',
-          color,
-          lineHeight: 1,
-          marginBottom: '0.4rem',
-        }}
-      >
-        {score.toFixed(1)}%
-      </div>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-        <span style={{ fontSize: '0.75rem', color: '#aaa' }}>Avg: {benchmark}%</span>
-        <DeltaBadge score={score} benchmark={benchmark} />
-      </div>
-    </div>
-  )
-}
-
-function BiasCard({ label, score, description }) {
-  return (
-    <div style={{ background: '#f7f7f0', borderRadius: '12px', padding: '1.25rem' }}>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'flex-start',
-          marginBottom: '0.5rem',
-        }}
-      >
-        <h4 style={{ fontSize: '0.82rem', color: '#1c4b61', maxWidth: '70%' }}>{label}</h4>
-        <span
-          style={{
-            fontFamily: 'Sofia Sans, sans-serif',
-            fontWeight: 700,
-            fontSize: '1.25rem',
-            color: '#578ead',
-          }}
+      <div className="share-buttons">
+        <a
+          className="share-btn share-btn-linkedin"
+          href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://jsb-humanmode.vercel.app')}&summary=${encodeURIComponent(`I just took the Emotional Aperture Assessment by Jeffrey Sanchez-Burks. My result: ${profile.name}. ${profile.shareText} Take it yourself:`)}`}
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          {score.toFixed(1)}%
-        </span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          Share on LinkedIn
+        </a>
+
+        <button
+          className="share-btn share-btn-copy"
+          onClick={onCopy}
+        >
+          {copied ? '✓ Copied!' : '🔗 Copy Link'}
+        </button>
       </div>
-      <p style={{ fontSize: '0.78rem', color: '#578ead', lineHeight: 1.55 }}>{description}</p>
     </div>
   )
 }
 
 export default function Results({ scores, leadData, onRetake }) {
-  const {
-    overallScore,
-    posAccuracy,
-    negAccuracy,
-    pessimisticBias,
-    roseTintedBias,
-    posBlindSpot,
-    negBlindSpot,
-    benchmarks,
-    n,
-  } = scores
+  const [copied, setCopied] = useState(false)
+
+  if (!scores) return null
+
+  const { overallAccuracy, typeScores, profile } = scores
+  const firstName = leadData?.firstName || ''
+
+  const handleCopy = () => {
+    const text = `${profile.name} — ${profile.tagline}\nI scored ${overallAccuracy}/100 on the Emotional Aperture Assessment by Jeffrey Sanchez-Burks.\nTake it: https://jsb-humanmode.vercel.app`
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2500)
+    })
+  }
 
   return (
-    <div className="quiz-card" style={{ maxWidth: 700 }}>
-      {/* Header */}
-      <div className="card-header">
-        <div className="brand-name">Jeffrey Sanchez-Burks</div>
-        <div className="brand-tagline">Human Mode, Always</div>
-        <span className="badge">Your EAM™ Results</span>
-        <h1 style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>
-          Emotional Aperture Score
-        </h1>
-        {leadData?.name && (
-          <p style={{ color: '#578ead', fontSize: '0.88rem' }}>Results for {leadData.name}</p>
-        )}
-      </div>
-
-      {/* Overall gauge */}
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '0.5rem',
-          marginBottom: '0.75rem',
-        }}
-      >
-        <ScoreRing score={overallScore} label="EA Score" />
-        <p style={{ fontSize: '0.78rem', color: '#aaa', textAlign: 'center' }}>
-          Average score: {benchmarks.overall}% &nbsp;·&nbsp; Based on {n} scenes &nbsp;·&nbsp; Higher = more accurate
-        </p>
-        <DeltaBadge score={overallScore} benchmark={benchmarks.overall} />
-      </div>
-
-      <div className="divider" />
-
-      {/* Accuracy breakdown */}
-      <h2 style={{ fontSize: '1.05rem', marginBottom: '0.85rem' }}>Accuracy Breakdown</h2>
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '1rem',
-          marginBottom: '2rem',
-        }}
-      >
-        <AccuracyCard
-          label="Positive Reactions"
-          score={posAccuracy}
-          benchmark={benchmarks.positive}
-          color="#2e7d32"
-        />
-        <AccuracyCard
-          label="Negative Reactions"
-          score={negAccuracy}
-          benchmark={benchmarks.negative}
-          color="#c62828"
-        />
-      </div>
-
-      <div className="divider" />
-
-      {/* Overestimation biases */}
-      <h2 style={{ fontSize: '1.05rem', marginBottom: '0.35rem' }}>Overestimation Biases</h2>
-      <p style={{ fontSize: '0.82rem', color: '#578ead', marginBottom: '0.85rem' }}>
-        How often you overestimated the proportion of emotional reactions in a group.
-      </p>
-      <div
-        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}
-      >
-        <BiasCard
-          label='"Pessimistic" Bias'
-          score={pessimisticBias}
-          description="% of scenes where you overestimated negative reactions — you saw more distress than was present."
-        />
-        <BiasCard
-          label='"Rose-Tinted" Bias'
-          score={roseTintedBias}
-          description="% of scenes where you overestimated positive reactions — you saw more enthusiasm than was present."
-        />
-      </div>
-
-      <div className="divider" />
-
-      {/* Blind spots */}
-      <h2 style={{ fontSize: '1.05rem', marginBottom: '0.35rem' }}>Blind Spots</h2>
-      <p style={{ fontSize: '0.82rem', color: '#578ead', marginBottom: '0.85rem' }}>
-        How often you underestimated reactions — the emotions you tend to miss.
-      </p>
-      <div
-        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}
-      >
-        <BiasCard
-          label="Positive Blind Spot"
-          score={posBlindSpot}
-          description="% of scenes where you underestimated positive reactions — missed enthusiasm or agreement in the room."
-        />
-        <BiasCard
-          label="Negative Blind Spot"
-          score={negBlindSpot}
-          description="% of scenes where you underestimated negative reactions — missed concern or resistance in the room."
-        />
-      </div>
-
-      <div className="divider" />
-
-      {/* Interpretation */}
-      <div className="info-box" style={{ marginBottom: '1.5rem' }}>
-        <h4 style={{ marginBottom: '0.4rem' }}>What This Means</h4>
-        <p style={{ fontSize: '0.875rem', lineHeight: 1.7 }}>
-          Your Emotional Aperture score reflects your capacity to accurately read the collective
-          emotional climate in groups — a critical leadership and communication skill. Biases and
-          blind spots highlight where systematic errors occur. For deeper development on Emotional
-          Aperture, explore Jeffrey Sanchez-Burks' Human Mode leadership programs.
-        </p>
-      </div>
-
-      {/* Email notice (placeholder) */}
-      {leadData?.email && (
-        <div
-          style={{
-            background: '#eef5fa',
-            borderRadius: '10px',
-            padding: '0.875rem 1.125rem',
-            marginBottom: '1.5rem',
-            fontSize: '0.82rem',
-            color: '#1c4b61',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.6rem',
-          }}
-        >
-          <span style={{ fontSize: '1rem' }}>📧</span>
-          <span>
-            Results will be emailed to <strong>{leadData.email}</strong> once delivery is
-            configured.
-          </span>
+    <div className="app-shell">
+      <nav className="top-bar">
+        <div className="top-bar-brand">
+          <span className="top-bar-name">Jeffrey Sanchez-Burks</span>
+          <span className="top-bar-tagline">Human Mode, Always</span>
         </div>
-      )}
+        <span className="top-bar-badge">Your Results</span>
+      </nav>
 
-      {/* Actions */}
-      <div
-        className="no-print"
-        style={{
-          display: 'flex',
-          gap: '1rem',
-          justifyContent: 'center',
-          flexWrap: 'wrap',
-          marginBottom: '1.5rem',
-        }}
-      >
-        <button className="btn" onClick={onRetake}>
-          Retake Assessment
-        </button>
-        <button className="btn btn-outline" onClick={() => window.print()}>
-          Print / Save PDF
-        </button>
+      <div className="page">
+        <div className="card">
+
+          {/* Hero */}
+          <div className="results-hero">
+            <span className="eyebrow-light">
+              {firstName ? `${firstName}'s Result` : 'Your Result'}
+            </span>
+            <ScoreRing accuracy={overallAccuracy} />
+            <div className="profile-type">{profile.name}</div>
+            <div className="profile-tagline">{profile.tagline}</div>
+          </div>
+
+          {/* Insight */}
+          <div className="insight-section">
+            <span className="eyebrow">What this means</span>
+            {profile.insight.split('\n\n').map((para, i) => (
+              <p key={i} className="insight-text" style={{ marginBottom: i < profile.insight.split('\n\n').length - 1 ? '1rem' : 0 }}>
+                {para}
+              </p>
+            ))}
+          </div>
+
+          <div className="divider" />
+
+          {/* Breakdown by type */}
+          <div className="breakdown-section">
+            <span className="eyebrow" style={{ marginBottom: '1.25rem' }}>Accuracy by scenario type</span>
+            {typeScores.map(({ type, accuracy }) => (
+              <div key={type} className="breakdown-row">
+                <span className="breakdown-label">{type.replace(', ', ',\n')}</span>
+                <div className="breakdown-bar-wrap">
+                  <div
+                    className="breakdown-bar"
+                    style={{
+                      width: `${accuracy}%`,
+                      background: TYPE_COLORS[type] || 'var(--slate)',
+                    }}
+                  />
+                </div>
+                <span className="breakdown-score">{accuracy}%</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="divider" />
+
+          {/* Share */}
+          <ShareCard
+            profile={profile}
+            accuracy={overallAccuracy}
+            onCopy={handleCopy}
+            copied={copied}
+          />
+
+          <div className="divider" />
+
+          {/* CTA */}
+          <div className="practice-cta">
+            <p>
+              Jeffrey's book <em>MATTERING</em> — releasing late 2026 — builds on this 
+              research with a complete framework for leading with full awareness. 
+              You're on the list.
+            </p>
+            <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <a
+                className="btn btn-slate"
+                href="https://workties.org"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Go Deeper at workties.org →
+              </a>
+              <button className="btn btn-outline" onClick={onRetake}>
+                Retake Assessment
+              </button>
+            </div>
+          </div>
+
+        </div>
       </div>
-
-      <p
-        style={{
-          textAlign: 'center',
-          fontSize: '0.68rem',
-          color: '#ccc',
-          lineHeight: 1.6,
-        }}
-      >
-        Copyright © 2008 J. Sanchez-Burks. All rights reserved.
-        <br />
-        EAM™ Emotional Aperture Measurement
-      </p>
     </div>
   )
 }

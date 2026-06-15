@@ -1,75 +1,81 @@
-import React, { useState, useEffect } from 'react'
-import FaceGrid from './FaceGrid'
+import React, { useState, useEffect, useRef } from 'react'
 
-const BEFORE_MS = 1500
-const AFTER_MS = 2000
+// GIF display duration in ms — matches EZGif settings:
+// Frame 1 (neutral): 1750ms + Frame 2 (emotional): 5000ms + buffer
+const GIF_DISPLAY_MS = 7500
 
 export default function SceneDisplay({ scenario, onComplete }) {
-  const [stage, setStage] = useState('before')
+  const [secondsLeft, setSecondsLeft] = useState(Math.ceil(GIF_DISPLAY_MS / 1000))
+  const [gifError, setGifError] = useState(false)
+  const timerRef = useRef(null)
+  const completeRef = useRef(false)
 
   useEffect(() => {
-    setStage('before')
-    const t1 = setTimeout(() => setStage('after'), BEFORE_MS)
-    const t2 = setTimeout(() => onComplete(), BEFORE_MS + AFTER_MS)
+    completeRef.current = false
+    setGifError(false)
+    setSecondsLeft(Math.ceil(GIF_DISPLAY_MS / 1000))
+
+    // Countdown
+    timerRef.current = setInterval(() => {
+      setSecondsLeft(prev => {
+        if (prev <= 1) {
+          clearInterval(timerRef.current)
+          return 0
+        }
+        return prev - 1
+      })
+    }, 1000)
+
+    // Auto-advance after GIF completes
+    const completeTimer = setTimeout(() => {
+      if (!completeRef.current) {
+        completeRef.current = true
+        onComplete()
+      }
+    }, GIF_DISPLAY_MS)
+
     return () => {
-      clearTimeout(t1)
-      clearTimeout(t2)
+      clearInterval(timerRef.current)
+      clearTimeout(completeTimer)
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scenario.id])
 
-  const emotions =
-    stage === 'before'
-      ? ['neutral', 'neutral', 'neutral', 'neutral']
-      : scenario.faces
+  const gifPath = `/gifs/${scenario.gifFile}`
 
   return (
     <div>
-      {/* Stage label */}
-      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
-        <span
-          style={{
-            background: stage === 'before' ? 'rgba(87,142,173,0.18)' : '#1c4b61',
-            color: stage === 'before' ? '#1c4b61' : 'white',
-            fontFamily: 'Saira, sans-serif',
-            fontWeight: 600,
-            fontSize: '0.72rem',
-            letterSpacing: '0.1em',
-            padding: '0.25rem 0.85rem',
-            borderRadius: '100px',
-            textTransform: 'uppercase',
-            transition: 'background 0.3s, color 0.3s',
-          }}
-        >
-          {stage === 'before' ? 'Before' : 'Reaction'}
-        </span>
-      </div>
+      <p className="gif-instruction">Watch all four reactions carefully</p>
 
-      {/* Countdown dots */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '6px', marginBottom: '0.75rem' }}>
-        {[0, 1, 2].map((i) => (
-          <div
-            key={i}
-            style={{
-              width: 6,
-              height: 6,
-              borderRadius: '50%',
-              background: '#578ead',
-              opacity: 0.4,
-              animation: `pulse ${stage === 'before' ? '1.5s' : '2s'} ease-in-out ${i * 0.2}s infinite`,
-            }}
+      <div className="gif-stage">
+        {gifError ? (
+          <div className="gif-placeholder">
+            <div className="gif-placeholder-icon">🎬</div>
+            <div className="gif-placeholder-text">{scenario.gifFile} — coming soon</div>
+          </div>
+        ) : (
+          <img
+            key={scenario.id}
+            src={gifPath}
+            alt={`Scene ${scenario.label || scenario.id}`}
+            onError={() => setGifError(true)}
+            style={{ width: '100%', display: 'block' }}
           />
-        ))}
+        )}
+
+        {secondsLeft > 0 && (
+          <div className="gif-countdown">{secondsLeft}s</div>
+        )}
       </div>
 
-      <FaceGrid emotions={emotions} size={105} />
-
-      <style>{`
-        @keyframes pulse {
-          0%, 100% { opacity: 0.25; transform: scale(0.85); }
-          50% { opacity: 1; transform: scale(1); }
-        }
-      `}</style>
+      <p style={{
+        textAlign: 'center',
+        fontSize: '0.8rem',
+        color: 'var(--muted)',
+        lineHeight: 1.5,
+        fontFamily: 'Saira',
+      }}>
+        The sliders will appear when the scene finishes.
+      </p>
     </div>
   )
 }

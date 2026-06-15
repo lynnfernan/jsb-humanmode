@@ -1,46 +1,119 @@
-const BENCHMARKS = {
-  overall: 79.2,
-  positive: 83.5,
-  negative: 74.9,
-}
+// Emotional Aperture — Scoring Engine
+// Measures accuracy of group-level emotional perception
+// Error = absolute deviation from correct percentage (0–100 scale)
+// Lower error = higher aperture accuracy
 
 export function computeScores(responses, scenarios) {
-  const n = Math.min(responses.length, scenarios.length)
-  if (n === 0) return null
+  if (!responses || responses.length === 0) return null
 
-  let totalPosAcc = 0
-  let totalNegAcc = 0
-  let pessimisticCount = 0
-  let roseTintedCount = 0
-  let posBlindSpotCount = 0
-  let negBlindSpotCount = 0
+  const itemScores = responses.map((resp, i) => {
+    const scenario = scenarios[i]
+    if (!scenario) return null
 
-  for (let i = 0; i < n; i++) {
-    const { posEstimate, negEstimate } = responses[i]
-    const { correctPositive, correctNegative } = scenarios[i]
+    const posError = Math.abs(resp.posEstimate - scenario.correctPositive)
+    const negError = Math.abs(resp.negEstimate - scenario.correctNegative)
+    const avgError = (posError + negError) / 2
+    const accuracy = Math.max(0, 100 - avgError)
 
-    totalPosAcc += Math.max(0, 100 - Math.abs(correctPositive - posEstimate))
-    totalNegAcc += Math.max(0, 100 - Math.abs(correctNegative - negEstimate))
+    return {
+      id: scenario.id,
+      apertureType: scenario.apertureType,
+      posEstimate: resp.posEstimate,
+      negEstimate: resp.negEstimate,
+      correctPositive: scenario.correctPositive,
+      correctNegative: scenario.correctNegative,
+      posError,
+      negError,
+      avgError,
+      accuracy,
+    }
+  }).filter(Boolean)
 
-    if (negEstimate > correctNegative) pessimisticCount++
-    if (posEstimate > correctPositive) roseTintedCount++
-    if (posEstimate < correctPositive) posBlindSpotCount++
-    if (negEstimate < correctNegative) negBlindSpotCount++
-  }
+  // Overall accuracy
+  const overallAccuracy = Math.round(
+    itemScores.reduce((sum, s) => sum + s.accuracy, 0) / itemScores.length
+  )
 
-  const posAccuracy = totalPosAcc / n
-  const negAccuracy = totalNegAcc / n
-  const overallScore = (posAccuracy + negAccuracy) / 2
+  // Accuracy by aperture type
+  const byType = {}
+  itemScores.forEach((s) => {
+    if (!byType[s.apertureType]) byType[s.apertureType] = []
+    byType[s.apertureType].push(s.accuracy)
+  })
+
+  const typeScores = Object.entries(byType).map(([type, scores]) => ({
+    type,
+    accuracy: Math.round(scores.reduce((a, b) => a + b, 0) / scores.length),
+    count: scores.length,
+  })).sort((a, b) => b.accuracy - a.accuracy)
+
+  // Bias: does the person over/under-estimate positive emotions?
+  const posErrors = itemScores.map(s => s.posEstimate - s.correctPositive)
+  const avgBias = posErrors.reduce((a, b) => a + b, 0) / posErrors.length
+  // positive bias = overestimates positive; negative = underestimates
+
+  // Profile assignment
+  const profile = assignProfile(overallAccuracy, avgBias, typeScores)
 
   return {
-    overallScore: Math.round(overallScore * 10) / 10,
-    posAccuracy: Math.round(posAccuracy * 10) / 10,
-    negAccuracy: Math.round(negAccuracy * 10) / 10,
-    pessimisticBias: Math.round((pessimisticCount / n) * 1000) / 10,
-    roseTintedBias: Math.round((roseTintedCount / n) * 1000) / 10,
-    posBlindSpot: Math.round((posBlindSpotCount / n) * 1000) / 10,
-    negBlindSpot: Math.round((negBlindSpotCount / n) * 1000) / 10,
-    benchmarks: BENCHMARKS,
-    n,
+    overallAccuracy,
+    typeScores,
+    avgBias: Math.round(avgBias),
+    profile,
+    itemScores,
+    totalItems: itemScores.length,
+  }
+}
+
+function assignProfile(accuracy, bias, typeScores) {
+  // Find strongest and weakest aperture type
+  const strongest = typeScores[0]?.type || ''
+  const weakest = typeScores[typeScores.length - 1]?.type || ''
+
+  if (accuracy >= 80) {
+    return {
+      name: 'The Wide-Angle Reader',
+      tagline: 'You see the full emotional landscape.',
+      insight: `Most people lock onto one or two faces and assume they represent the group. You don't. You track the spread — who's energized, who's struggling, where the tension is quietly building. Jeffrey's research shows this is the rarest and most consequential leadership skill. In teams, it's the difference between seeing a problem coming and being surprised by it.\n\nYour next edge: the moments that will test this skill aren't the obvious ones. They're the meetings where everything looks fine on the surface. Keep scanning even when the room seems calm.`,
+      strength: 'Reading mixed and complex emotional distributions',
+      shareText: 'I just took the Emotional Aperture Assessment and scored in the top tier. Turns out I can read a room better than I thought.',
+    }
+  }
+
+  if (accuracy >= 65) {
+    if (bias > 8) {
+      return {
+        name: 'The Optimism Lens',
+        tagline: 'You read the room — but through rose-colored glass.',
+        insight: `You have real perceptual range — you notice more of what's happening in a group than most people do. But your estimates consistently tilt positive. You see the happy faces first and they anchor your read on the whole room.\n\nThis isn't a character flaw. It's a perceptual habit. And in leadership, it matters: teams where managers consistently overread positivity tend to have higher rates of unspoken struggle. The people who aren't okay have learned that you're not looking for them.\n\nOne practice: after your next team meeting, name one person who seemed fine — then ask yourself what you'd see if they weren't.`,
+        strength: 'Detecting positive emotional signals',
+        shareText: 'The Emotional Aperture Assessment just told me I read groups with an optimism bias. I see the good — but might be missing who\'s struggling.',
+      }
+    }
+    if (bias < -8) {
+      return {
+        name: 'The Vigilant Scanner',
+        tagline: 'You catch what others miss — especially the difficult.',
+        insight: `You have above-average perceptual range and a strong instinct for detecting distress. When someone in a group is struggling, you tend to notice before others do. That's a genuine leadership asset.\n\nBut your estimates lean negative — you see more difficulty than is actually there. In a team context, this can manifest as overreading tension, reading neutral faces as troubled, or feeling a sense of group stress that others don't share.\n\nThe scan routine that serves you: trust your instinct to look for who's struggling. Then check it — ask one more question before concluding the room is harder than it is.`,
+        strength: 'Detecting negative and distress signals',
+        shareText: 'The Emotional Aperture Assessment says I\'m a Vigilant Scanner — I catch difficulty early, but sometimes see more trouble than is there.',
+      }
+    }
+    return {
+      name: 'The Selective Reader',
+      tagline: 'Your aperture opens wide — for some people.',
+      insight: `You read emotional information accurately when you're paying attention — and that's most of the time. What Jeffrey's research reveals about readers like you: the gap isn't perception, it's coverage. You track certain signals well (especially at the extremes — 100% or 0%) but mixed distributions trip you up.\n\nThat's the hard part of emotional aperture. It's not about reading one person clearly. It's about holding the whole spread — the person who's energized AND the person who's checked out — at the same time.\n\nPractice: in your next team meeting, make yourself name an emotion for every person in the room before the meeting ends. Not a judgment — just a read.`,
+      strength: 'Reading uniform emotional states',
+      shareText: 'The Emotional Aperture Assessment showed me where my group-reading breaks down. Turns out mixed rooms are where I lose the thread.',
+    }
+  }
+
+  // accuracy < 65
+  return {
+    name: 'The Single-Signal Reader',
+    tagline: 'You see clearly — but not the whole picture.',
+    insight: `Here's what the research shows about scores like yours: you're not missing the emotional information in the room. You're collapsing it. When you look at a group, you register a general impression — positive or negative — and that impression smooths over the variation.\n\nThis is extremely common. Most leaders operate this way. The organizational cost is significant: the people who are quietly not okay become invisible. The conflict that's building in the team doesn't register until it's already a problem.\n\nAltimeter lock, in Jeffrey's framework, is exactly this: fixating on the general signal while losing the individual data points. The Scan Routine exists to interrupt it. You just took the first step.\n\nStart small: pick one meeting this week and track one specific person's emotional state from start to finish. Not the whole room — one person. Build the muscle from there.`,
+    strength: 'Identifying general emotional valence',
+    shareText: 'The Emotional Aperture Assessment revealed I\'m a Single-Signal Reader — I read the overall vibe but miss the variation. Working on it.',
   }
 }

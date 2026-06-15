@@ -1,114 +1,102 @@
 import React, { useState } from 'react'
 
 export default function LeadCapture({ onSubmit }) {
-  const [form, setForm] = useState({ name: '', email: '', role: '' })
-  const [errors, setErrors] = useState({})
+  const [firstName, setFirstName] = useState('')
+  const [email, setEmail] = useState('')
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
-  const set = (key) => (e) => setForm((p) => ({ ...p, [key]: e.target.value }))
-
-  const validate = () => {
-    const e = {}
-    if (!form.name.trim()) e.name = 'Please enter your name.'
-    if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
-      e.email = 'Please enter a valid email address.'
-    return e
-  }
-
-  const handleSubmit = (ev) => {
-    ev.preventDefault()
-    const errs = validate()
-    if (Object.keys(errs).length) {
-      setErrors(errs)
-      return
-    }
-    onSubmit(form)
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setError('')
+    if (!firstName.trim()) { setError('First name is required.'); return }
+    if (!email.trim() || !email.includes('@')) { setError('A valid email is required.'); return }
+    setLoading(true)
+    setTimeout(() => {
+      onSubmit({ firstName: firstName.trim(), email: email.trim() })
+    }, 400)
   }
 
   return (
-    <div className="quiz-card" style={{ maxWidth: 540 }}>
-      <div className="card-header">
-        <div className="brand-name">Jeffrey Sanchez-Burks</div>
-        <div className="brand-tagline">Human Mode, Always</div>
+    <div className="app-shell">
+      <nav className="top-bar">
+        <div className="top-bar-brand">
+          <span className="top-bar-name">Jeffrey Sanchez-Burks</span>
+          <span className="top-bar-tagline">Human Mode, Always</span>
+        </div>
+        <span className="top-bar-badge">Free Assessment</span>
+      </nav>
 
-        <h1 style={{ fontSize: '1.8rem', lineHeight: 1.2, marginBottom: '0.5rem' }}>
-          Emotional Aperture<br />Assessment
-        </h1>
-        <p style={{ color: '#578ead', fontSize: '0.95rem' }}>
-          Discover how accurately you read collective emotions — and where your biases may lie.
-        </p>
+      <div className="page">
+        <div className="card">
+          <div className="card-hero">
+            <span className="eyebrow-light">Research-Based Assessment</span>
+            <h1 className="display">Can you read the room?</h1>
+            <p style={{ color: 'rgba(241,241,226,0.75)', fontSize: '0.95rem', lineHeight: 1.7, marginTop: '1rem' }}>
+              Most leaders think they track how their team is feeling. 
+              Jeffrey's research shows most of us are only catching part of the picture.
+              This assessment measures what you actually see — not what you think you see.
+            </p>
+          </div>
+
+          <div className="card-body">
+            <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '1.75rem' }}>
+              {[
+                { icon: '⏱', label: '5 minutes' },
+                { icon: '🎬', label: '17 scenes' },
+                { icon: '📊', label: 'Instant results' },
+              ].map(({ icon, label }) => (
+                <div key={label} style={{ flex: 1, textAlign: 'center' }}>
+                  <div style={{ fontSize: '1.4rem', marginBottom: '0.25rem' }}>{icon}</div>
+                  <div style={{ fontFamily: 'Saira', fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--muted)' }}>{label}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="divider" style={{ marginBottom: '1.75rem' }} />
+
+            <form onSubmit={handleSubmit} noValidate>
+              <div className="field">
+                <label htmlFor="firstName">First Name</label>
+                <input
+                  id="firstName"
+                  type="text"
+                  placeholder="Your first name"
+                  value={firstName}
+                  onChange={e => setFirstName(e.target.value)}
+                  autoComplete="given-name"
+                />
+              </div>
+              <div className="field">
+                <label htmlFor="email">Email Address</label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  autoComplete="email"
+                />
+              </div>
+
+              {error && (
+                <p style={{ color: 'var(--negative)', fontSize: '0.85rem', marginBottom: '1rem' }}>
+                  {error}
+                </p>
+              )}
+
+              <button className="btn btn-full" type="submit" disabled={loading}>
+                {loading ? 'Starting…' : 'Start the Assessment →'}
+              </button>
+            </form>
+
+            <p style={{ fontSize: '0.75rem', color: 'var(--muted)', textAlign: 'center', marginTop: '1rem', lineHeight: 1.6 }}>
+              You'll also receive Jeffrey's monthly note on leadership and human behavior.
+              No spam. Unsubscribe anytime.
+            </p>
+          </div>
+        </div>
       </div>
-
-      <div className="info-box" style={{ marginBottom: '1.75rem' }}>
-        <strong>What you'll discover:</strong>
-        <ul style={{ marginTop: '0.5rem', paddingLeft: '1.2rem', lineHeight: 1.8 }}>
-          <li>Your overall Emotional Aperture (EA™) score</li>
-          <li>Accuracy reading positive &amp; negative group reactions</li>
-          <li>"Pessimistic" and "Rose-Tinted" overestimation biases</li>
-          <li>Your positive &amp; negative blind spots</li>
-        </ul>
-      </div>
-
-      <form onSubmit={handleSubmit} noValidate>
-        <div className="form-group">
-          <label className="form-label">Full Name *</label>
-          <input
-            className="form-input"
-            type="text"
-            placeholder="Jane Smith"
-            value={form.name}
-            onChange={set('name')}
-            autoComplete="name"
-          />
-          {errors.name && <span className="form-error">{errors.name}</span>}
-        </div>
-
-        <div className="form-group">
-          <label className="form-label">Work Email *</label>
-          <input
-            className="form-input"
-            type="email"
-            placeholder="jane@company.com"
-            value={form.email}
-            onChange={set('email')}
-            autoComplete="email"
-          />
-          {errors.email && <span className="form-error">{errors.email}</span>}
-        </div>
-
-        <div className="form-group">
-          <label className="form-label">
-            Role / Title{' '}
-            <span style={{ fontWeight: 400, color: '#aaa' }}>(optional)</span>
-          </label>
-          <input
-            className="form-input"
-            type="text"
-            placeholder="e.g. VP, Director, Team Lead"
-            value={form.role}
-            onChange={set('role')}
-          />
-        </div>
-
-        <button
-          type="submit"
-          className="btn"
-          style={{ width: '100%', padding: '1rem', fontSize: '1.05rem', marginTop: '0.25rem' }}
-        >
-          Start the Assessment →
-        </button>
-
-        <p
-          style={{
-            textAlign: 'center',
-            fontSize: '0.72rem',
-            color: '#bbb',
-            marginTop: '0.75rem',
-            lineHeight: 1.5,
-          }}
-        >
-          ~8 minutes &nbsp;·&nbsp; Results emailed to you &nbsp;·&nbsp; We respect your privacy.
-        </p>
-      </form>
     </div>
   )
 }
