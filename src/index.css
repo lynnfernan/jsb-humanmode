@@ -283,6 +283,27 @@ body {
   transition: width 0.4s ease;
 }
 
+/* ── Scene display (image frames) ── */
+.scene-display {
+  background: #f7f8f9;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+  position: relative;
+  width: 100%;
+}
+
+.scene-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
 /* ── GIF display ── */
 .gif-stage {
   background: #f7f8f9;
