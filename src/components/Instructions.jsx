@@ -20,21 +20,18 @@ export default function Instructions({ onStart, firstName }) {
 
         <div className="page">
           <div className="card">
-            <div className="card-hero">
-              <span className="eyebrow-light">You're almost ready</span>
-              <h1 className="display" style={{ fontSize: 'clamp(1.4rem, 3vw, 1.9rem)' }}>
-                Practice trials coming up.
-              </h1>
-            </div>
-            <div className="card-body" style={{ textAlign: 'center' }}>
-              <p className="body-lg" style={{ marginBottom: '0.75rem' }}>
+            <div className="card-body" style={{ textAlign: 'left', paddingTop: '3rem' }}>
+              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '1.5rem', color: 'var(--ink)' }}>
                 Next you will complete your two practice trials.
               </p>
-              <p className="body-lg" style={{ marginBottom: '1.75rem' }}>
-                The movie clips are extremely brief — please focus carefully on your screen.
+              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '2rem', color: 'var(--ink)' }}>
+                The movie clips are extremely brief so please focus carefully on your screen.
               </p>
-              <button className="btn" style={{ minWidth: 220 }} onClick={onStart}>
-                Click to Begin →
+              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '2rem', color: 'var(--ink)' }}>
+                Click to begin.
+              </p>
+              <button className="btn btn-full" onClick={onStart}>
+                →
               </button>
             </div>
           </div>
@@ -43,7 +40,7 @@ export default function Instructions({ onStart, firstName }) {
     )
   }
 
-  // Screen 1 — Full instructions
+  // Screen 1 — Full instructions matching Qualtrics exactly
   return (
     <div className="app-shell">
       <nav className="top-bar">
@@ -56,66 +53,85 @@ export default function Instructions({ onStart, firstName }) {
 
       <div className="page">
         <div className="card">
-          <div className="card-hero">
-            <span className="eyebrow-light">Read carefully before you begin</span>
-            <h1 className="display" style={{ fontSize: 'clamp(1.4rem, 3vw, 1.9rem)' }}>
-              {firstName ? `Here's how it works, ${firstName}.` : "Here's how it works."}
-            </h1>
-          </div>
-
           <div className="card-body">
-            <ol className="instruction-steps">
-              {[
-                {
-                  title: 'You will see a series of brief, two-clip "movies."',
-                  detail: 'In each movie, imagine you see a group of employees just before hearing about an event in their organization — and then their reaction to it.',
-                },
-                {
-                  title: 'Following each movie, you will be asked about the group\'s emotional reaction.',
-                  detail: 'Specifically, you will indicate what percent of the group showed positive and negative emotion.',
-                },
-                {
-                  title: 'Positive and negative reactions do not need to add up to 100%.',
-                  detail: 'Some employees may show no reaction — that is, some individuals could appear neutral. Therefore the positive and negative reactions you see do not need to add up to 100%.',
-                },
-                {
-                  title: 'The emotional reactions appear and disappear rapidly.',
-                  detail: 'Much like they do in the real world. For the purposes of this assessment, imagine the emotions you see reflect the employees\' true feelings.',
-                },
-                {
-                  title: 'Each two-clip sequence is followed by two questions.',
-                  detail: 'Sequences may differ slightly in length or format from previous ones. This is normal. After viewing each movie, the page will auto-advance to the questions.',
-                },
-              ].map((step, i) => (
-                <li key={i} className="instruction-step">
-                  <div className="step-number">{i + 1}</div>
-                  <div className="step-text">
-                    <strong>{step.title}</strong>{' '}
-                    {step.detail}
-                  </div>
-                </li>
-              ))}
+            <h2 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1.5rem', color: 'var(--ink)' }}>
+              Read the following instructions carefully:
+            </h2>
+
+            <ol className="instruction-steps" style={{ marginBottom: '1.5rem' }}>
+              <li className="instruction-step">
+                <div className="step-number">1</div>
+                <div className="step-text">
+                  You will see a series of brief, two-clip "movies." In each movie, imagine you see a
+                  group of employees just before hearing about an event in their organization and then
+                  their reaction. Following each movie, you will be asked about the group's emotional
+                  reaction to the event. Specifically, you will indicate what percent of the group
+                  showed positive and negative emotion.
+                </div>
+              </li>
+
+              <li className="instruction-step">
+                <div className="step-number">2</div>
+                <div className="step-text">
+                  <strong>Please note: while the questions will ask about certain emotions, not all
+                  employees will show a reaction — that is, some employees could appear
+                  neutral. Therefore, the positive and negative reactions you see do not need to
+                  add up to 100%.</strong>
+                </div>
+              </li>
+
+              <li className="instruction-step">
+                <div className="step-number">3</div>
+                <div className="step-text">
+                  For example, if you see that 25% of the group expresses a positive emotion, this does
+                  not mean that 75% of the group must express a negative emotion. Instead, it could be
+                  the case that only 25% of the group expresses negative emotions while 50% of the
+                  group remains neutral (expressing neither positive nor negative emotions). In this case
+                  you would answer "about one-fourth (25%)" of the group" for BOTH positive and
+                  negative emotions.
+                </div>
+              </li>
+
+              <li className="instruction-step">
+                <div className="step-number">4</div>
+                <div className="step-text">
+                  After viewing each group movie, the page will auto-advance to the questions about
+                  that movie unless you are directed to click to continue.
+                </div>
+              </li>
+
+              <li className="instruction-step">
+                <div className="step-number">5</div>
+                <div className="step-text">
+                  The emotional reactions in the movies will appear and disappear rapidly, much like
+                  they do in the real world.
+                </div>
+              </li>
             </ol>
 
-            <div className="divider" style={{ margin: '1.5rem 0' }} />
-
             <div style={{
-              background: 'var(--cream)',
+              background: '#f9f7f2',
               borderRadius: 'var(--radius-sm)',
-              padding: '1rem 1.25rem',
+              padding: '1rem',
               marginBottom: '1.5rem',
-              borderLeft: '3px solid var(--slate)',
+              fontSize: '0.9rem',
+              lineHeight: 1.7,
+              color: 'var(--ink)',
             }}>
-              <p style={{ fontSize: '0.875rem', lineHeight: 1.65, color: 'var(--ink)' }}>
-                <strong style={{ color: 'var(--navy)' }}>This survey takes about 8 minutes.</strong>{' '}
-                You will complete 2 practice trials so you can familiarize yourself
-                with the movies and the format of the questions.
-                Once you are ready to begin, click the arrow below.
+              <p style={{ marginBottom: '0.75rem' }}>
+                <strong>You will complete 2 practice trials so that you can familiarize yourself with the
+                "movies" and the format of the questions.</strong>
+              </p>
+              <p style={{ marginBottom: '0.75rem' }}>
+                This survey should take about 8 minutes to complete.
+              </p>
+              <p>
+                Once you are ready to begin, click the arrow below:
               </p>
             </div>
 
             <button className="btn btn-full" onClick={() => setScreen(2)}>
-              Next →
+              →
             </button>
           </div>
         </div>
