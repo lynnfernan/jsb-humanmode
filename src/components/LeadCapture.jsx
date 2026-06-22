@@ -54,26 +54,7 @@ export default function LeadCapture({ onSubmit }) {
 
           <div className="card-body">
 
-            {/* Technical note matching original */}
-            <div style={{
-              background: '#fffbea',
-              border: '1px solid #f0e68c',
-              borderRadius: 'var(--radius-sm)',
-              padding: '0.875rem 1rem',
-              marginBottom: '1.5rem',
-            }}>
-              <p style={{
-                fontSize: '0.82rem',
-                color: '#7a6800',
-                lineHeight: 1.65,
-                fontFamily: 'Saira',
-              }}>
-                <strong>Note:</strong> Please make sure Javascript is enabled.
-                Depending on your browser settings, some images may not load properly.
-              </p>
-            </div>
-
-            {/* Original CTA text */}
+            {/* CTA text */}
             <p style={{
               fontSize: '0.9rem',
               color: 'var(--muted)',
@@ -81,9 +62,8 @@ export default function LeadCapture({ onSubmit }) {
               marginBottom: '1.5rem',
               textAlign: 'center',
             }}>
-              After submitting your responses, you will be redirected to a personalized
-              feedback report. Please provide the following information if you would like
-              to receive the report via email.
+              At the end you'll have the opportunity to receive a personalized feedback report.
+              Please provide your information below to get started.
             </p>
 
             <div className="divider" style={{ marginBottom: '1.5rem' }} />
