@@ -32,13 +32,21 @@ export default function LeadCapture({ onSubmit }) {
           <div className="card-hero">
             <span className="eyebrow-light">Jeffrey Sanchez-Burks</span>
             <h1 className="display">
-              Reading the Room™
+              Reading the Room
             </h1>
+            <p style={{
+              color: 'rgba(241,241,226,0.75)',
+              fontSize: '0.95rem',
+              lineHeight: 1.6,
+              marginTop: '0.75rem',
+              marginBottom: '1rem',
+            }}>
+              The Emotional Aperture Measure™ (EAM) Assessment
+            </p>
             <p style={{
               color: 'rgba(241,241,226,0.8)',
               fontSize: '1rem',
               lineHeight: 1.7,
-              marginTop: '1rem',
             }}>
               A skills-based assessment of how well you recognize emotional reactions in groups.
             </p>
