@@ -164,13 +164,7 @@ export default function App() {
         <div className="page">
           <div className="card">
             {phase === P.PRACTICE_SCENE && (
-              <div className="card-body">
-                <span className="eyebrow" style={{ textAlign: 'center', display: 'block' }}>
-                  Practice Round {practiceIndex + 1}
-                </span>
-                <h2 className="display-dark" style={{ textAlign: 'center', marginBottom: '0.5rem', fontSize: '1.3rem' }}>
-                  Watch the group react
-                </h2>
+              <div className="card-body" style={{ paddingTop: '3rem', paddingBottom: '3rem' }}>
                 <SceneDisplay
                   key={`p-scene-${practiceIndex}`}
                   scenario={currentPractice}
@@ -246,13 +240,7 @@ export default function App() {
         <div className="page">
           <div className="card">
             {phase === P.QUIZ_SCENE && (
-              <div className="card-body">
-                <span className="eyebrow" style={{ textAlign: 'center', display: 'block' }}>
-                  Scene {quizIndex + 1} of {QUIZ_SCENARIOS.length}
-                </span>
-                <h2 className="display-dark" style={{ textAlign: 'center', marginBottom: '0.5rem', fontSize: '1.3rem' }}>
-                  Watch the group react
-                </h2>
+              <div className="card-body" style={{ paddingTop: '3rem', paddingBottom: '3rem' }}>
                 <SceneDisplay
                   key={`q-scene-${quizIndex}`}
                   scenario={currentQuiz}

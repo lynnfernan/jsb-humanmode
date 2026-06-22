@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-export default function SceneDisplay({ scenario, onComplete }) {
+export default function SceneDisplay({ scenario, onComplete, hideLabel }) {
   const [frameIndex, setFrameIndex] = useState(0)
 
   useEffect(() => {
@@ -20,12 +20,14 @@ export default function SceneDisplay({ scenario, onComplete }) {
   const imagePath = `/images/${currentFrame}`
 
   return (
-    <div className="scene-display">
-      <img
-        src={imagePath}
-        alt={`${scenario.label} - Frame ${frameIndex + 1}`}
-        className="scene-image"
-      />
+    <div style={{ width: '100%' }}>
+      <div className="scene-display">
+        <img
+          src={imagePath}
+          alt={`${scenario.label} - Frame ${frameIndex + 1}`}
+          className="scene-image"
+        />
+      </div>
     </div>
   )
 }

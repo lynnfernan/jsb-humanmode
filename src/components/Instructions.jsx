@@ -62,11 +62,10 @@ export default function Instructions({ onStart, firstName }) {
               <li className="instruction-step">
                 <div className="step-number">1</div>
                 <div className="step-text">
-                  You will see a series of brief, two-clip "movies." In each movie, imagine you see a
-                  group of employees just before hearing about an event in their organization and then
-                  their reaction. Following each movie, you will be asked about the group's emotional
-                  reaction to the event. Specifically, you will indicate what percent of the group
-                  showed positive and negative emotion.
+                  You will see a series of brief images showing groups of people. In each, imagine you see a
+                  group of employees just before and then after learning about an event in their organization.
+                  After viewing each group, you will estimate what percent of the group showed positive
+                  and negative emotional reactions.
                 </div>
               </li>
 

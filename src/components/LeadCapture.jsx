@@ -32,7 +32,7 @@ export default function LeadCapture({ onSubmit }) {
           <div className="card-hero">
             <span className="eyebrow-light">Jeffrey Sanchez-Burks</span>
             <h1 className="display">
-              The Emotional Aperture Measure™ (EAM) Assessment
+              Reading the Room™
             </h1>
             <p style={{
               color: 'rgba(241,241,226,0.8)',
@@ -40,7 +40,7 @@ export default function LeadCapture({ onSubmit }) {
               lineHeight: 1.7,
               marginTop: '1rem',
             }}>
-              This survey focuses on how people recognize the emotions that other people express.
+              A skills-based assessment of how well you recognize emotional reactions in groups.
             </p>
           </div>
 
