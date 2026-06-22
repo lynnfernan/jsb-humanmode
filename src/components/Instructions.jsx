@@ -20,17 +20,11 @@ export default function Instructions({ onStart, firstName }) {
 
         <div className="page">
           <div className="card">
-            <div className="card-body" style={{ textAlign: 'left', paddingTop: '3rem' }}>
-              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '1.5rem', color: 'var(--ink)' }}>
-                Next you will complete your two practice trials.
-              </p>
-              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '2rem', color: 'var(--ink)' }}>
-                The movie clips are extremely brief so please focus carefully on your screen.
-              </p>
+            <div className="card-body" style={{ textAlign: 'left', paddingTop: '3rem', paddingBottom: '3rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '300px' }}>
               <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '2rem', color: 'var(--ink)' }}>
                 Click to begin.
               </p>
-              <button className="btn btn-full" onClick={onStart}>
+              <button className="btn btn-full" onClick={onStart} style={{ maxWidth: '200px' }}>
                 →
               </button>
             </div>
