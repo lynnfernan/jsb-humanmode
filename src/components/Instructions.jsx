@@ -54,82 +54,39 @@ export default function Instructions({ onStart, firstName }) {
       <div className="page">
         <div className="card">
           <div className="card-body">
-            <h2 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1.5rem', color: 'var(--ink)' }}>
-              Read the following instructions carefully:
-            </h2>
-
             <ol className="instruction-steps" style={{ marginBottom: '1.5rem' }}>
               <li className="instruction-step">
                 <div className="step-number">1</div>
                 <div className="step-text">
-                  You will see a series of brief images showing groups of people. In each, imagine you see a
-                  group of employees just before and then after learning about an event in their organization.
-                  After viewing each group, you will estimate what percent of the group showed positive
-                  and negative emotional reactions.
+                  <strong>What You'll See</strong>
+                  <div style={{ marginTop: '0.5rem', fontWeight: 400 }}>
+                    You will see brief videos of groups of people. For each video, estimate what percent of the group shows positive emotions and what percent shows negative emotions. Note that some people will show positive reactions, some will show negative reactions, and some will show no reaction at all (remaining neutral).
+                  </div>
                 </div>
               </li>
 
               <li className="instruction-step">
                 <div className="step-number">2</div>
                 <div className="step-text">
-                  <strong>Please note: while the questions will ask about certain emotions, not all
-                  employees will show a reaction — that is, some employees could appear
-                  neutral. Therefore, the positive and negative reactions you see do not need to
-                  add up to 100%.</strong>
+                  <strong>How to Score</strong>
+                  <div style={{ marginTop: '0.5rem', fontWeight: 400 }}>
+                    Positive and negative reactions do not need to add up to 100%. For example, 25% of the group might show positive emotions while only 25% show negative emotions—the remaining 50% could appear neutral. Answer what you actually see, not what you think should add up.
+                  </div>
                 </div>
               </li>
 
               <li className="instruction-step">
                 <div className="step-number">3</div>
                 <div className="step-text">
-                  For example, if you see that 25% of the group expresses a positive emotion, this does
-                  not mean that 75% of the group must express a negative emotion. Instead, it could be
-                  the case that only 25% of the group expresses negative emotions while 50% of the
-                  group remains neutral (expressing neither positive nor negative emotions). In this case
-                  you would answer "about one-fourth (25%)" of the group" for BOTH positive and
-                  negative emotions.
-                </div>
-              </li>
-
-              <li className="instruction-step">
-                <div className="step-number">4</div>
-                <div className="step-text">
-                  After viewing each group movie, the page will auto-advance to the questions about
-                  that movie unless you are directed to click to continue.
-                </div>
-              </li>
-
-              <li className="instruction-step">
-                <div className="step-number">5</div>
-                <div className="step-text">
-                  The emotional reactions in the movies will appear and disappear rapidly, much like
-                  they do in the real world.
+                  <strong>What to Expect</strong>
+                  <div style={{ marginTop: '0.5rem', fontWeight: 400 }}>
+                    You'll complete 2 practice videos first to get familiar with the format. Emotional reactions appear and disappear quickly, just like in real life. This takes about 8 minutes total. When you're ready, click the arrow to begin.
+                  </div>
                 </div>
               </li>
             </ol>
 
-            <div style={{
-              background: '#f9f7f2',
-              borderRadius: 'var(--radius-sm)',
-              padding: '1rem',
-              marginBottom: '1.5rem',
-              fontSize: '0.9rem',
-              lineHeight: 1.7,
-              color: 'var(--ink)',
-            }}>
-              <p style={{ marginBottom: '0.75rem' }}>
-                <strong>You will complete 2 practice trials so that you can familiarize yourself with the
-                "movies" and the format of the questions.</strong>
-              </p>
-              <p style={{ marginBottom: '0.75rem' }}>
-                This survey should take about 8 minutes to complete.
-              </p>
-              <p>
-                Once you are ready to begin, click the arrow below:
-              </p>
-            </div>
-
-            <button className="btn btn-full" onClick={() => setScreen(2)}>
+            <button className="btn btn-full" onClick={() => setScreen(2)} style={{ marginTop: '1.5rem' }}>
               →
             </button>
           </div>
