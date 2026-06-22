@@ -511,6 +511,36 @@ input[type="range"]::-webkit-slider-runnable-track {
 }
 
 /* ── Results ── */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.result-card {
+  background: var(--cream);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.result-label {
+  font-family: 'Saira', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 0.5rem;
+}
+
+.result-value {
+  font-family: 'Sofia Sans', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--navy);
+}
+
 .results-hero {
   background: var(--navy);
   padding: 2.5rem 2rem;
