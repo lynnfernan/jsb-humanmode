@@ -62,8 +62,7 @@ export default function LeadCapture({ onSubmit }) {
               marginBottom: '1.5rem',
               textAlign: 'center',
             }}>
-              At the end you'll have the opportunity to receive a personalized feedback report.
-              Please provide your information below to get started.
+              To receive a personalized feedback report, please provide your name and email address below.
             </p>
 
             <div className="divider" style={{ marginBottom: '1.5rem' }} />
