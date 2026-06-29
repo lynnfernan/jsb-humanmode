@@ -30,7 +30,7 @@ export const PRACTICE_SCENARIOS = [
 
 export const QUIZ_SCENARIOS = [
   // Two-Emotion Blends
-  { id: 'EA1',  correctPositive: 25,  correctNegative: 75,  correctNeutral: 0,   apertureType: 'Two-Emotion Blend',        label: 'EA1',  frame1: 'EA1.1 happy25disgust75-neutral.jpg.jpg', frame2: 'EA1.2 happy25disgust75.jpg.jpg' },
+  { id: 'EA1',  correctPositive: 25,  correctNegative: 75,  correctNeutral: 0,   apertureType: 'Two-Emotion Blend',        label: 'EA1',  frame1: 'EA1.1.jpg', frame2: 'EA1.2 happy25disgust75.jpg.jpg' },
   { id: 'EA2',  correctPositive: 25,  correctNegative: 75,  correctNeutral: 0,   apertureType: 'Two-Emotion Blend',        label: 'EA2',  frame1: 'EA2.1 happy25sad75-neutral.jpg.jpg', frame2: 'EA2.2 happy25sad75.jpg.jpg' },
   { id: 'EA3',  correctPositive: 25,  correctNegative: 75,  correctNeutral: 0,   apertureType: 'Two-Emotion Blend',        label: 'EA3',  frame1: 'EA3.1 happy25fear75-neutral.jpg.jpg', frame2: 'EA3.2 happy25fear75.jpg.jpg' },
   { id: 'EA4',  correctPositive: 75,  correctNegative: 25,  correctNeutral: 0,   apertureType: 'Two-Emotion Blend',        label: 'EA4',  frame1: 'EA4.1 happy75fear25-neutral.jpg.jpg', frame2: 'EA4.2 happy75fear25.jpg' },
