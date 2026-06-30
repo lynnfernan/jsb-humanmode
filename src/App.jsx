@@ -14,74 +14,13 @@ const P = {
   INSTRUCTIONS: 'instructions',
   PRACTICE_SCENE: 'practice-scene',
   PRACTICE_Q: 'practice-question',
-  PRACTICE_FB: 'practice-feedback',
+  PRACTICE_COMPLETE: 'practice-complete',
   QUIZ_INTRO: 'quiz-intro',
   QUIZ_SCENE: 'quiz-scene',
   QUIZ_Q: 'quiz-question',
   RESULTS: 'results',
 }
 
-function PracticeFeedback({ scenario, response, practiceIndex, onNext, totalPractice }) {
-  const items = [
-    {
-      label: 'Positive Reactions',
-      colorClass: 'positive',
-      user: response.posEstimate,
-      actual: scenario.correctPositive,
-    },
-    {
-      label: 'Negative Reactions',
-      colorClass: 'negative',
-      user: response.negEstimate,
-      actual: scenario.correctNegative,
-    },
-  ]
-
-  return (
-    <div className="card-body">
-      <span className="eyebrow" style={{ textAlign: 'center', display: 'block' }}>
-        Practice {practiceIndex + 1} — How Did You Do?
-      </span>
-      <h2 className="display-dark" style={{ textAlign: 'center', marginBottom: '1.5rem', fontSize: '1.4rem' }}>
-        Here's what was actually there.
-      </h2>
-
-      <div className="feedback-grid">
-        {items.map(({ label, colorClass, user, actual }) => {
-          const diff = Math.abs(user - actual)
-          const isClose = diff <= 15
-          const isPerfect = diff === 0
-          return (
-            <div
-              key={label}
-              className={`feedback-card feedback-card-${colorClass}`}
-            >
-              <div className="feedback-card-label">{label}</div>
-              <div className="feedback-your">{user}%</div>
-              <div className="feedback-actual">Actual: <strong>{actual}%</strong></div>
-              <div
-                className="feedback-delta"
-                style={{ color: isPerfect ? 'var(--positive)' : isClose ? 'var(--slate)' : 'var(--negative)' }}
-              >
-                {isPerfect ? '✓ Perfect' : isClose ? `Close — off by ${diff}%` : `Off by ${diff}%`}
-              </div>
-            </div>
-          )
-        })}
-      </div>
-
-      <p style={{ fontSize: '0.875rem', color: 'var(--muted)', lineHeight: 1.65, marginBottom: '1.5rem', textAlign: 'center' }}>
-        {practiceIndex + 1 < totalPractice
-          ? 'One more practice round before the real assessment begins.'
-          : "You're ready. The assessment works the same way — no feedback until the end."}
-      </p>
-
-      <button className="btn btn-full" onClick={onNext}>
-        {practiceIndex + 1 < totalPractice ? 'Next Practice →' : 'Begin Assessment →'}
-      </button>
-    </div>
-  )
-}
 
 export default function App() {
   const [phase, setPhase] = useState(P.LEAD)
@@ -105,16 +44,11 @@ export default function App() {
 
   const handlePracticeAnswer = (resp) => {
     setPracticeResponse(resp)
-    setPhase(P.PRACTICE_FB)
-  }
-
-  const handlePracticeNext = () => {
     if (practiceIndex + 1 < PRACTICE_SCENARIOS.length) {
       setPracticeIndex(i => i + 1)
-      setPracticeResponse(null)
       setPhase(P.PRACTICE_SCENE)
     } else {
-      setPhase(P.QUIZ_INTRO)
+      setPhase(P.PRACTICE_COMPLETE)
     }
   }
 
@@ -157,7 +91,7 @@ export default function App() {
   }
 
   // ── Practice ──
-  if ([P.PRACTICE_SCENE, P.PRACTICE_Q, P.PRACTICE_FB].includes(phase)) {
+  if ([P.PRACTICE_SCENE, P.PRACTICE_Q].includes(phase)) {
     return (
       <div className="app-shell">
         <TopBar badge={`Practice ${practiceIndex + 1} of ${PRACTICE_SCENARIOS.length}`} />
@@ -184,16 +118,33 @@ export default function App() {
                 <QuestionSliders onSubmit={handlePracticeAnswer} isPractice />
               </div>
             )}
+          </div>
+        </div>
+      </div>
+    )
+  }
 
-            {phase === P.PRACTICE_FB && practiceResponse && (
-              <PracticeFeedback
-                scenario={currentPractice}
-                response={practiceResponse}
-                practiceIndex={practiceIndex}
-                totalPractice={PRACTICE_SCENARIOS.length}
-                onNext={handlePracticeNext}
-              />
-            )}
+  // ── Practice Complete ──
+  if (phase === P.PRACTICE_COMPLETE) {
+    return (
+      <div className="app-shell">
+        <TopBar badge="Ready" />
+        <div className="page">
+          <div className="card">
+            <div className="card-body" style={{ textAlign: 'center', paddingTop: '2.5rem', paddingBottom: '2.5rem' }}>
+              <h2 className="display-dark" style={{ fontSize: '1.4rem', marginBottom: '1.5rem' }}>
+                Well done!
+              </h2>
+              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '1.5rem', color: 'var(--ink)' }}>
+                You have completed the practice trials. You should now have a sense for how quickly the emotional reactions appear and disappear.
+              </p>
+              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '2rem', color: 'var(--ink)' }}>
+                Now, to begin the 17-movie Emotional Aperture assessment, click below.
+              </p>
+              <button className="btn btn-full" onClick={() => setPhase(P.QUIZ_INTRO)}>
+                Begin Assessment →
+              </button>
+            </div>
           </div>
         </div>
       </div>
