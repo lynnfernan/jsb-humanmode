@@ -45,9 +45,9 @@ export const QUIZ_SCENARIOS = [
   { id: 'EA10', correctPositive: 0,   correctNegative: 25,  correctNeutral: 75,  apertureType: 'Single Emotion + Neutral', label: 'EA10', frame1: 'EA10.1.jpg', frame2: 'EA10.2.jpg' },
   { id: 'EA12', correctPositive: 0,   correctNegative: 50,  correctNeutral: 50,  apertureType: 'Single Emotion + Neutral', label: 'EA12', frame1: 'EA12.1 fear50-Neutral.jpg.jpg', frame2: 'EA12.2 fear50.jpg.jpg' },
   { id: 'EA13', correctPositive: 0,   correctNegative: 25,  correctNeutral: 75,  apertureType: 'Single Emotion + Neutral', label: 'EA13', frame1: 'EA13.1.jpg', frame2: 'EA13.2.jpg' },
-  { id: 'EA14', correctPositive: 0,   correctNegative: 75,  correctNeutral: 25,  apertureType: 'Single Emotion + Neutral', label: 'EA14', frame1: 'EA14.1 fear75-neutral.jpg.jpg', frame2: 'EA14.2 fear75.jpg.jpg' },
+  { id: 'EA14', correctPositive: 0,   correctNegative: 75,  correctNeutral: 25,  apertureType: 'Single Emotion + Neutral', label: 'EA14', frame1: 'EA14.1.jpg', frame2: 'EA14.2.jpg' },
   // All-Negative
-  { id: 'EA15', correctPositive: 0,   correctNegative: 100, correctNeutral: 0,   apertureType: 'All-Negative, Different',  label: 'EA15', frame1: 'EA15.1 AllNegDiff-Neutral.jpg', frame2: 'EA15.2 AllNegDiff.jpg' },
+  { id: 'EA15', correctPositive: 0,   correctNegative: 100, correctNeutral: 0,   apertureType: 'All-Negative, Different',  label: 'EA15', frame1: 'EA15.1.jpg', frame2: 'EA15.2.jpg' },
   { id: 'EA16', correctPositive: 0,   correctNegative: 100, correctNeutral: 0,   apertureType: 'All-Negative, Similar',    label: 'EA16', frame1: 'EA16.1Neutral.jpg', frame2: 'EA16.2 AllNegSimilar.jpg' },
   // All-Positive
   { id: 'EA17', correctPositive: 100, correctNegative: 0,   correctNeutral: 0,   apertureType: 'All-Positive',             label: 'EA17', frame1: 'EA17.1 AllPos-neutral.jpg', frame2: 'EA17.1 AllPos.jpg' },
