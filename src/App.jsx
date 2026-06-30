@@ -15,7 +15,6 @@ const P = {
   PRACTICE_SCENE: 'practice-scene',
   PRACTICE_Q: 'practice-question',
   PRACTICE_COMPLETE: 'practice-complete',
-  QUIZ_INTRO: 'quiz-intro',
   QUIZ_SCENE: 'quiz-scene',
   QUIZ_Q: 'quiz-question',
   RESULTS: 'results',
@@ -132,48 +131,14 @@ export default function App() {
         <div className="page">
           <div className="card">
             <div className="card-body" style={{ textAlign: 'center', paddingTop: '2.5rem', paddingBottom: '2.5rem' }}>
-              <h2 className="display-dark" style={{ fontSize: '1.4rem', marginBottom: '1.5rem' }}>
-                Well done!
-              </h2>
               <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '1.5rem', color: 'var(--ink)' }}>
                 You have completed the practice trials. You should now have a sense for how quickly the emotional reactions appear and disappear.
               </p>
               <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '2rem', color: 'var(--ink)' }}>
-                Now, to begin the 17-movie Emotional Aperture assessment, click below.
+                Now, to begin the 17 question Emotional Aperture assessment, click below.
               </p>
-              <button className="btn btn-full" onClick={() => setPhase(P.QUIZ_INTRO)}>
-                Begin Assessment →
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  // ── Quiz intro ──
-  if (phase === P.QUIZ_INTRO) {
-    return (
-      <div className="app-shell">
-        <TopBar badge="Ready" />
-        <div className="page">
-          <div className="card">
-            <div className="card-hero">
-              <span className="eyebrow-light">Practice complete</span>
-              <h1 className="display">The real assessment starts now.</h1>
-              <p style={{ color: 'rgba(241,241,226,0.75)', fontSize: '0.95rem', lineHeight: 1.7, marginTop: '1rem' }}>
-                {QUIZ_SCENARIOS.length} scenes. No feedback until the end. 
-                Do your best — there are no trick questions.
-              </p>
-            </div>
-            <div className="card-body" style={{ textAlign: 'center' }}>
-              <p className="body-lg" style={{ marginBottom: '1.5rem' }}>
-                You've calibrated your eye. Now we measure your natural aperture 
-                across a range of emotional distributions — from subtle to obvious, 
-                uniform to mixed.
-              </p>
-              <button className="btn" style={{ minWidth: 220 }} onClick={startQuiz}>
-                Start Assessment →
+              <button className="btn btn-full" onClick={() => startQuiz()}>
+                Continue
               </button>
             </div>
           </div>
