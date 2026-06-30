@@ -1,40 +1,6 @@
-import React, { useState } from 'react'
-
-// Two screens matching original EAM instrument exactly:
-// Screen 1: Full instructions
-// Screen 2: Pre-practice prompt — "Next you will complete your two practice trials..."
+import React from 'react'
 
 export default function Instructions({ onStart, firstName }) {
-  const [screen, setScreen] = useState(1)
-
-  if (screen === 2) {
-    return (
-      <div className="app-shell">
-        <nav className="top-bar">
-          <div className="top-bar-brand">
-            <span className="top-bar-name">Jeffrey Sanchez-Burks</span>
-            <span className="top-bar-tagline">Human Mode, Always</span>
-          </div>
-          <span className="top-bar-badge">Practice</span>
-        </nav>
-
-        <div className="page">
-          <div className="card">
-            <div className="card-body" style={{ textAlign: 'left', paddingTop: '3rem', paddingBottom: '3rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '300px' }}>
-              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '2rem', color: 'var(--ink)' }}>
-                Click to begin.
-              </p>
-              <button className="btn btn-full" onClick={onStart} style={{ maxWidth: '200px' }}>
-                →
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  // Screen 1 — Full instructions matching Qualtrics exactly
   return (
     <div className="app-shell">
       <nav className="top-bar">
@@ -80,7 +46,7 @@ export default function Instructions({ onStart, firstName }) {
               </li>
             </ol>
 
-            <button className="btn btn-full" onClick={() => setScreen(2)} style={{ marginTop: '1.5rem' }}>
+            <button className="btn btn-full" onClick={onStart} style={{ marginTop: '1.5rem' }}>
               →
             </button>
           </div>

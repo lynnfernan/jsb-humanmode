@@ -148,7 +148,7 @@ export default function QuestionSliders({ onSubmit, isPractice }) {
           disabled={!isValid}
           style={{ opacity: isValid ? 1 : 0.4 }}
         >
-          {isPractice ? 'See How I Did →' : 'Continue →'}
+          Continue →
         </button>
       </div>
     </div>
