@@ -9,11 +9,6 @@ export default function ProgressBar({ current, total }) {
           style={{ width: `${percentage}%` }}
         />
       </div>
-      <div className="progress-text">
-        <span className="progress-current">{current}</span>
-        <span className="progress-slash">/</span>
-        <span className="progress-total">{total}</span>
-      </div>
     </div>
   )
 }
