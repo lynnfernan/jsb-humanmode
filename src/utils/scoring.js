@@ -39,6 +39,14 @@ export function computeScores(responses, scenarios) {
     itemScores.reduce((sum, s) => sum + s.accuracy, 0) / itemScores.length
   )
 
+  // Per-dimension accuracies (positive and negative scored independently)
+  const posAccuracy = Math.round(
+    itemScores.reduce((sum, s) => sum + Math.max(0, 100 - s.posError), 0) / itemScores.length
+  )
+  const negAccuracy = Math.round(
+    itemScores.reduce((sum, s) => sum + Math.max(0, 100 - s.negError), 0) / itemScores.length
+  )
+
   // Accuracy by aperture type
   const byType = {}
   itemScores.forEach((s) => {
@@ -61,10 +69,40 @@ export function computeScores(responses, scenarios) {
   const missesNeutral = neutralScenarios.length > 0 &&
     neutralScenarios.every(s => (s.posEstimate + s.negEstimate) > (100 - s.correctNeutral + 15))
 
+  // Overestimation biases: % of items where user overcalled
+  const pessimisticBias = Math.round(
+    (itemScores.filter(s => s.negEstimate > s.correctNegative).length / itemScores.length) * 100
+  )
+  const roseTintedBias = Math.round(
+    (itemScores.filter(s => s.posEstimate > s.correctPositive).length / itemScores.length) * 100
+  )
+
+  // Underestimation biases / blind spots: % of items where user undercalled
+  const positiveBlindSpot = Math.round(
+    (itemScores.filter(s => s.posEstimate < s.correctPositive).length / itemScores.length) * 100
+  )
+  const negativeBlindSpot = Math.round(
+    (itemScores.filter(s => s.negEstimate < s.correctNegative).length / itemScores.length) * 100
+  )
+
+  // Benchmark averages from JSB normative data
+  const benchmarks = {
+    overall: 79.2,
+    negative: 74.9,
+    positive: 83.5,
+  }
+
   const profile = assignProfile(overallAccuracy, avgPosBias, typeScores, missesNeutral)
 
   return {
     overallAccuracy,
+    posAccuracy,
+    negAccuracy,
+    benchmarks,
+    pessimisticBias,
+    roseTintedBias,
+    positiveBlindSpot,
+    negativeBlindSpot,
     typeScores,
     avgPosBias: Math.round(avgPosBias),
     missesNeutral,

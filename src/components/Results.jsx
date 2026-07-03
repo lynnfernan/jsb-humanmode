@@ -33,8 +33,24 @@ export default function Results({ scores, leadData, onRetake }) {
 
   const handleEmailSubmit = async (e) => {
     e.preventDefault()
-    // TODO: Send detailed report email via SendGrid
-    setEmailSubmitted(true)
+    try {
+      const res = await fetch('/api/send-report', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: leadData?.firstName,
+          email: emailForReport,
+          scores,
+        }),
+      })
+      if (res.ok) {
+        setEmailSubmitted(true)
+      } else {
+        console.error('Failed to send report:', res.statusText)
+      }
+    } catch (err) {
+      console.error('Error sending report:', err)
+    }
   }
 
   return (
@@ -61,48 +77,85 @@ export default function Results({ scores, leadData, onRetake }) {
           </div>
 
           <div className="card-body">
-            {/* Overall accuracy */}
-            <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-              <div style={{ fontSize: '0.85rem', color: 'var(--muted)', fontFamily: 'Saira', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                Overall Emotional Aperture
-              </div>
-              <div style={{ fontSize: '3.5rem', fontWeight: 700, color: 'var(--navy)', lineHeight: 1 }}>
-                {scores.overallAccuracy}%
-              </div>
-            </div>
-
-            {/* Three dimensions */}
+            {/* Section 1: Overall EAM Score with Benchmarks */}
             <div style={{ background: '#f9f7f2', borderRadius: 'var(--radius-sm)', padding: '1.75rem', marginBottom: '2rem' }}>
+              <div style={{ fontSize: '0.85rem', color: 'var(--muted)', fontFamily: 'Saira', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+                Overall Emotional Aperture Score
+              </div>
               <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                <thead>
-                  <tr style={{ borderBottom: '1px solid #e8edf0' }}>
-                    <th style={{ textAlign: 'left', paddingBottom: '0.75rem', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', color: 'var(--slate)', letterSpacing: '0.06em' }}>
-                      Dimension
-                    </th>
-                    <th style={{ textAlign: 'right', paddingBottom: '0.75rem', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', color: 'var(--slate)', letterSpacing: '0.06em' }}>
-                      Your Score
-                    </th>
-                  </tr>
-                </thead>
                 <tbody>
-                  <tr style={{ borderBottom: '1px solid #f0f0e8' }}>
-                    <td style={{ paddingTop: '1rem', paddingBottom: '1rem', fontSize: '0.95rem', color: 'var(--ink)' }}>
-                      Positive Emotions
+                  <tr style={{ borderBottom: '1px solid #e8edf0' }}>
+                    <td style={{ paddingBottom: '1rem', fontSize: '0.95rem', color: 'var(--ink)' }}>
+                      Overall Emotional Aperture
                     </td>
-                    <td style={{ paddingTop: '1rem', paddingBottom: '1rem', textAlign: 'right', fontSize: '1.3rem', fontWeight: 700, color: 'var(--positive)' }}>
-                      {scores.typeScores?.find(t => t.type === 'Positive') ? Math.round(scores.typeScores.find(t => t.type === 'Positive').accuracy) : scores.overallAccuracy}%
+                    <td style={{ paddingBottom: '1rem', textAlign: 'right', fontSize: '1.1rem', fontWeight: 700, color: 'var(--navy)' }}>
+                      {scores.overallAccuracy}%
+                    </td>
+                    <td style={{ paddingBottom: '1rem', textAlign: 'right', fontSize: '0.9rem', color: 'var(--muted)' }}>
+                      Avg: {scores.benchmarks.overall}%
+                    </td>
+                  </tr>
+                  <tr style={{ borderBottom: '1px solid #e8edf0' }}>
+                    <td style={{ paddingTop: '1rem', paddingBottom: '1rem', fontSize: '0.95rem', color: 'var(--ink)' }}>
+                      Negative Reactions
+                    </td>
+                    <td style={{ paddingTop: '1rem', paddingBottom: '1rem', textAlign: 'right', fontSize: '1.1rem', fontWeight: 700, color: 'var(--negative)' }}>
+                      {scores.negAccuracy}%
+                    </td>
+                    <td style={{ paddingTop: '1rem', paddingBottom: '1rem', textAlign: 'right', fontSize: '0.9rem', color: 'var(--muted)' }}>
+                      Avg: {scores.benchmarks.negative}%
                     </td>
                   </tr>
                   <tr>
                     <td style={{ paddingTop: '1rem', paddingBottom: '1rem', fontSize: '0.95rem', color: 'var(--ink)' }}>
-                      Negative Emotions
+                      Positive Reactions
                     </td>
-                    <td style={{ paddingTop: '1rem', paddingBottom: '1rem', textAlign: 'right', fontSize: '1.3rem', fontWeight: 700, color: 'var(--negative)' }}>
-                      {scores.typeScores?.find(t => t.type === 'Negative') ? Math.round(scores.typeScores.find(t => t.type === 'Negative').accuracy) : scores.overallAccuracy}%
+                    <td style={{ paddingTop: '1rem', paddingBottom: '1rem', textAlign: 'right', fontSize: '1.1rem', fontWeight: 700, color: 'var(--positive)' }}>
+                      {scores.posAccuracy}%
+                    </td>
+                    <td style={{ paddingTop: '1rem', paddingBottom: '1rem', textAlign: 'right', fontSize: '0.9rem', color: 'var(--muted)' }}>
+                      Avg: {scores.benchmarks.positive}%
                     </td>
                   </tr>
                 </tbody>
               </table>
+              <p style={{ fontSize: '0.85rem', color: 'var(--muted)', marginTop: '1rem', lineHeight: 1.6 }}>
+                Your score reflects your average accuracy at recognizing emotional reactions within groups. Higher scores indicate greater accuracy.
+              </p>
+            </div>
+
+            {/* Section 2: Overestimation Biases */}
+            <div style={{ background: '#fef3f0', borderRadius: 'var(--radius-sm)', padding: '1.75rem', marginBottom: '2rem', borderLeft: '4px solid var(--negative)' }}>
+              <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--navy)', marginBottom: '1rem' }}>
+                Overestimation Biases
+              </h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--ink)', lineHeight: 1.7, marginBottom: '0.75rem' }}>
+                <strong>"Pessimistic" Bias:</strong> <span style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--negative)' }}>{scores.pessimisticBias}%</span>
+                <br />
+                <span style={{ fontSize: '0.85rem', color: 'var(--muted)' }}>Percentage of items where you overestimated negative emotional reactions</span>
+              </p>
+              <p style={{ fontSize: '0.9rem', color: 'var(--ink)', lineHeight: 1.7 }}>
+                <strong>"Rose-Tinted Glasses" Bias:</strong> <span style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--positive)' }}>{scores.roseTintedBias}%</span>
+                <br />
+                <span style={{ fontSize: '0.85rem', color: 'var(--muted)' }}>Percentage of items where you overestimated positive emotional reactions</span>
+              </p>
+            </div>
+
+            {/* Section 3: Blind Spots */}
+            <div style={{ background: '#f0faf5', borderRadius: 'var(--radius-sm)', padding: '1.75rem', marginBottom: '2rem', borderLeft: '4px solid var(--positive)' }}>
+              <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--navy)', marginBottom: '1rem' }}>
+                Underestimation Biases / Blind Spots
+              </h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--ink)', lineHeight: 1.7, marginBottom: '0.75rem' }}>
+                <strong>Negative Blind Spot:</strong> <span style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--negative)' }}>{scores.negativeBlindSpot}%</span>
+                <br />
+                <span style={{ fontSize: '0.85rem', color: 'var(--muted)' }}>Percentage of items where you underestimated negative reactions</span>
+              </p>
+              <p style={{ fontSize: '0.9rem', color: 'var(--ink)', lineHeight: 1.7 }}>
+                <strong>Positive Blind Spot:</strong> <span style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--positive)' }}>{scores.positiveBlindSpot}%</span>
+                <br />
+                <span style={{ fontSize: '0.85rem', color: 'var(--muted)' }}>Percentage of items where you underestimated positive reactions</span>
+              </p>
             </div>
 
             {/* Profile insight */}
@@ -180,9 +233,14 @@ export default function Results({ scores, leadData, onRetake }) {
             </div>
 
             {/* Retake button */}
-            <button className="btn btn-outline" onClick={onRetake} style={{ width: '100%' }}>
+            <button className="btn btn-outline" onClick={onRetake} style={{ width: '100%', marginBottom: '2rem' }}>
               Take Assessment Again
             </button>
+
+            {/* Copyright line */}
+            <p style={{ fontSize: '0.75rem', color: 'var(--muted)', textAlign: 'center' }}>
+              Copyright © 2008 J Sanchez-Burks. All rights reserved.
+            </p>
           </div>
         </div>
       </div>
