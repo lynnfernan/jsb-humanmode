@@ -20,7 +20,7 @@ export default function Instructions({ onStart, firstName }) {
                 <div className="step-text">
                   <strong>What You'll See</strong>
                   <div style={{ marginTop: '0.5rem', fontWeight: 400 }}>
-                    You will see brief videos of groups of people. For each video, estimate what percent of the group shows positive emotions and what percent shows negative emotions. Note that some people will show positive reactions, some will show negative reactions, and some will show no reaction at all (remaining neutral).
+                    You will see a set of photos of people. For each set, estimate what percent of the group shows positive emotions and what percent shows negative emotions. Note that some people will show positive reactions, some will show negative reactions, and some will show no reaction at all (remaining neutral).
                   </div>
                 </div>
               </li>
@@ -40,7 +40,7 @@ export default function Instructions({ onStart, firstName }) {
                 <div className="step-text">
                   <strong>What to Expect</strong>
                   <div style={{ marginTop: '0.5rem', fontWeight: 400 }}>
-                    You'll complete 2 practice videos first to get familiar with the format. Emotional reactions appear and disappear quickly, just like in real life. This takes about 8 minutes total. When you're ready, click the arrow to begin.
+                    You'll complete 2 practice rounds first to get familiar with the format. Emotional reactions appear and disappear quickly, just like in real life. This takes about 8 minutes total. When you're ready, click the arrow to begin.
                   </div>
                 </div>
               </li>
