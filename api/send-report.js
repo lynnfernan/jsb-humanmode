@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     const html = buildReportEmail(firstName || 'Friend', scores)
 
     const response = await resend.emails.send({
-      from: 'JSB Human Mode <onboarding@resend.dev>',
+      from: process.env.REPORT_FROM_EMAIL || 'JSB Human Mode <onboarding@resend.dev>',
       to: email,
       subject: `${firstName || 'Your'} Emotional Aperture Assessment Results`,
       html,
