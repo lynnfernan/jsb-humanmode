@@ -2,9 +2,15 @@
 // Based on original EAM instrument (Sanchez-Burks)
 //
 // CRITICAL: Positive and negative are scored INDEPENDENTLY.
-// Some scenarios have neutral faces — pos + neg may not equal 100%.
-// Error = absolute deviation from correct percentage for each dimension.
-// Lower error = higher aperture accuracy.
+// Scoring is BINARY per dimension, per the original instrument:
+// each estimate is either exactly right (1) or wrong (0).
+// Response options and correct answers share the same 25% buckets,
+// so exact-match comparison needs no tolerance.
+//
+// Per item, six derived scores:
+//   posCorrect (1/0), posOver (1/0), posUnder (1/0)
+//   negCorrect (1/0), negOver (1/0), negUnder (1/0)
+// Overall accuracy = (sum of posCorrect + negCorrect) / (items * 2)
 
 export function computeScores(responses, scenarios) {
   if (!responses || responses.length === 0) return null
@@ -13,11 +19,12 @@ export function computeScores(responses, scenarios) {
     const scenario = scenarios[i]
     if (!scenario) return null
 
-    const posError = Math.abs(resp.posEstimate - scenario.correctPositive)
-    const negError = Math.abs(resp.negEstimate - scenario.correctNegative)
-    // Average error across both dimensions
-    const avgError = (posError + negError) / 2
-    const accuracy = Math.max(0, 100 - avgError)
+    const posCorrect = resp.posEstimate === scenario.correctPositive ? 1 : 0
+    const posOver = resp.posEstimate > scenario.correctPositive ? 1 : 0
+    const posUnder = resp.posEstimate < scenario.correctPositive ? 1 : 0
+    const negCorrect = resp.negEstimate === scenario.correctNegative ? 1 : 0
+    const negOver = resp.negEstimate > scenario.correctNegative ? 1 : 0
+    const negUnder = resp.negEstimate < scenario.correctNegative ? 1 : 0
 
     return {
       id: scenario.id,
@@ -27,24 +34,41 @@ export function computeScores(responses, scenarios) {
       correctPositive: scenario.correctPositive,
       correctNegative: scenario.correctNegative,
       correctNeutral: scenario.correctNeutral || 0,
-      posError,
-      negError,
-      avgError,
-      accuracy,
+      posCorrect,
+      posOver,
+      posUnder,
+      negCorrect,
+      negOver,
+      negUnder,
+      accuracy: ((posCorrect + negCorrect) / 2) * 100,
     }
   }).filter(Boolean)
 
-  // Overall accuracy
-  const overallAccuracy = Math.round(
-    itemScores.reduce((sum, s) => sum + s.accuracy, 0) / itemScores.length
+  const n = itemScores.length
+  const posCorrectCount = itemScores.reduce((sum, s) => sum + s.posCorrect, 0)
+  const negCorrectCount = itemScores.reduce((sum, s) => sum + s.negCorrect, 0)
+
+  // Overall: points out of items * 2 (17 questions -> max 34)
+  const totalPoints = posCorrectCount + negCorrectCount
+  const maxPoints = n * 2
+  const overallAccuracy = Math.round((totalPoints / maxPoints) * 100)
+  const posAccuracy = Math.round((posCorrectCount / n) * 100)
+  const negAccuracy = Math.round((negCorrectCount / n) * 100)
+
+  // Overestimation biases: % of items where the estimate ran high
+  const roseTintedBias = Math.round(
+    (itemScores.reduce((sum, s) => sum + s.posOver, 0) / n) * 100
+  )
+  const pessimisticBias = Math.round(
+    (itemScores.reduce((sum, s) => sum + s.negOver, 0) / n) * 100
   )
 
-  // Per-dimension accuracies (positive and negative scored independently)
-  const posAccuracy = Math.round(
-    itemScores.reduce((sum, s) => sum + Math.max(0, 100 - s.posError), 0) / itemScores.length
+  // Underestimation biases / blind spots: % of items where the estimate ran low
+  const positiveBlindSpot = Math.round(
+    (itemScores.reduce((sum, s) => sum + s.posUnder, 0) / n) * 100
   )
-  const negAccuracy = Math.round(
-    itemScores.reduce((sum, s) => sum + Math.max(0, 100 - s.negError), 0) / itemScores.length
+  const negativeBlindSpot = Math.round(
+    (itemScores.reduce((sum, s) => sum + s.negUnder, 0) / n) * 100
   )
 
   // Accuracy by aperture type
@@ -60,7 +84,7 @@ export function computeScores(responses, scenarios) {
     count: scores.length,
   })).sort((a, b) => b.accuracy - a.accuracy)
 
-  // Positive bias: does the person consistently over/under-estimate positive?
+  // Signed positive bias (mean deviation) — drives profile assignment
   const posBiases = itemScores.map(s => s.posEstimate - s.correctPositive)
   const avgPosBias = posBiases.reduce((a, b) => a + b, 0) / posBiases.length
 
@@ -68,22 +92,6 @@ export function computeScores(responses, scenarios) {
   const neutralScenarios = itemScores.filter(s => s.correctNeutral > 0)
   const missesNeutral = neutralScenarios.length > 0 &&
     neutralScenarios.every(s => (s.posEstimate + s.negEstimate) > (100 - s.correctNeutral + 15))
-
-  // Overestimation biases: % of items where user overcalled
-  const pessimisticBias = Math.round(
-    (itemScores.filter(s => s.negEstimate > s.correctNegative).length / itemScores.length) * 100
-  )
-  const roseTintedBias = Math.round(
-    (itemScores.filter(s => s.posEstimate > s.correctPositive).length / itemScores.length) * 100
-  )
-
-  // Underestimation biases / blind spots: % of items where user undercalled
-  const positiveBlindSpot = Math.round(
-    (itemScores.filter(s => s.posEstimate < s.correctPositive).length / itemScores.length) * 100
-  )
-  const negativeBlindSpot = Math.round(
-    (itemScores.filter(s => s.negEstimate < s.correctNegative).length / itemScores.length) * 100
-  )
 
   // Benchmark averages from JSB normative data
   const benchmarks = {
@@ -96,6 +104,8 @@ export function computeScores(responses, scenarios) {
 
   return {
     overallAccuracy,
+    totalPoints,
+    maxPoints,
     posAccuracy,
     negAccuracy,
     benchmarks,
@@ -108,7 +118,7 @@ export function computeScores(responses, scenarios) {
     missesNeutral,
     profile,
     itemScores,
-    totalItems: itemScores.length,
+    totalItems: n,
   }
 }
 

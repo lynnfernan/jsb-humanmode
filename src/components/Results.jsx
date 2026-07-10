@@ -92,7 +92,7 @@ export default function Results({ scores, leadData, onRetake }) {
                 {scores.overallAccuracy}%
               </div>
               <div style={{ fontSize: '0.9rem', color: 'var(--muted)', marginTop: '0.75rem' }}>
-                Average score: {scores.benchmarks.overall}%
+                {scores.totalPoints} of {scores.maxPoints} emotional reads exactly right &middot; Average score: {scores.benchmarks.overall}%
               </div>
               <p style={{ fontSize: '0.9rem', color: 'var(--ink)', marginTop: '1.5rem', lineHeight: 1.7, textAlign: 'left' }}>
                 This single number doesn't tell the whole story about your ability to read the room. Instead, your report breaks down how well you decode positive versus negative reactions, highlighting any tendencies to overestimate or underestimate these cues. Together, these insights will help you read the room more accurately and dynamically adapt while presenting and collaborating.
