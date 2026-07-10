@@ -163,9 +163,28 @@ function buildReportEmail(firstName, scores) {
           <p style="white-space: pre-wrap; margin: 0;">${escapeHtml(scores.profile.insight)}</p>
         </div>
 
+        <h2>The Science Behind Reading the Room</h2>
+        <p>
+          The Emotional Aperture Measure is grounded in peer-reviewed research on how leaders perceive collective emotions. To go deeper into the science and pick up practical tips for improving your skills:
+        </p>
+        <ul style="line-height: 1.8;">
+          <li>
+            <a href="https://sloanreview.mit.edu/article/how-leaders-can-optimize-teams-emotional-landscapes/" style="color: #1a3a52;">How Leaders Can Optimize Teams' Emotional Landscapes</a>
+            <span style="color: #666;"> &mdash; MIT Sloan Management Review</span>
+          </li>
+          <li>
+            <a href="https://knowledge.insead.edu/strategy/leaders-who-can-read-collective-emotions-are-more-effective" style="color: #1a3a52;">Leaders Who Can Read Collective Emotions Are More Effective</a>
+            <span style="color: #666;"> &mdash; INSEAD Knowledge</span>
+          </li>
+          <li>
+            <a href="https://pubsonline.informs.org/doi/10.1287/orsc.1070.0347" style="color: #1a3a52;">Emotional Aperture and Strategic Change: The Accurate Recognition of Collective Emotions</a>
+            <span style="color: #666;"> &mdash; Organization Science (the original EAM research)</span>
+          </li>
+        </ul>
+
         <h2>Next Steps</h2>
         <p>
-          Reflect on your scores in the context of your leadership. Consider how understanding these patterns can help you build stronger team awareness and emotional intelligence.
+          Reflect on your scores in the context of your leadership. Start with one meeting this week: before it ends, take ten seconds to scan the room and estimate how many people are energized, how many are struggling, and how many are giving you nothing at all. That simple scan routine, repeated, is how emotional aperture widens.
         </p>
 
         <div class="footer">

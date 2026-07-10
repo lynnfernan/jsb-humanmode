@@ -20,7 +20,7 @@ export default function Instructions({ onStart, firstName }) {
                 <div className="step-text">
                   <strong>What You'll See</strong>
                   <div style={{ marginTop: '0.5rem', fontWeight: 400 }}>
-                    You will see a set of photos of people. For each set, estimate what percent of the group shows positive emotions and what percent shows negative emotions. Note that some people will show positive reactions, some will show negative reactions, and some will show no reaction at all (remaining neutral).
+                    You're going to look at a number different groups consisting of four people. For each group, you'll see two photos: one taken BEFORE an event (like an announcement) and one AFTER. Treat them like back-to-back movie frames, and see how their reactions changed! Note that some people will show positive reactions, some will show negative reactions, and some will show no reaction at all (remaining neutral).
                   </div>
                 </div>
               </li>
