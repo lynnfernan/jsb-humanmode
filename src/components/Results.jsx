@@ -197,7 +197,7 @@ export default function Results({ scores, leadData, onRetake }) {
 
             {/* Copyright line */}
             <p style={{ fontSize: '0.75rem', color: 'var(--muted)', textAlign: 'center' }}>
-              Copyright © 2008 J Sanchez-Burks. All rights reserved.
+              Copyright © 2026 J Sanchez-Burks. All rights reserved.
             </p>
           </div>
         </div>

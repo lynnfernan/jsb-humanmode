@@ -117,6 +117,43 @@ function buildReportEmail(firstName, scores) {
           <div class="sub">Prepared for ${escapeHtml(firstName)}<br>${date}</div>
         </div>
 
+        <div class="insight-box">
+          <h3 style="margin-top: 0;">Your Profile: ${escapeHtml(scores.profile.name)}</h3>
+          <p style="white-space: pre-wrap; margin: 0;">${escapeHtml(scores.profile.insight)}</p>
+        </div>
+
+        <h2>Tips for Development</h2>
+        <p>
+          Emotional aperture is a skill, not a fixed trait. It improves with deliberate practice. As you read these tips, think of a recent meeting where you read the room well, and one where you missed something.
+        </p>
+        <ul>
+          <li><strong>Get to know people beyond the work.</strong> The better you understand what someone values and what they're finding hard, the easier their reactions are to read.</li>
+          <li><strong>Watch the mismatch.</strong> When someone's tone, face, or body language doesn't match their words, ask an open question and explore.</li>
+          <li><strong>Reflect back what you hear.</strong> When someone shares how they feel, say it back in your own words and ask a clarifying question if you're unsure.</li>
+          <li><strong>Scan the whole room, not just the loudest voice.</strong> Before a meeting ends, take ten seconds to estimate how many people are energized, how many are struggling, and how many are giving you nothing at all.</li>
+          <li><strong>Act on your intuition.</strong> If you sense someone needs support, ask. Being wrong costs little; being right matters.</li>
+          <li><strong>Match your energy to the room.</strong> Adjusting your tone and pace to those around you builds connection and sharpens your reads over time.</li>
+        </ul>
+
+        <h2>The Science Behind Reading the Room</h2>
+        <p>
+          The Emotional Aperture Measure is grounded in peer-reviewed research on how leaders perceive collective emotions. To go deeper:
+        </p>
+        <ul style="line-height: 1.8;">
+          <li>
+            <a href="https://sloanreview.mit.edu/article/how-leaders-can-optimize-teams-emotional-landscapes/" style="color: #1a3a52;">How Leaders Can Optimize Teams' Emotional Landscapes</a>
+            <span style="color: #666;"> &mdash; MIT Sloan Management Review</span>
+          </li>
+          <li>
+            <a href="https://knowledge.insead.edu/strategy/leaders-who-can-read-collective-emotions-are-more-effective" style="color: #1a3a52;">Leaders Who Can Read Collective Emotions Are More Effective</a>
+            <span style="color: #666;"> &mdash; INSEAD Knowledge</span>
+          </li>
+          <li>
+            <a href="https://pubsonline.informs.org/doi/10.1287/orsc.1070.0347" style="color: #1a3a52;">Emotional Aperture and Strategic Change: The Accurate Recognition of Collective Emotions</a>
+            <span style="color: #666;"> &mdash; Organization Science (the original EAM research)</span>
+          </li>
+        </ul>
+
         <h2>About This Report</h2>
         <p>
           This report presents your results on the Emotional Aperture Measure (EAM), which reflects how well you recognize the emotional reactions of people in groups. Your results are personal to you, so treat them as private and share them only with people you trust.
@@ -199,49 +236,16 @@ function buildReportEmail(firstName, scores) {
           <p style="margin-bottom: 0;">${focusText}</p>
         </div>
 
-        <div class="insight-box">
-          <h3 style="margin-top: 0;">Your Profile: ${escapeHtml(scores.profile.name)}</h3>
-          <p style="white-space: pre-wrap; margin: 0;">${escapeHtml(scores.profile.insight)}</p>
-        </div>
-
-        <h2>Tips for Development</h2>
-        <p>
-          Emotional aperture is a skill, not a fixed trait. It improves with deliberate practice. As you read these tips, think of a recent meeting where you read the room well, and one where you missed something.
-        </p>
-        <ul>
-          <li><strong>Get to know people beyond the work.</strong> The better you understand what someone values and what they're finding hard, the easier their reactions are to read.</li>
-          <li><strong>Watch the mismatch.</strong> When someone's tone, face, or body language doesn't match their words, ask an open question and explore.</li>
-          <li><strong>Reflect back what you hear.</strong> When someone shares how they feel, say it back in your own words and ask a clarifying question if you're unsure.</li>
-          <li><strong>Scan the whole room, not just the loudest voice.</strong> Before a meeting ends, take ten seconds to estimate how many people are energized, how many are struggling, and how many are giving you nothing at all.</li>
-          <li><strong>Act on your intuition.</strong> If you sense someone needs support, ask. Being wrong costs little; being right matters.</li>
-          <li><strong>Match your energy to the room.</strong> Adjusting your tone and pace to those around you builds connection and sharpens your reads over time.</li>
-        </ul>
-
-        <h2>The Science Behind Reading the Room</h2>
-        <p>
-          The Emotional Aperture Measure is grounded in peer-reviewed research on how leaders perceive collective emotions. To go deeper:
-        </p>
-        <ul style="line-height: 1.8;">
-          <li>
-            <a href="https://sloanreview.mit.edu/article/how-leaders-can-optimize-teams-emotional-landscapes/" style="color: #1a3a52;">How Leaders Can Optimize Teams' Emotional Landscapes</a>
-            <span style="color: #666;"> &mdash; MIT Sloan Management Review</span>
-          </li>
-          <li>
-            <a href="https://knowledge.insead.edu/strategy/leaders-who-can-read-collective-emotions-are-more-effective" style="color: #1a3a52;">Leaders Who Can Read Collective Emotions Are More Effective</a>
-            <span style="color: #666;"> &mdash; INSEAD Knowledge</span>
-          </li>
-          <li>
-            <a href="https://pubsonline.informs.org/doi/10.1287/orsc.1070.0347" style="color: #1a3a52;">Emotional Aperture and Strategic Change: The Accurate Recognition of Collective Emotions</a>
-            <span style="color: #666;"> &mdash; Organization Science (the original EAM research)</span>
-          </li>
-        </ul>
-
         <p>
           This assessment is one of the themes in <a href="https://jeffreysanchezburks.com" style="color: #1a3a52;"><em>Human Mode: Unlock Your Unique Edge and Transform Your World of Work</em></a> (2027), forthcoming from Harper Collins.
         </p>
 
+        <p style="text-align: center; margin-top: 28px;">
+          <a href="https://jeffreysanchezburks.com" style="display: inline-block; background: #1a3a52; color: #f1f1e2; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 600;">Learn More at JeffreySanchezBurks.com</a>
+        </p>
+
         <div class="footer">
-          <p>Copyright &copy; 2008 J Sanchez-Burks. All rights reserved.</p>
+          <p>Copyright &copy; 2026 J Sanchez-Burks. All rights reserved.</p>
           <p>Powered by the Emotional Aperture Measure (EAM&trade;)</p>
         </div>
       </body>
