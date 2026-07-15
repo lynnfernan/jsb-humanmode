@@ -93,11 +93,11 @@ export function computeScores(responses, scenarios) {
   const missesNeutral = neutralScenarios.length > 0 &&
     neutralScenarios.every(s => (s.posEstimate + s.negEstimate) > (100 - s.correctNeutral + 15))
 
-  // Benchmark averages from JSB normative data
+  // Benchmark averages from JSB normative data (n=309, version closest to 3.0)
   const benchmarks = {
-    overall: 79.2,
-    negative: 74.9,
-    positive: 83.5,
+    overall: 46,
+    negative: 36,
+    positive: 56,
   }
 
   const profile = assignProfile(overallAccuracy, avgPosBias, typeScores, missesNeutral)
