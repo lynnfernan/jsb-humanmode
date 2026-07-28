@@ -3,7 +3,12 @@
 **Project:** Reading the Room™ — The Emotional Aperture Measure™ (EAM) Assessment  
 **Current Environment:** Production (Vercel)  
 **Live URL:** https://jsb-humanmode.vercel.app/  
-**Repository:** https://github.com/lynnfernan/jsb-humanmode
+**Pulse Check (same domain):** https://jsb-humanmode.vercel.app/competent-humility  
+**Repository:** https://github.com/lynnfernan/jsb-humanmode  
+**Local path (canonical):** `/Users/lynnfernan/jsb-humanmode`  
+
+> **2026-07-27:** Restored this repo as production after a domain alias pointed at a GIF/slider fork.  
+> See **SOURCE_OF_TRUTH.md** before any deploy.
 
 ---
 
@@ -236,4 +241,7 @@ Pushing to `main` branch automatically triggers Vercel deployment. Current deplo
 | Version | Date | Status | Notes |
 |---------|------|--------|-------|
 | 1.0.0 | 2026-06-22 | Live | Phase 1 complete. Results screen with email opt-in ready. Email delivery pending. |
+| 1.1.0 | 2026-07-09 | Live | JSB feedback round (`f75c2bd`). |
+| 1.2.0 | 2026-07-15 | Live | Report email + scoring finalize (`7cf1468`). Production deploy me2iwmkro. |
+| 1.3.0 | 2026-07-27 | Live | **Restore canonical EAM** after mistaken alias. Pulse Check at `/competent-humility`. SOURCE_OF_TRUTH.md. |
 

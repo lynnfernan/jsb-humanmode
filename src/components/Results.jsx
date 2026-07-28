@@ -181,18 +181,23 @@ export default function Results({ scores, leadData, onRetake }) {
               )}
             </div>
 
-            {/* Retake button */}
-            <button className="btn btn-outline" onClick={onRetake} style={{ width: '100%', marginBottom: '2rem' }}>
-              Take Assessment Again
-            </button>
+            {/* Next assessment + retake */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
+              <a className="btn btn-full" href="/competent-humility" style={{ textAlign: 'center', textDecoration: 'none' }}>
+                Next: Competent Humility Pulse Check →
+              </a>
+              <button className="btn btn-outline" onClick={onRetake} style={{ width: '100%' }}>
+                Take Assessment Again
+              </button>
+            </div>
 
             {/* Book mention */}
             <p style={{ fontSize: '0.85rem', color: 'var(--muted)', textAlign: 'center', lineHeight: 1.7, marginBottom: '1.5rem' }}>
               This assessment is one of the themes in{' '}
-              <a href="https://jeffreysanchezburks.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--navy)', fontWeight: 600 }}>
+              <a href="https://www.jeffreysanchezburks.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--navy)', fontWeight: 600 }}>
                 <em>Human Mode: Unlock Your Unique Edge and Transform Your World of Work</em>
               </a>
-              {' '}(2027), forthcoming from Harper Collins.
+              {' '}(2027), forthcoming from HarperCollins.
             </p>
 
             {/* Copyright line */}
