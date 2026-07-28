@@ -115,7 +115,7 @@ export default function Results({ scores, leadData, onRetake }) {
                 <strong>Strength:</strong> {profile.strength}
               </p>
               <p style={{ fontSize: '0.9rem', color: 'var(--ink)', lineHeight: 1.7, marginBottom: '0.75rem' }}>
-                <strong>Focus Area:</strong> {hasPositiveBias ? 'Recognizing negative emotional signals and distress that might be masked by optimism bias.' : hasNegativeBias ? 'Validating positive emotions and building on moments of connection without overreading tension.' : 'Expanding your aperture to read mixed emotional distributions where some people are energized and others are struggling.'}
+                <strong>Focus Area:</strong> {hasPositiveBias ? 'Recognizing negative emotional signals and distress that might be masked by optimism bias.' : hasNegativeBias ? 'Validating positive emotions and building on moments of connection without overreading tension.' : 'First, read your detailed results in the report. Second, consider developing others in their ability to read the room accurately. Studies out of MIT and Carnegie Mellon indicate that collective intelligence in teams is largely due to a widespread practice of reading the room. It gives them an edge over other teams.'}
               </p>
               <p style={{ fontSize: '0.9rem', color: 'var(--muted)', lineHeight: 1.7 }}>
                 Links to the science behind reading the room and tips for improving your skills are included in your report.

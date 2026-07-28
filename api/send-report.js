@@ -226,7 +226,7 @@ function buildReportEmail(firstName, scores) {
           <div class="label">Your 30-Second Summary</div>
           <p><strong>Your score:</strong> ${scores.overallAccuracy}% (${band.label}). ${pointsLine}The benchmark average is ${BENCHMARKS.overall}%.</p>
           <p><strong>Your pattern:</strong> ${pattern.line}</p>
-          <p><strong>Your practice:</strong> The ten-second scan. Before your next meeting ends, estimate how many people are energized, how many are struggling, and how many are giving you nothing at all.</p>
+          <p><strong>Your practice:</strong> The ten-second scan. Before your next meeting ends, estimate how many people are energized, how many are struggling, and how many are giving you nothing at all. Then foster this habit on your team: invite others to practice the same scan so reading the room becomes a shared skill, not a solo talent. Research on collective intelligence (including work associated with MIT and Carnegie Mellon) links widespread social sensitivity in teams to stronger group performance.</p>
         </div>
 
         <p>
