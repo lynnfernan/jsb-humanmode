@@ -1,8 +1,10 @@
 # SOURCE OF TRUTH — JSB Human Mode Assessments
 
-**Last updated:** 2026-07-27  
+**Last updated:** 2026-07-28  
 **Owner:** Lynn Fernando / REV Global  
 **Assessment creator:** Jeffrey Sanchez-Burks  
+
+**Shareable project summary (email / partners):** see **[PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md)** — what changed, what matters, next steps for real-user validation.
 
 ---
 

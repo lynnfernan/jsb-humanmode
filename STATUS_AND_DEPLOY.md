@@ -244,4 +244,5 @@ Pushing to `main` branch automatically triggers Vercel deployment. Current deplo
 | 1.1.0 | 2026-07-09 | Live | JSB feedback round (`f75c2bd`). |
 | 1.2.0 | 2026-07-15 | Live | Report email + scoring finalize (`7cf1468`). Production deploy me2iwmkro. |
 | 1.3.0 | 2026-07-27 | Live | **Restore canonical EAM** after mistaken alias. Pulse Check at `/competent-humility`. SOURCE_OF_TRUTH.md. |
+| 1.3.1 | 2026-07-28 | Live | EAM report/on-screen copy: wide-angle insight, Focus Area (team collective intelligence), email Your practice (team habit). PROJECT_SUMMARY.md. |
 

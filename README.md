@@ -9,7 +9,9 @@
 
 **Production:** https://jsb-humanmode.vercel.app  
 
-**Read first:** [SOURCE_OF_TRUTH.md](./SOURCE_OF_TRUTH.md) — which repo to deploy, EAM rules, incident log.
+**Read first:**  
+- [SOURCE_OF_TRUTH.md](./SOURCE_OF_TRUTH.md) — which repo to deploy, EAM rules, incident log  
+- [PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md) — overall changes, what’s important, real-user validation next steps
 
 ---
 
