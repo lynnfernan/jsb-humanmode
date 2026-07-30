@@ -40,7 +40,8 @@ export const QUIZ_SCENARIOS = [
   { id: 'EA8',  correctPositive: 25,  correctNegative: 75,  correctNeutral: 0,   apertureType: 'Two-Emotion Blend',        label: 'EA8',  frame1: 'EA8-a.jpg', frame2: 'EA8-b.jpg' },
   { id: 'EA9',  correctPositive: 75,  correctNegative: 25,  correctNeutral: 0,   apertureType: 'Two-Emotion Blend',        label: 'EA9',  frame1: 'EA9-a.jpg', frame2: 'EA9-b.jpg' },
   // Emotion Transitions
-  { id: 'EA5',  correctPositive: 100, correctNegative: 0,   correctNeutral: 0,   apertureType: 'Emotion Transition',       label: 'EA5',  frame1: 'EA5-a.jpg', frame2: 'EA5-b.jpg' },
+  // After-frame is all angry (100% negative). Key was previously 100/0 (before-frame happy endpoint on Qualtrics).
+  { id: 'EA5',  correctPositive: 0,   correctNegative: 100, correctNeutral: 0,   apertureType: 'Emotion Transition',       label: 'EA5',  frame1: 'EA5-a.jpg', frame2: 'EA5-b.jpg' },
   { id: 'EA11', correctPositive: 100, correctNegative: 0,   correctNeutral: 0,   apertureType: 'Emotion Transition',       label: 'EA11', frame1: 'EA11-a.jpg', frame2: 'EA11-b.jpg' },
   // Single Emotion + Neutral — NOTE: neutral faces present, sliders independent
   { id: 'EA10', correctPositive: 0,   correctNegative: 25,  correctNeutral: 75,  apertureType: 'Single Emotion + Neutral', label: 'EA10', frame1: 'EA10-a.jpg', frame2: 'EA10-b.jpg' },
