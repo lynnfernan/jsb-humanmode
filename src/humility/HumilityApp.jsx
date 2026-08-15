@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import TopBar from '../components/TopBar.jsx'
 import ProgressBar from '../components/ProgressBar.jsx'
-import { HUMILITY_ITEMS, LIKERT_LABELS, PULSE_META } from '../data/humilityItems.js'
+import {
+  HUMILITY_ITEMS,
+  LIKERT_LABELS,
+  COPY,
+  PULSE_META,
+} from '../data/humilityItems.js'
 import { computeHumilityScores } from '../utils/humilityScoring.js'
 
 const P = {
@@ -13,7 +18,6 @@ const P = {
 const SHARE_URL = 'https://jsb-humanmode.vercel.app/competent-humility'
 
 function track(event, payload = {}) {
-  // Optional analytics hooks — wire to GA/plausible later
   if (typeof window !== 'undefined' && window.dataLayer) {
     window.dataLayer.push({ event: `ch_pulse_${event}`, ...payload })
   }
@@ -96,8 +100,8 @@ export default function HumilityApp() {
         <div className="page">
           <div className="card">
             <div className="card-hero">
-              <span className="eyebrow-light">Human Mode · Part III · Authentic Competence</span>
-              <h1 className="display">{PULSE_META.title}</h1>
+              <span className="eyebrow-light">{COPY.eyebrow}</span>
+              <h1 className="display">{COPY.title}</h1>
               <p
                 style={{
                   color: 'rgba(241,241,226,0.75)',
@@ -106,19 +110,12 @@ export default function HumilityApp() {
                   marginTop: '1rem',
                 }}
               >
-                Somewhere in the last month, you sat in a room and felt the pull to perform a
-                certainty you did not have. Competent humility is the practice of not giving in:
-                owning what you are genuinely good at while naming, out loud, what you do not yet
-                know.
+                {COPY.standfirst}
               </p>
             </div>
             <div className="card-body">
               <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '1.5rem' }}>
-                {[
-                  { icon: '⏱', label: '3 minutes' },
-                  { icon: '📋', label: '12 statements' },
-                  { icon: '🎯', label: 'Instant read' },
-                ].map(({ icon, label }) => (
+                {COPY.chips.map(({ icon, label }) => (
                   <div key={label} style={{ flex: 1, textAlign: 'center' }}>
                     <div style={{ fontSize: '1.4rem', marginBottom: '0.25rem' }}>{icon}</div>
                     <div className="meta-chip">{label}</div>
@@ -126,18 +123,16 @@ export default function HumilityApp() {
                 ))}
               </div>
               <p className="body-lg" style={{ marginBottom: '1rem' }}>
-                Twelve statements about the last ninety days at work — not the person you hope to
-                be. It will not grade your character. It will show where you already practice
-                competent humility, where there is room, and one thing to try.
+                {COPY.introBody}
               </p>
               <p className="body-sm" style={{ marginBottom: '1.5rem' }}>
-                Be honest. A flattering answer only fools the one person the score is for.
+                {COPY.introNudge}
               </p>
               <button className="btn btn-full" onClick={() => setPhase(P.QUIZ)}>
-                Start the Pulse Check →
+                {COPY.startButton}
               </button>
               <p className="footer-soft" style={{ marginTop: '1.25rem' }}>
-                No account required · Results on this device
+                {COPY.introFooter}
               </p>
               <p style={{ textAlign: 'center', marginTop: '1rem' }}>
                 <a href="/" className="link-subtle">
@@ -151,7 +146,7 @@ export default function HumilityApp() {
     )
   }
 
-  // ── Quiz (one question per screen) ──
+  // ── Quiz (one statement per screen) ──
   if (phase === P.QUIZ && current) {
     return (
       <div className="app-shell">
@@ -174,15 +169,10 @@ export default function HumilityApp() {
               >
                 {current.text}
               </h2>
-              <p
-                className="body-sm"
-                style={{ textAlign: 'center', marginBottom: '0.75rem' }}
-              >
-                How true is this for you over the last 90 days?
+              <p className="body-sm" style={{ textAlign: 'center', marginBottom: '0.75rem' }}>
+                {COPY.itemPrompt}
               </p>
-              <p className="likert-scale-hint">
-                1 = Strongly disagree · 5 = Strongly agree
-              </p>
+              <p className="likert-scale-hint">{COPY.scaleHint}</p>
               <div className="likert-list">
                 {LIKERT_LABELS.map(({ value, label }) => {
                   const selected = answers[current.id] === value
@@ -207,9 +197,10 @@ export default function HumilityApp() {
     )
   }
 
-  // ── Results (shown immediately; email optional after) ──
+  // ── Results: single score, multi-paragraph body, close on practice ──
   if (phase === P.RESULTS && scores) {
-    const { bucket, balance, competenceMean, humilityMean, competencePct, humilityPct } = scores
+    const { bucket, score, pct } = scores
+    const bodyParas = Array.isArray(bucket.body) ? bucket.body : [bucket.body]
 
     return (
       <div className="app-shell">
@@ -217,52 +208,80 @@ export default function HumilityApp() {
         <div className="page">
           <div className="card">
             <div className="results-hero">
-              <span className="eyebrow-light">{PULSE_META.title}</span>
+              <span className="eyebrow-light">{COPY.title}</span>
               <div className="profile-type" style={{ marginTop: '1rem', fontSize: '1.45rem' }}>
                 {bucket.headline}
               </div>
               <div className="profile-tagline" style={{ marginTop: '0.75rem' }}>
-                {PULSE_META.tagline}
+                {COPY.tagline}
               </div>
             </div>
 
-            <div className="insight-section">
-              <span className="eyebrow">What this means</span>
-              <p className="insight-text">{bucket.body}</p>
+            <div className="breakdown-section" style={{ paddingTop: '1.5rem' }}>
+              <span
+                className="eyebrow"
+                style={{ marginBottom: '0.75rem', display: 'block', textAlign: 'center' }}
+              >
+                {COPY.scoreLabel}
+              </span>
+              <div style={{ textAlign: 'center', marginBottom: '0.75rem' }}>
+                <span
+                  style={{
+                    fontSize: '2.5rem',
+                    fontWeight: 700,
+                    color: 'var(--navy)',
+                    lineHeight: 1,
+                  }}
+                >
+                  {score.toFixed(2)}
+                </span>
+                <span
+                  style={{
+                    fontSize: '0.95rem',
+                    color: 'var(--muted)',
+                    marginLeft: '0.5rem',
+                  }}
+                >
+                  / 5.0
+                </span>
+              </div>
+              <div className="axis-meter" style={{ marginBottom: '0.5rem', maxWidth: '100%' }}>
+                <div className="axis-meter-track light">
+                  <div className="axis-meter-fill navy" style={{ width: `${pct}%` }} />
+                </div>
+              </div>
+              <p
+                className="body-sm"
+                style={{ textAlign: 'center', marginTop: '0.5rem', color: 'var(--muted)' }}
+              >
+                Mean of {HUMILITY_ITEMS.length} statements (1–5 scale)
+              </p>
             </div>
 
             <div className="divider" />
 
+            <div className="insight-section">
+              <span className="eyebrow">What this means</span>
+              {bodyParas.map((para, i) => (
+                <p
+                  key={i}
+                  className="insight-text"
+                  style={{ marginTop: i === 0 ? undefined : '1rem' }}
+                >
+                  {para}
+                </p>
+              ))}
+            </div>
+
+            <div className="divider" />
+
+            {/* Primary close: practice (JSB handoff — not preorder) */}
             <div className="insight-section" style={{ background: 'var(--cream)' }}>
               <span className="eyebrow">Try this</span>
               <p className="insight-text">{bucket.practice}</p>
             </div>
 
             <div className="divider" />
-
-            <div className="insight-section">
-              <span className="eyebrow">Your balance read</span>
-              <p className="balance-label">{balance.label}</p>
-              <p className="insight-text">{balance.text}</p>
-            </div>
-
-            <div className="divider" />
-
-            <div className="breakdown-section">
-              <span className="eyebrow" style={{ marginBottom: '1rem', display: 'block' }}>
-                Subscale scores (1–5)
-              </span>
-              <SubscaleMeter
-                label="Competence Ownership"
-                mean={competenceMean}
-                pct={competencePct}
-              />
-              <SubscaleMeter
-                label="Humility / Openness"
-                mean={humilityMean}
-                pct={humilityPct}
-              />
-            </div>
 
             <div className="share-section">
               <span
@@ -276,7 +295,7 @@ export default function HumilityApp() {
                 <div className="share-card-type" style={{ fontSize: '1.25rem' }}>
                   {bucket.headline}
                 </div>
-                <div className="share-card-sub">{PULSE_META.tagline}</div>
+                <div className="share-card-sub">{COPY.tagline}</div>
                 <div className="share-card-score">Jeffrey Sanchez-Burks</div>
               </div>
               <div className="share-buttons">
@@ -294,7 +313,6 @@ export default function HumilityApp() {
               </div>
             </div>
 
-            {/* Optional email — after results, with consent */}
             <div className="email-opt-in">
               <span className="eyebrow">Optional — email yourself this result</span>
               {emailSaved ? (
@@ -330,7 +348,11 @@ export default function HumilityApp() {
                       {emailError}
                     </p>
                   )}
-                  <button className="btn btn-slate btn-full" type="submit" style={{ marginTop: '0.75rem' }}>
+                  <button
+                    className="btn btn-slate btn-full"
+                    type="submit"
+                    style={{ marginTop: '0.75rem' }}
+                  >
                     Send my result
                   </button>
                 </form>
@@ -338,10 +360,6 @@ export default function HumilityApp() {
             </div>
 
             <div className="practice-cta">
-              <p>
-                Competent humility is a practice — trainable under pressure. That terrain is Part
-                III of <em>Human Mode</em>.
-              </p>
               <div
                 style={{
                   display: 'flex',
@@ -350,26 +368,32 @@ export default function HumilityApp() {
                   flexWrap: 'wrap',
                 }}
               >
+                <a className="btn btn-full" href="/comphum" style={{ textAlign: 'center', textDecoration: 'none' }}>
+                  Get the playbook →
+                </a>
+                <button className="btn btn-outline" type="button" onClick={handleRetake}>
+                  Retake Pulse Check
+                </button>
+                <a className="btn btn-outline" href="/">
+                  Read the Room
+                </a>
+                <a className="btn btn-outline" href="/hub">
+                  Field Kit
+                </a>
                 <a
-                  className="btn btn-slate"
+                  className="btn btn-outline"
                   href={PULSE_META.bookUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   {PULSE_META.bookLabel} →
                 </a>
-                <a className="btn btn-outline" href="/">
-                  Emotional Aperture
-                </a>
-                <button className="btn btn-outline" type="button" onClick={handleRetake}>
-                  Retake
-                </button>
               </div>
               <p className="footer-soft" style={{ marginTop: '1.25rem', lineHeight: 1.55 }}>
-                {PULSE_META.creditLine}
+                {COPY.creditLine}
               </p>
               <p className="footer-soft" style={{ marginTop: '0.5rem' }}>
-                {PULSE_META.tagline} · #HumanModeAlways
+                {COPY.tagline} · #HumanModeAlways
               </p>
             </div>
           </div>
@@ -379,18 +403,4 @@ export default function HumilityApp() {
   }
 
   return null
-}
-
-function SubscaleMeter({ label, mean, pct }) {
-  return (
-    <div className="axis-meter" style={{ marginBottom: '1rem', maxWidth: '100%' }}>
-      <div className="axis-meter-meta" style={{ marginBottom: '0.4rem' }}>
-        <span className="subscale-label">{label}</span>
-        <span className="subscale-value">{mean.toFixed(2)}</span>
-      </div>
-      <div className="axis-meter-track light">
-        <div className="axis-meter-fill navy" style={{ width: `${pct}%` }} />
-      </div>
-    </div>
-  )
 }

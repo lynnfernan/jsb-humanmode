@@ -331,9 +331,9 @@ function buildReportEmail(firstName, scores) {
           One caveat as you reflect. Group emotion travels through more than faces; it leaks out in voices, posture, pacing, and what goes unsaid. The EAM reads the face channel, and your strengths may vary across channels. These skills tend to travel together, but treat your score as one lens among several, not the whole picture.
         </p>
 
-        <h2>The Science Behind Reading the Room</h2>
+        <h2>The Science Behind Emotional Aperture</h2>
         <p>
-          The Emotional Aperture Measure is grounded in peer-reviewed research on how leaders perceive collective emotions. To go deeper:
+          The Emotional Aperture Measure (Read the Room) is grounded in peer-reviewed research on how leaders perceive collective emotions. To go deeper:
         </p>
         <ul style="line-height: 1.8;">
           <li>

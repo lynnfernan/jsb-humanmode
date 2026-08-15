@@ -184,7 +184,10 @@ export default function Results({ scores, leadData, onRetake }) {
             {/* Next assessment + retake */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
               <a className="btn btn-full" href="/competent-humility" style={{ textAlign: 'center', textDecoration: 'none' }}>
-                Next: Competent Humility Pulse Check →
+                Next: Drop the Certainty Theater →
+              </a>
+              <a className="btn btn-outline" href="/hub" style={{ textAlign: 'center', textDecoration: 'none', width: '100%' }}>
+                Field Kit · all four practices
               </a>
               <button className="btn btn-outline" onClick={onRetake} style={{ width: '100%' }}>
                 Take Assessment Again
