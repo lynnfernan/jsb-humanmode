@@ -2,6 +2,8 @@ node_modules
 .git
 .DS_Store
 *.docx
-*.pdf
 face-preview.html
 dist
+# Source-folder print PDFs only (public/playbooks must deploy)
+/playbooks/*.pdf
+src/**/*.pdf
