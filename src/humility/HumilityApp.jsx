@@ -41,18 +41,27 @@ export default function HumilityApp() {
   const current = HUMILITY_ITEMS[itemIndex]
 
   const handleSelect = (value) => {
+    if (!current) return
     const next = { ...answers, [current.id]: value }
+    const isLast = itemIndex >= HUMILITY_ITEMS.length - 1
     setAnswers(next)
-    setTimeout(() => {
-      if (itemIndex + 1 < HUMILITY_ITEMS.length) {
-        setItemIndex((i) => i + 1)
-      } else {
-        const result = computeHumilityScores(next)
-        setScores(result)
-        setPhase(P.RESULTS)
-        track('completed')
-        if (result) track('bucket_assigned', { bucket: result.bucketKey })
+    // Advance after a short beat so the selected state is visible.
+    // Use isLast from this click (not a later itemIndex) so item #8 always reaches results.
+    window.setTimeout(() => {
+      if (!isLast) {
+        setItemIndex((i) => Math.min(i + 1, HUMILITY_ITEMS.length - 1))
+        return
       }
+      const result = computeHumilityScores(next)
+      if (!result) {
+        // Incomplete map should not blank the UI; stay on last item.
+        console.error('Pulse Check: incomplete answers at finish', next)
+        return
+      }
+      setScores(result)
+      setPhase(P.RESULTS)
+      track('completed')
+      track('bucket_assigned', { bucket: result.bucketKey })
     }, 160)
   }
 
@@ -147,7 +156,41 @@ export default function HumilityApp() {
   }
 
   // ── Quiz (one statement per screen) ──
-  if (phase === P.QUIZ && current) {
+  if (phase === P.QUIZ) {
+    if (!current) {
+      // Recover if index drifts past the last item (should not happen after isLast fix).
+      return (
+        <div className="app-shell">
+          <TopBar badge="Pulse Check" />
+          <div className="page">
+            <div className="card">
+              <div className="card-body" style={{ textAlign: 'center', padding: '2rem 1.25rem' }}>
+                <p className="body-lg" style={{ marginBottom: '1rem' }}>
+                  Scoring your answers…
+                </p>
+                <button
+                  type="button"
+                  className="btn btn-full"
+                  onClick={() => {
+                    const result = computeHumilityScores(answers)
+                    if (result) {
+                      setScores(result)
+                      setPhase(P.RESULTS)
+                    } else {
+                      setItemIndex(0)
+                      setPhase(P.INTRO)
+                    }
+                  }}
+                >
+                  See my result →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    }
+
     return (
       <div className="app-shell">
         <TopBar badge="Pulse Check" />
@@ -198,7 +241,27 @@ export default function HumilityApp() {
   }
 
   // ── Results: single score, multi-paragraph body, close on practice ──
-  if (phase === P.RESULTS && scores) {
+  if (phase === P.RESULTS) {
+    if (!scores || !scores.bucket) {
+      return (
+        <div className="app-shell">
+          <TopBar badge="Pulse Check" />
+          <div className="page">
+            <div className="card">
+              <div className="card-body" style={{ textAlign: 'center', padding: '2rem 1.25rem' }}>
+                <p className="body-lg" style={{ marginBottom: '1rem' }}>
+                  We could not score this run. Please retake the Pulse Check.
+                </p>
+                <button type="button" className="btn btn-full" onClick={handleRetake}>
+                  Retake Pulse Check →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    }
+
     const { bucket, score, pct } = scores
     const bodyParas = Array.isArray(bucket.body) ? bucket.body : [bucket.body]
 
@@ -402,5 +465,22 @@ export default function HumilityApp() {
     )
   }
 
-  return null
+  // Fallback — never blank the page
+  return (
+    <div className="app-shell">
+      <TopBar badge="Pulse Check" />
+      <div className="page">
+        <div className="card">
+          <div className="card-body" style={{ textAlign: 'center', padding: '2rem 1.25rem' }}>
+            <p className="body-lg" style={{ marginBottom: '1rem' }}>
+              Something went wrong loading this step.
+            </p>
+            <button type="button" className="btn btn-full" onClick={handleRetake}>
+              Start over →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }

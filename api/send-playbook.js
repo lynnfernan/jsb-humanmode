@@ -20,9 +20,9 @@ const ASSETS = {
     ],
   },
   comphum: {
-    title: 'The Confident and Humble Leader’s Playbook',
+    title: 'The Competent Humility Playbook',
     blurb:
-      'Here’s your free companion field guide to the Competent Humility Pulse Check — five practices you can run this week. (Not the assessment itself.)',
+      'Here’s your free companion field guide to the Competent Humility Pulse Check: five practices you can run this week. (Not the assessment itself.)',
     pdf: 'https://jsb-humanmode.vercel.app/playbooks/competent-humility-playbook.pdf',
     pocket: 'https://jsb-humanmode.vercel.app/playbooks/competent-humility-pocket.pdf',
     tag: 'comphum_playbook',

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Competent Humility · Pocket Card</title>
+  <link href="https://fonts.googleapis.com/css2?family=Saira:wght@600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root { --navy:#1c4b61; --slate:#578ead; --cream:#f1f1e2; --ink:#1a1a1a; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    @page { size:letter; margin:0.45in; }
+    body { font-family:"Source Serif 4",Georgia,serif; font-size:8.75pt; color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    .card { border:2px solid var(--navy); border-radius:6px; overflow:hidden; min-height:10in; display:flex; flex-direction:column; }
+    .head { background:var(--navy); color:var(--cream); padding:0.45in 0.45in 0.35in; display:flex; justify-content:space-between; gap:0.3in; }
+    .head h1 { font-family:Saira,sans-serif; font-size:16pt; font-weight:700; color:#fff; line-height:1.1; max-width:5.2in; }
+    .head p { margin-top:0.15em; font-size:9pt; color:rgba(241,241,226,0.85); max-width:5in; }
+    .badge { font-family:Saira,sans-serif; font-size:7pt; letter-spacing:0.1em; text-transform:uppercase; border:1px solid rgba(241,241,226,0.4); padding:0.25em 0.55em; border-radius:999px; height:fit-content; white-space:nowrap; }
+    .body { padding:0.3in 0.4in 0.3in; flex:1; }
+    .promise { font-size:10pt; font-weight:600; color:var(--navy); margin-bottom:0.22in; border-left:3px solid var(--slate); padding-left:0.45em; }
+    .script {
+      background:var(--cream); border-left:3px solid var(--navy); padding:0.18in 0.22in; margin:0 0 0.18in;
+      font-style:italic; font-size:9pt; white-space:pre-line; page-break-inside:avoid;
+    }
+    .script .lab { font-family:Saira,sans-serif; font-style:normal; font-size:7pt; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--slate); display:block; margin-bottom:0.08in; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:0.15in; margin-bottom:0.2in; }
+    .box { border:1px solid #d5dde3; border-radius:4px; padding:0.15in; page-break-inside:avoid; }
+    .box h3 { font-family:Saira,sans-serif; font-size:8.5pt; color:var(--navy); margin-bottom:0.08in; }
+    .box p { font-size:8pt; line-height:1.35; color:#444; }
+    .foot { display:flex; justify-content:space-between; align-items:center; gap:0.25in; border-top:1px solid #d5dde3; padding-top:0.18in; margin-top:0.1in; }
+    .foot .lines { font-size:8.5pt; line-height:1.4; }
+    .foot strong { color:var(--navy); }
+    .qr { text-align:center; font-family:Saira,sans-serif; font-size:6.5pt; color:#6b7a85; }
+    .qr img { width:0.9in; height:0.9in; display:block; margin:0 auto 0.06in; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="head">
+      <div>
+        <h1>The Competent Humility Playbook</h1>
+        <p>Pocket card · Five practices · Companion to the Competent Humility Pulse Check</p>
+      </div>
+      <span class="badge">Human Mode</span>
+    </div>
+    <div class="body">
+      <p class="promise">Own your craft. Name the complexity. Leave oxygen for the unknown — then decide.</p>
+
+      <div class="script"><span class="lab">1 · Know / Don’t know / Decide</span>Here’s what I know.
+Here’s what no one can really know at this point.
+Here’s how we’ll decide — and by when.</div>
+
+      <div class="script"><span class="lab">2 · Pre-mortem (you go first)</span>“It’s six months from now. This failed. What did we miss?”
+One real risk from you. Top three. Owners.</div>
+
+      <div class="grid">
+        <div class="box">
+          <h3>3 · Claim craft (Quiet Experts)</h3>
+          <p>“Here’s where I’m confident — [domain]. Here’s where I want your pressure-test — [domain].”</p>
+        </div>
+        <div class="box">
+          <h3>4 · Dissenting junior (Certainty Actors)</h3>
+          <p>“What are we not seeing?” Protect the answer. Thank them in the room.</p>
+        </div>
+      </div>
+
+      <div class="script"><span class="lab">5 · Repair within 48 hours</span>In that meeting I overstated how settled this is.
+What’s actually still open is [X].
+Here’s what I need from you now — [specific].</div>
+
+      <div class="foot">
+        <div class="lines">
+          <strong>Traps:</strong> Certainty Actor · Quiet Expert · Open Amateur → target: Competent Humility Leader<br/>
+          <strong>Close:</strong> Imperfection isn’t the opposite of leadership. Unowned imperfection is.
+          <div style="margin-top:0.1in;font-family:Saira,sans-serif;font-size:7pt;color:#6b7a85">
+            Jeffrey Sanchez-Burks · Human Mode (2027) · Free full guide via QR
+          </div>
+        </div>
+        <div class="qr">
+          <img src="../public/playbooks/qr-comphum.png" alt="QR" />
+          Full guide + Pulse Check
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

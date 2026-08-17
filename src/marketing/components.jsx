@@ -183,7 +183,7 @@ export function EmailPdfForm({
   const pdfHref = asset === 'comphum' ? LINKS.comphumPdf : LINKS.quietPdf
   const consentLabel =
     asset === 'comphum'
-      ? 'Email me the Confident and Humble Leader’s Playbook and occasional notes on leadership from Human Mode.'
+      ? 'Email me the Competent Humility Playbook and occasional notes on leadership from Human Mode.'
       : 'Email me the Quiet Understanding guide and occasional notes on leadership from Human Mode.'
   const submitLabel =
     buttonLabel ||

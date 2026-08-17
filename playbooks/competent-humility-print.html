@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Competent Humility Playbook | Human Mode</title>
+  <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet" />
+  <style>
+    :root { --navy:#1c4b61; --slate:#578ead; --cream:#f1f1e2; --ink:#1a1a1a; --muted:#5a6a74; --line:#d5dde3; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    @page { size:letter; margin:0.65in 0.7in 0.7in 0.7in; }
+    body {
+      font-family:"Source Serif 4",Georgia,serif; font-size:10.25pt; line-height:1.45; color:var(--ink);
+      -webkit-print-color-adjust:exact; print-color-adjust:exact;
+    }
+    h1,h2,h3,.sans,.label,.badge { font-family:Saira,system-ui,sans-serif; }
+    p { margin:0 0 0.5em; }
+    .cover {
+      page-break-after:always; min-height:9.5in; display:flex; flex-direction:column; justify-content:space-between;
+      background:var(--navy); color:var(--cream); margin:-0.65in -0.7in; padding:0.9in 0.85in 0.75in;
+    }
+    .badge {
+      display:inline-block; font-size:8pt; font-weight:600; letter-spacing:0.12em; text-transform:uppercase;
+      border:1px solid rgba(241,241,226,0.35); padding:0.35em 0.75em; border-radius:999px; color:rgba(241,241,226,0.9);
+    }
+    .cover h1 { font-size:28pt; font-weight:700; line-height:1.08; color:#fff; margin:0.4em 0 0.3em; max-width:6in; }
+    .cover .subtitle { font-family:"Source Serif 4",Georgia,serif; font-size:12.5pt; line-height:1.4; color:rgba(241,241,226,0.88); max-width:5.8in; margin-bottom:0.7em; }
+    .cover .promise { font-size:10.5pt; color:rgba(241,241,226,0.72); border-left:3px solid var(--slate); padding-left:0.75em; max-width:5.5in; }
+    .cover-meta { font-family:Saira,sans-serif; font-size:9pt; font-weight:600; letter-spacing:0.04em; color:rgba(241,241,226,0.7); line-height:1.55; }
+    .cover-meta .author { color:#fff; font-size:11pt; display:block; margin-bottom:0.2em; }
+    h2 { font-size:13.5pt; font-weight:700; color:var(--navy); margin:1em 0 0.4em; page-break-after:avoid; }
+    h2:first-child { margin-top:0; }
+    h3 { font-size:10.5pt; font-weight:700; color:var(--navy); margin:0.75em 0 0.25em; page-break-after:avoid; }
+    .break-before { page-break-before:always; }
+    .callout { background:#f4f7f9; border-left:3px solid var(--slate); padding:0.5em 0.65em; margin:0.55em 0 0.7em; font-size:9.75pt; }
+    ul { margin:0.3em 0 0.6em 1.15em; }
+    li { margin-bottom:0.25em; }
+    table.traps { width:100%; border-collapse:collapse; margin:0.45em 0 0.7em; font-size:9pt; }
+    table.traps th { background:var(--navy); color:#fff; text-align:left; padding:0.35em 0.45em; font-family:Saira,sans-serif; font-size:8pt; letter-spacing:0.04em; }
+    table.traps td { border:1px solid var(--line); padding:0.4em 0.45em; vertical-align:top; }
+    table.traps tr:nth-child(even) td { background:#fafbf9; }
+    table.traps .gold { background:#eef6f0 !important; font-weight:600; }
+    .practice {
+      border:1px solid var(--line); border-radius:5px; padding:0.55em 0.65em 0.6em; margin:0.55em 0;
+      page-break-inside:avoid;
+    }
+    .practice .tag {
+      font-family:Saira,sans-serif; font-size:7.5pt; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
+      color:var(--slate); margin-bottom:0.15em;
+    }
+    .practice h3 { margin-top:0; font-size:11.5pt; }
+    .when { font-size:9pt; color:var(--muted); margin-bottom:0.35em; font-style:italic; }
+    blockquote {
+      margin:0.4em 0; padding:0.45em 0.6em; background:var(--cream); border-left:3px solid var(--navy);
+      font-style:italic; font-size:10pt; white-space:pre-line;
+    }
+    .meta { font-size:9.25pt; margin-top:0.35em; }
+    .meta strong { color:var(--navy); }
+    .anti { font-size:9pt; color:#8a3a32; margin-top:0.3em; }
+    table.loop { width:100%; border-collapse:collapse; margin:0.4em 0; font-size:9.5pt; }
+    table.loop th { background:var(--navy); color:#fff; text-align:left; padding:0.3em 0.45em; font-family:Saira,sans-serif; font-size:8pt; }
+    table.loop td { border:1px solid var(--line); padding:0.35em 0.45em; height:22px; }
+    .end {
+      margin-top:1em; padding-top:0.65em; border-top:2px solid var(--navy);
+      font-family:Saira,sans-serif; font-size:9.5pt; color:var(--navy); line-height:1.5;
+    }
+    .close-line { font-size:11.5pt; font-weight:700; color:var(--navy); margin:0.6em 0; }
+    .footer-note { margin-top:0.6em; font-family:Saira,sans-serif; font-size:7.5pt; color:var(--muted); }
+  </style>
+</head>
+<body>
+
+<section class="cover">
+  <div>
+    <span class="badge">Companion field guide</span>
+    <h1>The Competent Humility Playbook</h1>
+    <p class="subtitle">Five practices for leading with competence and disciplined openness about what you don’t know.</p>
+    <p class="promise">Not fake modesty. Not vulnerability theater. The research-backed alternative to certainty performance. A free companion to the Competent Humility Pulse Check.</p>
+  </div>
+  <div class="cover-meta">
+    <span class="author">Jeffrey Sanchez-Burks</span>
+    Author of <em>Human Mode: Unlock Your Unique Edge and Transform Your World of Work</em><br/>
+    (2027, HarperCollins)<br/><br/>
+    Human Mode, Always™
+  </div>
+</section>
+
+<h2>The certainty tax</h2>
+<p>When everyone assumes the challenge at hand is straightforward, when uncertainty and complexity are only moderate, rooms reward looking sure. Boards want conviction. Investors want a clean narrative. Teams want someone who “has it.”</p>
+<p>So leaders learn a performance: project certainty even when the picture is incomplete.</p>
+<p>That performance has a cost. At the wrong time (early in problem-solving) and in the wrong moment (where everyone clearly sees massive uncertainty), confidence signals <em>less</em> competence.</p>
+<p>When people sense you need to look right more than you need to get right, risk goes underground. The junior with the data stays quiet. The peer who sees the landmine waits for the postmortem. In AI-era change — when almost no one has the full map — certainty theater is especially expensive.</p>
+
+<h3>Competent Humility (what it is)</h3>
+<p>Competent humility is not low confidence. It is the capacity to do three things at once:</p>
+<ul>
+  <li><strong>Own your craft</strong> — claim where your judgment is strong, set standards, decide.</li>
+  <li><strong>Make clear the complexity and uncertainty</strong> of the challenge at hand.</li>
+  <li><strong>Leave oxygen for the unknown</strong> — name what you don’t know yet, invite challenge, update in public.</li>
+</ul>
+<div class="callout">
+  Related to <em>wabi-sabi</em>: authentic appreciation that initial ideas are imperfect and will evolve. You are accurate about the unfinished parts.
+</div>
+<p>Use this after the <strong>Competent Humility Pulse Check</strong> — or any Tuesday you tighten into “we’ve got this” when you don’t fully. Five practices. Each is a script you can run this week.</p>
+
+<h2>The four traps (and the target)</h2>
+<p>Many don’t fail at humility or competence in the abstract. They lock onto one pole.</p>
+<table class="traps">
+  <thead>
+    <tr><th style="width:22%">Pattern</th><th style="width:40%">What it looks like</th><th style="width:38%">Cost</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Certainty Actor</strong></td><td>Decisive optics; low genuine openness to alternatives</td><td>Silent risk — team stops surfacing bad news</td></tr>
+    <tr><td><strong>Quiet Expert</strong></td><td>Deep skill; under-claims authority</td><td>Vacuum filled by louder, less informed voices</td></tr>
+    <tr><td><strong>Open Amateur</strong></td><td>Invites input before owning a frame</td><td>Drift; team loses the “adult in the room”</td></tr>
+    <tr class="gold"><td><strong>Competent Humility Leader</strong></td><td>High craft + high openness</td><td>The gold standard</td></tr>
+  </tbody>
+</table>
+<div class="callout"><strong>This quarter’s honest question:</strong> Which trap do you fall into when the room gets political? Circle one. That’s your practice focus for the next 30 days.</div>
+
+<div class="practice break-before">
+  <div class="tag">Practice 1</div>
+  <h3>Know / Don’t know / Decide</h3>
+  <p class="when">When: high-stakes moments with real uncertainty or complexity — all-hands, board prep, or 1:1 where complexity is real.</p>
+  <blockquote>Here’s what I know.
+Here’s what no one can really know at this point.
+Here’s how we’ll decide — and by when.</blockquote>
+  <p class="meta"><strong>Why it works:</strong> You keep authority (you still decide) without pretending omniscience. Teams calibrate to truth, not theater.</p>
+  <p class="meta"><strong>Do this week:</strong> Use the full three-line frame once in a meeting that would usually get a polished monologue.</p>
+  <p class="anti"><strong>Anti-pattern:</strong> “I don’t know” with no decision path. Always close the loop: how and when.</p>
+</div>
+
+<div class="practice">
+  <div class="tag">Practice 2</div>
+  <h3>Pre-mortem honesty in exec forums</h3>
+  <p class="when">When: before a launch, reorg, AI rollout, or any plan that currently has only upside slides.</p>
+  <p class="meta"><strong>The move:</strong> Set a 10-minute timer. Ask: “It’s six months from now. This failed. What did we miss?” You go first with one real risk — not a safe, performative one. Capture the top three. Assign an owner to each.</p>
+  <p class="meta"><strong>Why it works:</strong> If the most senior person models incomplete knowledge, others can tell the truth without career risk.</p>
+  <p class="meta"><strong>Do this week:</strong> Run one pre-mortem where you put a reputational risk on the table first.</p>
+  <p class="anti"><strong>Anti-pattern:</strong> Asking for risks while your face and tone punish the first honest answer.</p>
+</div>
+
+<div class="practice">
+  <div class="tag">Practice 3 · For Quiet Experts</div>
+  <h3>Claim your craft out loud</h3>
+  <p>Humility without owned competence reads as absence. The room needs a clear signal of where your judgment is strong so they don’t invent a louder leader.</p>
+  <blockquote>Here’s where I’m confident — [domain].
+Here’s where I want your pressure-test — [domain].</blockquote>
+  <p class="meta"><strong>Do this week:</strong> Open one meeting with a competence claim before you open the floor. Not arrogance. Orientation.</p>
+</div>
+
+<div class="practice break-before">
+  <div class="tag">Practice 4 · For Certainty Actors</div>
+  <h3>Invite the dissenting junior</h3>
+  <p>In the next decision meeting, explicitly ask the least senior person with relevant exposure:</p>
+  <blockquote>What are we not seeing?</blockquote>
+  <p>Then: protect their answer. Do not let the room talk over it.</p>
+  <p class="meta"><strong>Why it works:</strong> Status threat is the enemy of competent humility. You reverse the default.</p>
+  <p class="meta"><strong>Do this week:</strong> One named invitation. One protected answer. Thank them in the room.</p>
+</div>
+
+<div class="practice">
+  <div class="tag">Practice 5</div>
+  <h3>Repair after certainty theater</h3>
+  <p>You will slip. Everyone does under board heat or public pressure.</p>
+  <blockquote>In that meeting I overstated how settled this is.
+What’s actually still open is [X].
+Here’s what I need from you now — [specific].</blockquote>
+  <p class="meta"><strong>Why it works:</strong> Repair rebuilds more trust than never-slipping ever could. Silence after theater teaches people the performance is the real standard.</p>
+  <p class="meta"><strong>Do this week:</strong> If you already have a recent overclaim, repair it. Don’t wait for the perfect moment. Within 48 hours.</p>
+</div>
+
+<h2>Your 30-day loop</h2>
+<table class="loop">
+  <thead><tr><th style="width:15%">Week</th><th>Focus</th></tr></thead>
+  <tbody>
+    <tr><td><strong>1</strong></td><td>Run Practice 1 once in a real room</td></tr>
+    <tr><td><strong>2</strong></td><td>Pre-mortem (Practice 2) on one live initiative</td></tr>
+    <tr><td><strong>3</strong></td><td>Claim craft + invite dissent (Practices 3 + 4)</td></tr>
+    <tr><td><strong>4</strong></td><td>Log one repair (Practice 5) — or note where you almost needed one</td></tr>
+  </tbody>
+</table>
+
+<h3>Go deeper</h3>
+<ul>
+  <li>Retake or share the <strong>Competent Humility Pulse Check</strong> with your leadership team</li>
+  <li><strong>Emotional Aperture Assessment</strong> — can you see the room’s full emotional landscape?</li>
+  <li><em>Human Mode</em> — the full framework (HarperCollins, 2027)</li>
+</ul>
+
+<p class="close-line">Imperfection isn’t the opposite of leadership.<br/>Unowned imperfection is.</p>
+<p>Competent humility is how you keep the standard and the truth in the same room.</p>
+
+<div class="end">
+  Jeffrey Sanchez-Burks<br/>
+  Author of <em>Human Mode</em> (2027, HarperCollins)<br/>
+  Human Mode, Always™
+</div>
+<p class="footer-note">Open field guide · Companion to Pulse Check (not the instrument) · jsb-humanmode.vercel.app/comphum</p>
+
+</body>
+</html>

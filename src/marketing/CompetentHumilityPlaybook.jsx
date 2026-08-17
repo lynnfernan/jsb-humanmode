@@ -73,7 +73,7 @@ export default function CompetentHumilityPlaybook() {
     if (meta) {
       meta.setAttribute(
         'content',
-        'Free Competent Humility playbook: five practices without certainty theater. Companion to the Pulse Check — not the assessment itself.'
+        'Free Competent Humility playbook: five practices without certainty theater. Companion to the Pulse Check, not the assessment itself.'
       )
     }
   }, [])
@@ -84,7 +84,7 @@ export default function CompetentHumilityPlaybook() {
       <div className="mk-page">
         <header className="mk-hero">
           <span className="eyebrow">Drop the Certainty Theater · Free field guide</span>
-          <h1>The Confident and Humble Leader’s Playbook</h1>
+          <h1>The Competent Humility Playbook</h1>
           <p className="mk-promise">
             Five practices for leading with competence and disciplined openness — without certainty
             theater or risking your reputation.
@@ -159,7 +159,7 @@ export default function CompetentHumilityPlaybook() {
           <div className="mk-preview">
             <div className="mk-preview-block navy">
               <h4>Cover</h4>
-              <p className="mk-preview-title">Confident &amp; Humble</p>
+              <p className="mk-preview-title">Competent Humility</p>
               <p className="mk-preview-sub">
                 Five practices. Not fake modesty. Not vulnerability theater.
               </p>

@@ -183,8 +183,11 @@ export default function Results({ scores, leadData, onRetake }) {
 
             {/* Next assessment + retake */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
-              <a className="btn btn-full" href="/competent-humility" style={{ textAlign: 'center', textDecoration: 'none' }}>
-                Next: Drop the Certainty Theater →
+              <a className="btn btn-full" href="/bricolage" style={{ textAlign: 'center', textDecoration: 'none' }}>
+                Next: Tap the Rest of You →
+              </a>
+              <a className="btn btn-outline" href="/competent-humility" style={{ textAlign: 'center', textDecoration: 'none', width: '100%' }}>
+                Drop the Certainty Theater →
               </a>
               <a className="btn btn-outline" href="/hub" style={{ textAlign: 'center', textDecoration: 'none', width: '100%' }}>
                 Field Kit · all four practices
