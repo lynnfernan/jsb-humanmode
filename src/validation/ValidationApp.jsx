@@ -4,6 +4,7 @@ import QuestionSliders from '../components/QuestionSliders.jsx'
 import ProgressBar from '../components/ProgressBar.jsx'
 import { PRACTICE_SCENARIOS, QUIZ_SCENARIOS } from '../data/scenarios.js'
 import { computeScores } from '../utils/scoring.js'
+import { captureProlificPid, computeCode } from './prolific.js'
 
 /**
  * Emotional Aperture — Validation Study build
@@ -12,6 +13,7 @@ import { computeScores } from '../utils/scoring.js'
  * Stripped for pilot / real-user validation:
  *   - No lead capture, email, or PDF report
  *   - No personal name branding, book, newsletter, or Pulse Check CTA
+ *   - Prolific: reads PROLIFIC_PID from URL, shows confirmation code only on final results
  *
  * Live path: /eam-validation  (aliases: /validation, /eam-pilot)
  */
@@ -65,10 +67,23 @@ function ValidationBar({ badge }) {
 export default function ValidationApp() {
   const [phase, setPhase] = useState(P.START)
   const [participantCode, setParticipantCode] = useState('')
+  /** Prolific ID from URL (?PROLIFIC_PID=) + sessionStorage for in-flow navigation / refresh */
+  const [prolificPid, setProlificPid] = useState(null)
   const [practiceIndex, setPracticeIndex] = useState(0)
   const [quizIndex, setQuizIndex] = useState(0)
   const [responses, setResponses] = useState([])
   const [copied, setCopied] = useState(false)
+  const [codeCopied, setCodeCopied] = useState(false)
+
+  // Capture Prolific ID on first mount (URL first, then sessionStorage)
+  useEffect(() => {
+    const pid = captureProlificPid()
+    if (pid) {
+      setProlificPid(pid)
+      // Prefill optional facilitator field when empty so copy-results JSON stays useful
+      setParticipantCode((prev) => (prev.trim() ? prev : pid))
+    }
+  }, [])
 
   // Neutral browser tab + meta (shared index.html still brands production EAM)
   useEffect(() => {
@@ -168,27 +183,50 @@ export default function ValidationApp() {
             </div>
 
             <div className="card-body">
-              <p
-                style={{
-                  fontSize: '0.9rem',
-                  color: 'var(--muted)',
-                  lineHeight: 1.7,
-                  marginBottom: '1.25rem',
-                }}
-              >
-                Optional: enter a participant code if your study facilitator
-                gave you one. You can leave this blank.
-              </p>
+              {prolificPid ? (
+                <p
+                  style={{
+                    fontSize: '0.9rem',
+                    color: 'var(--muted)',
+                    lineHeight: 1.7,
+                    marginBottom: '1.25rem',
+                  }}
+                >
+                  Prolific session linked. A confirmation code will appear only
+                  after you finish the full assessment.
+                </p>
+              ) : (
+                <p
+                  style={{
+                    fontSize: '0.9rem',
+                    color: 'var(--muted)',
+                    lineHeight: 1.7,
+                    marginBottom: '1.25rem',
+                  }}
+                >
+                  Optional: enter a participant code if your study facilitator
+                  gave you one. You can leave this blank. Prolific participants
+                  should arrive via the study link that includes PROLIFIC_PID.
+                </p>
+              )}
 
               <div className="field">
-                <label htmlFor="participantCode">Participant code (optional)</label>
+                <label htmlFor="participantCode">
+                  {prolificPid ? 'Prolific ID' : 'Participant code (optional)'}
+                </label>
                 <input
                   id="participantCode"
                   type="text"
-                  placeholder="e.g. P017"
+                  placeholder={prolificPid ? prolificPid : 'e.g. P017'}
                   value={participantCode}
                   onChange={(e) => setParticipantCode(e.target.value)}
                   autoComplete="off"
+                  readOnly={Boolean(prolificPid)}
+                  style={
+                    prolificPid
+                      ? { background: '#f4f7f9', color: 'var(--ink)' }
+                      : undefined
+                  }
                 />
               </div>
 
@@ -470,9 +508,15 @@ export default function ValidationApp() {
     const neutralInsight = sanitizeForValidation(profile.insight)
     const neutralStrength = sanitizeForValidation(profile.strength)
 
+    // Confirmation code only on true final results, from Prolific PID (not optional facilitator code)
+    const confirmationCode =
+      prolificPid && prolificPid.length > 0 ? computeCode(prolificPid) : null
+
     const payload = {
       build: 'eam-validation',
       completedAt: new Date().toISOString(),
+      prolificPid: prolificPid || null,
+      confirmationCode,
       participantCode: participantCode.trim() || null,
       overallAccuracy: scores.overallAccuracy,
       totalPoints: scores.totalPoints,
@@ -531,7 +575,96 @@ export default function ValidationApp() {
             </div>
 
             <div className="card-body">
-              {participantCode.trim() && (
+              {/* Prolific completion gate — only on this true final screen */}
+              {confirmationCode ? (
+                <div
+                  style={{
+                    background: 'var(--navy)',
+                    color: 'var(--cream)',
+                    borderRadius: 'var(--radius-sm)',
+                    padding: '1.5rem 1.25rem',
+                    marginBottom: '1.5rem',
+                    textAlign: 'center',
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: '0.75rem',
+                      fontFamily: 'Saira, system-ui, sans-serif',
+                      fontWeight: 600,
+                      letterSpacing: '0.08em',
+                      textTransform: 'uppercase',
+                      opacity: 0.85,
+                      marginBottom: '0.5rem',
+                    }}
+                  >
+                    Study confirmation
+                  </div>
+                  <p
+                    style={{
+                      fontSize: '0.95rem',
+                      marginBottom: '0.75rem',
+                      opacity: 0.9,
+                    }}
+                  >
+                    You have finished the Emotional Aperture task. Enter this code
+                    on the study page to continue.
+                  </p>
+                  <div
+                    style={{
+                      fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+                      fontSize: '2.25rem',
+                      fontWeight: 700,
+                      letterSpacing: '0.12em',
+                      color: '#fff',
+                      marginBottom: '0.35rem',
+                    }}
+                  >
+                    Your confirmation code: {confirmationCode}
+                  </div>
+                  <button
+                    type="button"
+                    className="btn btn-outline"
+                    style={{
+                      marginTop: '0.75rem',
+                      borderColor: 'rgba(241,241,226,0.45)',
+                      color: 'var(--cream)',
+                    }}
+                    onClick={async () => {
+                      try {
+                        await navigator.clipboard.writeText(confirmationCode)
+                        setCodeCopied(true)
+                        setTimeout(() => setCodeCopied(false), 2000)
+                      } catch {
+                        /* ignore */
+                      }
+                    }}
+                  >
+                    {codeCopied ? '✓ Copied' : 'Copy code'}
+                  </button>
+                </div>
+              ) : (
+                <div
+                  style={{
+                    background: '#fdf6e3',
+                    border: '1px solid #e8d9a8',
+                    borderRadius: 'var(--radius-sm)',
+                    padding: '1rem 1.15rem',
+                    marginBottom: '1.5rem',
+                    textAlign: 'center',
+                    fontSize: '0.9rem',
+                    color: 'var(--ink)',
+                    lineHeight: 1.5,
+                  }}
+                >
+                  No Prolific ID was found on this session. If you are in a Prolific
+                  study, return via the study link that includes{' '}
+                  <code style={{ fontSize: '0.85em' }}>PROLIFIC_PID</code> so a
+                  confirmation code can be generated.
+                </div>
+              )}
+
+              {(prolificPid || participantCode.trim()) && (
                 <p
                   style={{
                     fontSize: '0.85rem',
@@ -540,9 +673,9 @@ export default function ValidationApp() {
                     textAlign: 'center',
                   }}
                 >
-                  Participant code:{' '}
+                  {prolificPid ? 'Prolific ID' : 'Participant code'}:{' '}
                   <strong style={{ color: 'var(--ink)' }}>
-                    {participantCode.trim()}
+                    {prolificPid || participantCode.trim()}
                   </strong>
                 </p>
               )}
