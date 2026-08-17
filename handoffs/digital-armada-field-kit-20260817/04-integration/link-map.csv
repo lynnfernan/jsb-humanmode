@@ -1,0 +1,15 @@
+id,command,concept,surface_type,canonical_path,live_url,package_file,notes
+field-kit,Field Kit,The Human Mode Always Field Kit,hub,/hub,https://jsb-humanmode.vercel.app/hub,02-qr-codes/qr-field-kit.png,Aliases: /field-kit /starter-kit
+read-the-room,Read the Room,Emotional Aperture Measure,assessment,/,https://jsb-humanmode.vercel.app/,,~8 min interactive; results CTA next to Bricolage
+tap-the-rest-of-you,Tap the Rest of You,Bricolage,exercises_landing,/bricolage,https://jsb-humanmode.vercel.app/bricolage,02-qr-codes/qr-bricolage.png,Interactive forage + deck
+bricolage-playbook,Tap the Rest of You,Bricolage,pdf_full,/playbooks/bricolage-playbook.pdf,https://jsb-humanmode.vercel.app/playbooks/bricolage-playbook.pdf,01-pdfs/bricolage-playbook.pdf,Keep filename stable
+bricolage-pocket,Tap the Rest of You,Bricolage,pdf_pocket,/playbooks/bricolage-pocket.pdf,https://jsb-humanmode.vercel.app/playbooks/bricolage-pocket.pdf,01-pdfs/bricolage-pocket.pdf,
+drop-certainty-theater,Drop the Certainty Theater,Competent Humility,pulse_check,/competent-humility,https://jsb-humanmode.vercel.app/competent-humility,,8-item instrument ~2 min
+comphum-landing,Drop the Certainty Theater,Competent Humility,playbook_landing,/comphum,https://jsb-humanmode.vercel.app/comphum,02-qr-codes/qr-comphum.png,Product name: The Competent Humility Playbook
+comphum-playbook,Drop the Certainty Theater,Competent Humility,pdf_full,/playbooks/competent-humility-playbook.pdf,https://jsb-humanmode.vercel.app/playbooks/competent-humility-playbook.pdf,01-pdfs/competent-humility-playbook.pdf,Not Confident and Humble
+comphum-pocket,Drop the Certainty Theater,Competent Humility,pdf_pocket,/playbooks/competent-humility-pocket.pdf,https://jsb-humanmode.vercel.app/playbooks/competent-humility-pocket.pdf,01-pdfs/competent-humility-pocket.pdf,
+skip-pep-talk,Skip the Pep Talk,Quiet Understanding,guide_landing,/quiet,https://jsb-humanmode.vercel.app/quiet,02-qr-codes/qr-quiet-understanding.png,
+quiet-pdf,Skip the Pep Talk,Quiet Understanding,pdf_full,/playbooks/quiet-understanding.pdf,https://jsb-humanmode.vercel.app/playbooks/quiet-understanding.pdf,01-pdfs/quiet-understanding.pdf,
+quiet-pocket,Skip the Pep Talk,Quiet Understanding,pdf_pocket,/playbooks/quiet-understanding-pocket.pdf,https://jsb-humanmode.vercel.app/playbooks/quiet-understanding-pocket.pdf,01-pdfs/quiet-understanding-pocket.pdf,
+book-amazon,,,external_cta,,https://www.amazon.com/Human-Mode-Unlock-Unique-Transform/dp/0063467542/ref=tmm_hrd_swatch_0,,Human Mode book
+eam-validation,,,research_only,/eam-validation,https://jsb-humanmode.vercel.app/eam-validation,,Not a marketing lead magnet; Prolific study

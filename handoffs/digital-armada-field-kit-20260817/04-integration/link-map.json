@@ -1,0 +1,117 @@
+{
+  "product": "The Human Mode, Always™ Field Kit",
+  "package_date": "2026-08-17",
+  "current_base_url": "https://jsb-humanmode.vercel.app",
+  "book_url": "https://www.amazon.com/Human-Mode-Unlock-Unique-Transform/dp/0063467542/ref=tmm_hrd_swatch_0",
+  "naming": {
+    "commands": [
+      "Read the Room",
+      "Tap the Rest of You",
+      "Drop the Certainty Theater",
+      "Skip the Pep Talk"
+    ],
+    "concepts": [
+      "Emotional Aperture",
+      "Bricolage",
+      "Competent Humility",
+      "Quiet Understanding"
+    ],
+    "rule": "Commands on cards/CTAs/nav. Concepts on page H1s, PDF titles, download labels."
+  },
+  "surfaces": [
+    {
+      "id": "field-kit",
+      "command": "Field Kit",
+      "type": "hub",
+      "path": "/hub",
+      "url": "https://jsb-humanmode.vercel.app/hub",
+      "aliases": ["/field-kit", "/starter-kit", "/human-mode-hub", "/human-mode-starter-kit", "/human-mode-field-kit"],
+      "package_qr": "02-qr-codes/qr-field-kit.png"
+    },
+    {
+      "id": "read-the-room",
+      "command": "Read the Room",
+      "concept": "Emotional Aperture Measure™",
+      "type": "assessment",
+      "path": "/",
+      "url": "https://jsb-humanmode.vercel.app/",
+      "duration": "~8 min",
+      "package_pdf": null
+    },
+    {
+      "id": "tap-the-rest-of-you",
+      "command": "Tap the Rest of You",
+      "concept": "Bricolage",
+      "type": "exercises_landing",
+      "path": "/bricolage",
+      "url": "https://jsb-humanmode.vercel.app/bricolage",
+      "pdfs": {
+        "full": {
+          "path": "/playbooks/bricolage-playbook.pdf",
+          "url": "https://jsb-humanmode.vercel.app/playbooks/bricolage-playbook.pdf",
+          "file": "01-pdfs/bricolage-playbook.pdf"
+        },
+        "pocket": {
+          "path": "/playbooks/bricolage-pocket.pdf",
+          "url": "https://jsb-humanmode.vercel.app/playbooks/bricolage-pocket.pdf",
+          "file": "01-pdfs/bricolage-pocket.pdf"
+        }
+      }
+    },
+    {
+      "id": "drop-the-certainty-theater",
+      "command": "Drop the Certainty Theater",
+      "concept": "Competent Humility",
+      "type": "assessment_plus_playbook",
+      "pulse": {
+        "path": "/competent-humility",
+        "url": "https://jsb-humanmode.vercel.app/competent-humility",
+        "duration": "~2 min"
+      },
+      "playbook_landing": {
+        "path": "/comphum",
+        "url": "https://jsb-humanmode.vercel.app/comphum",
+        "h1": "The Competent Humility Playbook"
+      },
+      "pdfs": {
+        "full": {
+          "path": "/playbooks/competent-humility-playbook.pdf",
+          "url": "https://jsb-humanmode.vercel.app/playbooks/competent-humility-playbook.pdf",
+          "file": "01-pdfs/competent-humility-playbook.pdf"
+        },
+        "pocket": {
+          "path": "/playbooks/competent-humility-pocket.pdf",
+          "url": "https://jsb-humanmode.vercel.app/playbooks/competent-humility-pocket.pdf",
+          "file": "01-pdfs/competent-humility-pocket.pdf"
+        }
+      }
+    },
+    {
+      "id": "skip-the-pep-talk",
+      "command": "Skip the Pep Talk",
+      "concept": "Quiet Understanding",
+      "type": "field_guide",
+      "path": "/quiet",
+      "url": "https://jsb-humanmode.vercel.app/quiet",
+      "pdfs": {
+        "full": {
+          "path": "/playbooks/quiet-understanding.pdf",
+          "url": "https://jsb-humanmode.vercel.app/playbooks/quiet-understanding.pdf",
+          "file": "01-pdfs/quiet-understanding.pdf"
+        },
+        "pocket": {
+          "path": "/playbooks/quiet-understanding-pocket.pdf",
+          "url": "https://jsb-humanmode.vercel.app/playbooks/quiet-understanding-pocket.pdf",
+          "file": "01-pdfs/quiet-understanding-pocket.pdf"
+        }
+      }
+    }
+  ],
+  "do_not_treat_as_lead_magnet": [
+    {
+      "path": "/eam-validation",
+      "url": "https://jsb-humanmode.vercel.app/eam-validation",
+      "note": "Research validation / Prolific completion codes only"
+    }
+  ]
+}
